@@ -346,8 +346,15 @@ br.clear {
 }
 
 .hutable {
-    width: 92%;
+    /* width: 90%; */
     font-size: large;
+    /* text-align: left; */
+    /* background-color: white; */
+}
+
+.textok {
+    font-size: large;
+    text-align: left;
 }
 
 .datasets {
@@ -2123,6 +2130,13 @@ button:active,
 
 #main>section.three {
     background-color: #ecf1f1;
+    font-size: large;
+    text-align: left;
+}
+
+#main>section.three h2 {
+    background-color: #ecf1f1;
+    text-align: center;
 }
 
 #main>section.four {
