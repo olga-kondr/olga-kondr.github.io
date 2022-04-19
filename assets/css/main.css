@@ -345,6 +345,11 @@ br.clear {
     width: 1400px;
 }
 
+.hutable {
+    width: 92%;
+    font-size: large;
+}
+
 .datasets {
     text-align: left;
     font-size: large;
