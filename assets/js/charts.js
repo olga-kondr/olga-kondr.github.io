@@ -142,7 +142,7 @@ function renderChart2_1(dataElements) {
             .style('border-radius', '6px')
             .style('pointer-events', 'none');
 
-        tooltip.html('Type ' + d[0])
+        tooltip.html('Type ' + d[0] + '<br/>' + 'Total Count ' + d[1])
             .style('top', (e.pageY) + 'px')
             .style('left', (e.pageX) + 'px');
     }
@@ -190,7 +190,7 @@ d3.csv(
 
 function renderChart2_2(dataElements) {
 
-    let width = 600;
+    let width = 800;
     let height = 500;
     let data = dataElements.map(o => ({
         decade: o.Decade,
@@ -291,3 +291,113 @@ function renderChart2_2(dataElements) {
 d3.csv(
     'https://gist.githubusercontent.com/olga-kondr/4e92d9ecab44d7894731a16b8f1f5c71/raw/3aa458955b5c58f2f406ebd4144a4ff79cebae00/atlantic_hist.csv',
 ).then(data => renderChart2_2(data));
+
+// Chart 4
+function renderChart4(dataElements) {
+    let width = 800;
+    let height = 500;
+
+    // console.log(dataElements);
+
+    let years = new Set(dataElements.map((o) => +o.year));
+    let maxWind = d3.max(dataElements.map((o) => +o.max_wind));
+
+    let data = dataElements.map((o) => ({
+        name: o.name,
+        max_wind: +o.max_wind,
+        year: +o.year
+    }));
+
+    let margin = { top: 50, right: 25, bottom: 40, left: 80 };
+
+    let x = d3
+        .scaleLinear()
+        .domain([2004, 2016]).nice()
+        .range([margin.left, width - margin.right]);
+
+    let y = d3
+        .scaleLinear()
+        .domain([0, maxWind]).nice()
+        .range([height - margin.bottom, margin.top]);
+
+    let xAxis = (g) => g
+        .attr(
+            'transform',
+            `translate(0,${height - margin.bottom})`
+        )
+        .call(d3.axisBottom(x));
+
+    let yAxis = (g) => g
+        .attr(
+            'transform',
+            `translate(${margin.left},0)`
+        )
+        .call(d3.axisLeft(y));
+
+    const svg = d3.select('#chart4')
+        .append('svg')
+        .attr('width', width)
+        .attr('height', height);
+
+    svg.append('g')
+        .call(xAxis);
+
+    svg.append('g')
+        .call(yAxis);
+
+    // div for the tooltip
+    var tooltip = d3.select('#chart22').append('div')
+        .attr('class', 'tooltip')
+        .style('opacity', 0);
+
+    // add tooltips
+    let showTt = (e, d) => {
+        tooltip.transition()
+            .duration(200)
+            .style('opacity', .9);
+
+        tooltip.style('position', 'absolute')
+            .style('width', '40')
+            .style('color', 'black')
+            .style('text-align', 'center')
+            .style('padding', '0.35em')
+            .style('font-size', '1em')
+            .style('background', '#ccc')
+            .style('border', '0px')
+            .style('border-radius', '6px')
+            .style('pointer-events', 'none');
+
+        tooltip.html('In ' + d.year + ' ' + d.name + '\'s' + '<br/>' + 'speed was ' + d.max_wind + ' kn')
+            .style('top', (e.pageY) + 'px')
+            .style('left', (e.pageX) + 'px');
+    }
+
+    let hideTt = (e, d) => {
+        tooltip.transition()
+            .duration(500)
+            .style('opacity', 0);
+    }
+
+    // console.log(data);
+    data = data.filter(d => d.year >= 2005);
+    svg.append('g')
+        .selectAll('circle')
+        .data(data)
+        .join('circle')
+        .attr('fill', '#66a61e')
+        .attr('cx', d => x(d.year))
+        .attr('cy', d => y(d.max_wind))
+        .attr('r', '0.3em')
+        .on('mouseenter', showTt)
+        .on('mouseleave', hideTt);
+}
+
+// Charts
+
+function renderCharts(dataElements) {
+    renderChart4(dataElements);
+
+}
+d3.csv(
+    'https://gist.githubusercontent.com/olga-kondr/0ffc7e15398f5c8e424ee35152d0aa39/raw/1c2d4097dc652534914f5a6bca2ee5c56706ecbe/atlantic_cleaned.csv',
+).then(data => renderCharts(data));
