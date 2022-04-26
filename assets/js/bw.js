@@ -385,7 +385,6 @@ function renderChartwh1(dataElements) {
 
 
 function renderCharts10(dataElements) {
-    alert(dataElements);
     renderChartbl(dataElements);
     renderChartwh(dataElements);
     renderChartbl1(dataElements);
