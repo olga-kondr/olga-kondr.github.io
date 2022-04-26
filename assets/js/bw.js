@@ -1,4 +1,4 @@
-let width = 350;
+let width = 400;
 let height = 300;
 
 function renderChartbl(dataElements) {
@@ -105,7 +105,7 @@ function renderChartbl(dataElements) {
         .attr("y", "-15")
         .attr("transform", "translate(30, 300) rotate(270)")
         .style("font-size", "14px")
-        .text("Price ($)");
+        .text("Price");
 }
 
 function renderChartwh(dataElements) {
