@@ -345,6 +345,18 @@ br.clear {
     width: 1400px;
 }
 
+.container #chart4slider {
+    width: 60%;
+    position: relative;
+    z-index: 1;
+}
+
+.container #chart5slider {
+    width: 60%;
+    position: relative;
+    z-index: 1;
+}
+
 .hutable {
     /* width: 90%; */
     font-size: large;

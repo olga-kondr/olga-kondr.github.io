@@ -1,10 +1,56 @@
-// inspired by http://bl.ocks.org/ndobie/336055eed95f62350ec3
-var colors0 = ['#c464d9', '#ff6060', '#ff8f20', '#ffd821', '#fff795', '#00faf4', '#5ebaff']; // 0%
-var colors4 = ['#dca2e8', '#ffa0a0', '#ffbc79', '#ffe87a', '#fffabf', '#63fffb', '#9ed6ff']; // 40%
-var colors6 = ['#e7c1f0', '#ffbfbf', '#ffd2a6', '#ffefa6', '#fffcd5', '#97fffd', '#bfe3ff']; // 60%
+// inspired by 
+// http://bl.ocks.org/ndobie/336055eed95f62350ec3
+// https://d3-graph-gallery.com/graph/violin_jitter.html
+// https://bl.ocks.org/motttey/339c1a5ec41c2c3b5da8f07c4169e661
 
-// Chart-Table 1.1
-function addTable(data, columns, colors4) {
+// get width
+var width = document.getElementById('objective').offsetWidth / 1.5;
+var height = width * 0.7;
+
+// colors used:
+var colors0 = ['#c464d9', '#ff6060', '#ff8f20', '#ffd821', '#fff795', '#00faf4', '#5ebaff', '#45b021', '#3e6aff', '#00cac4']; // 0%
+var colors4 = ['#dca2e8', '#ffa0a0', '#ffbc79', '#ffe87a', '#fffabf', '#63fffb', '#9ed6ff', '#86e267', '#8ba6ff', '#46fffa']; // 40%
+var colors6 = ['#e7c1f0', '#ffbfbf', '#ffd2a6', '#ffefa6', '#fffcd5', '#97fffd', '#bfe3ff', '#aeec9a', '#b2c3ff', '#84fffb']; // 60%
+var colors9 = ['#f9effb', '#ffefef', '#fff4e9', '#fffbe9', '#fffef4', '#e5fffe', '#eff8ff', '#ebfae6', '#ecf0ff', '#e0fffe']; // 90%
+
+var colorClassifications = [
+    { abbr: 'TD', descr: 'Tropical cyclone of tropical depression intensity (less than 34 knots)', colorHex: colors4[6] },
+    { abbr: 'TS', descr: 'Tropical cyclone of tropical storm intensity (34-63 knots)', colorHex: colors4[5] },
+    { abbr: 'HU', descr: 'Tropical cyclone of hurricane intensity (> 64 knots)', colorHex: colors4[2] },
+    { abbr: 'HU1', descr: 'Hurricane of category one', colorHex: colors4[4] },
+    { abbr: 'HU2', descr: 'Hurricane of category two', colorHex: colors4[3] },
+    { abbr: 'HU3', descr: 'Hurricane of category three', colorHex: colors4[2] },
+    { abbr: 'HU4', descr: 'Hurricane of category four', colorHex: colors4[1] },
+    { abbr: 'HU5', descr: 'Hurricane of category five', colorHex: colors4[0] },
+    { abbr: 'EX', descr: 'Extratropical cyclone (of any intensity)', colorHex: colors4[7] },
+    { abbr: 'SD', descr: 'Subtropical cyclone of subtropical depression intensity (less than 34 knots)', colorHex: colors4[8] },
+    { abbr: 'SS', descr: 'Subtropical cyclone of subtropical storm intensity (> 34 knots)', colorHex: colors4[9] },
+    { abbr: 'LO', descr: 'A low that is neither a tropical cyclone, a subtropical cyclone, nor an extratropical cyclone (of any intensity)', colorHex: '#000' },
+    { abbr: 'WV', descr: 'Tropical Wave (of any intensity)', colorHex: '#ccc' },
+    { abbr: 'DB', descr: 'Disturbance (of any intensity)', colorHex: '#ffa0f9' }
+];
+
+var colorsDict = new Map();
+colorClassifications.forEach(element => colorsDict.set(element.abbr, element.colorHex)); //[element.abbr] = element.colorHex);
+// console.log('EX == ' + colorsDict.get('EX'));
+
+let colorShortClassifications = [
+    { abbr: 'TD', descr: 'Tropical cyclone of tropical depression intensity (less than 34 knots)', colorHex: colors4[6] },
+    { abbr: 'TS', descr: 'Tropical cyclone of tropical storm intensity (34-63 knots)', colorHex: colors4[5] },
+    { abbr: 'HU', descr: 'Tropical cyclone of hurricane intensity (> 64 knots)', colorHex: colors4[2] },
+    { abbr: 'EX', descr: 'Extratropical cyclone (of any intensity)', colorHex: colors4[7] },
+    { abbr: 'SD', descr: 'Subtropical cyclone of subtropical depression intensity (less than 34 knots)', colorHex: colors4[8] },
+    { abbr: 'SS', descr: 'Subtropical cyclone of subtropical storm intensity (> 34 knots)', colorHex: colors4[9] },
+    { abbr: 'LO', descr: 'A low that is neither a tropical cyclone, a subtropical cyclone, nor an extratropical cyclone (of any intensity)', colorHex: '#000' },
+    { abbr: 'WV', descr: 'Tropical Wave (of any intensity)', colorHex: '#ccc' },
+    { abbr: 'DB', descr: 'Disturbance (of any intensity)', colorHex: '#ffa0f9' }
+];
+var colorsShortDict = new Map();
+colorShortClassifications.forEach(element => colorsShortDict.set(element.abbr, element.colorHex));
+
+
+// Table 1.1
+function addTable(data, columns, colors) {
     // add table
     var table = d3.select('#hurtable')
         .append('table');
@@ -25,12 +71,9 @@ function addTable(data, columns, colors4) {
         .enter()
         .append('tr');
 
-    // let color = d3.scaleOrdinal()
-    //     .domain(rows)
-    //     .range(colors);
-
+    // apply lighter background colors
     rows = tbody.selectAll('tr')
-        .style('background-color', (e, i) => colors4[i]); //color);
+        .style('background-color', (e, i) => colors[i]);
 
     // add data
     // create a cell in each row for each column
@@ -50,18 +93,21 @@ function addTable(data, columns, colors4) {
 
 function renderChart1_1(dataElements) {
     let columns = Object.keys(dataElements[0]);
-    addTable(dataElements, columns, colors4);
+    addTable(dataElements, columns, colors9);
 };
 
 d3.csv(
     'https://gist.githubusercontent.com/olga-kondr/03ffdd2935e38acd6688991780546a12/raw/3e482541c7d2b96bf7ab6e7e95e451a02a71aa23/scale.csv'
 ).then(data => renderChart1_1(data));
 
+function getColorByAbbr(abbr) {
+    return colorsDict.get(abbr);
+}
 // Chart 2.1
 function renderChart2_1(dataElements) {
 
-    let width = 600;
-    let height = 500;
+    // let width = 600;
+    // let height = 500;
     let offset = 200;
 
     let data = new Map();
@@ -71,6 +117,7 @@ function renderChart2_1(dataElements) {
     let dt = Array.from(data.entries());
     for (let i = 0; i < dt.length; i++) {
         dt[i].push(i);
+        dt[i].push(getColorByAbbr(dt[i][0]));
     }
 
     let margin = ({ top: 45, right: 25, bottom: 45, left: 45 });
@@ -153,12 +200,13 @@ function renderChart2_1(dataElements) {
             .style('opacity', 0);
     }
 
+    // console.log('dt-> ' + dt);
     svg.selectAll('rect')
         .data(dt)
         .enter()
         .append('rect')
         .attr('transform', `translate(0, ${y()})`)
-        .attr('fill', 'blue')
+        .attr('fill', d => d[3])
         .attr('width', x.bandwidth())
         .attr('height', d => (height - y(d[1]) - margin.top))
         .attr('x', d => x(d[0]))
@@ -187,11 +235,8 @@ d3.csv(
 ).then(data => renderChart2_1(data));
 
 // Chart 2.2
-
+// color scale issues
 function renderChart2_2(dataElements) {
-
-    let width = 800;
-    let height = 500;
     let data = dataElements.map(o => ({
         decade: o.Decade,
         type: o.Type,
@@ -204,27 +249,27 @@ function renderChart2_2(dataElements) {
     let margin = ({ top: 45, right: 45, bottom: 45, left: 45 });
 
     // append the svg object to the body of the page
-    const svg = d3.select("#chart22")
-        .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform", `translate(${margin.left},${margin.top})`);
+    const svg = d3.select('#chart22')
+        .append('svg')
+        .attr('width', width + margin.left + margin.right)
+        .attr('height', height + margin.top + margin.bottom)
+        .append('g')
+        .attr('transform', `translate(${margin.left},${margin.top})`);
 
     const x = d3.scaleBand()
         .domain(decade)
         .range([0, width])
-        .padding([0.2]);
+        .padding([0.3]);
 
-    svg.append("g")
-        .attr("transform", `translate(0, ${height})`)
-        .call(d3.axisBottom(x).tickSize(0));
+    svg.append('g')
+        .attr('transform', `translate(0, ${height})`)
+        .call(d3.axisBottom(x)); //.tickSize(0));
 
     const y = d3.scaleLinear()
         .domain([0, max])
         .range([height, 0]);
 
-    svg.append("g")
+    svg.append('g')
         .call(d3.axisLeft(y));
 
     // scale for small groups inside a big ones
@@ -233,9 +278,10 @@ function renderChart2_2(dataElements) {
         .range([0, x.bandwidth()])
         .padding([0.05]);
 
+    // doesn't work correctly 
     const color = d3.scaleOrdinal()
-        .domain(type)
-        .range(d3.schemeCategory10);
+        .domain(colorsShortDict.keys())
+        .range(colorsShortDict.values());
 
     // div for the tooltip
     var tooltip = d3.select('#chart22').append('div')
@@ -272,19 +318,24 @@ function renderChart2_2(dataElements) {
 
     let arr = Array.from(type);
 
-    svg.append("g")
-        .selectAll("g")
+    svg.append('g')
+        .selectAll('g')
         .data(data)
-        .join("g")
-        .attr("transform", d => `translate(${x(d.decade)}, 0)`)
-        .selectAll("rect")
+        .join('g')
+        .attr('transform', d => `translate(${x(d.decade)}, 0)`)
+        .selectAll('rect')
         .data(function(d) { return arr.map(function(key) { return { key: d.type, value: d.value }; }); })
-        .join("rect")
-        .attr("x", d => xSubgroup(d.key))
-        .attr("y", d => y(d.value))
-        .attr("width", xSubgroup.bandwidth())
-        .attr("height", d => height - y(d.value))
-        .attr("fill", d => color(d.key))
+        .join('rect')
+        .attr('x', d => xSubgroup(d.key))
+        .attr('y', d => y(d.value))
+        .attr('width', xSubgroup.bandwidth())
+        .attr('height', d => height - y(d.value))
+        // .attr('fill', d => colorsDict.get(d.key))
+        // .attr('fill', function(d) {
+        // let tmp = d.key;
+        // return colorsDict.get(tmp);
+        // })
+        .attr('fill', d => color(d.key))
         .on('mouseenter', showTt)
         .on('mouseleave', hideTt);
 }
@@ -294,31 +345,53 @@ d3.csv(
 ).then(data => renderChart2_2(data));
 
 // Chart 4
-function renderChart4(dataElements) {
-    let width = 800;
-    let height = 500;
-
-    // console.log(dataElements);
-
-    let years = new Set(dataElements.map((o) => +o.year));
-    let maxWind = d3.max(dataElements.map((o) => +o.max_wind));
-
-    let data = dataElements.map((o) => ({
+function renderChart4(dataElements, startYear = 2010, endYear = 2015, numBins = 10) {
+    let dataPrep = dataElements.filter(d => +d.year >= startYear & +d.year <= endYear);
+    dataMap = dataPrep.map((o) => ({
         name: o.name,
-        max_wind: +o.max_wind,
+        maxWind: +o.max_wind,
         year: +o.year
     }));
+    let data = [];
+    let nm = 'ARLENE';
+    let maxWinSpeed = 0;
+    let minVal = 1000;
+    let maxVal = 0;
+    dataMap.forEach(el => {
+        let val = +el.maxWind;
+        if (nm === el.name) {
+            if (maxWinSpeed < val) {
+                maxWinSpeed = +val;
+            }
+        } else {
+            data.push({ 'name': nm, 'maxWind': maxWinSpeed, 'year': +el.year })
+            nm = el.name;
+            maxWinSpeed = val;
+        }
+        if (minVal > val) {
+            minVal = val;
+        }
+        if (maxVal < val) {
+            maxVal = val;
+        }
+    })
+
+    let years = new Set(data.map((o) => { if (o.year >= startYear & o.year <= endYear) return o.year; }));
+    const meanVal = d3.mean(data, (d) => d.maxWind);
+    const jitterWidth = 20;
+    const jitterHeight = 1.5;
 
     let margin = { top: 50, right: 25, bottom: 40, left: 80 };
 
     let x = d3
-        .scaleLinear()
-        .domain([2004, 2016]).nice()
+        .scaleBand()
+        .domain(years)
+        .padding(0.05)
         .range([margin.left, width - margin.right]);
 
     let y = d3
         .scaleLinear()
-        .domain([0, maxWind]).nice()
+        .domain([0, maxVal + 1]).nice()
         .range([height - margin.bottom, margin.top]);
 
     let xAxis = (g) => g
@@ -335,10 +408,12 @@ function renderChart4(dataElements) {
         )
         .call(d3.axisLeft(y));
 
+    d3.selectAll("#chart4 > *").remove();
     const svg = d3.select('#chart4')
         .append('svg')
         .attr('width', width)
-        .attr('height', height);
+        .attr('height', height)
+        .attr('class', 'violin');
 
     svg.append('g')
         .call(xAxis);
@@ -346,8 +421,53 @@ function renderChart4(dataElements) {
     svg.append('g')
         .call(yAxis);
 
+    let hist = d3.bin()
+        .domain(y.domain())
+        .thresholds(y.ticks(numBins))
+        .value(d => d);
+
+    let suma = d3.rollup(data,
+        v => {
+            let input = v.map(el => el.maxWind);
+            return hist(input);
+        },
+        d => d.year
+    );
+
+    let maxNumber = 0;
+    let maxNumberVal = 0;
+
+    suma.forEach((value) => {
+        maxWS = value.map(function(d) { return d3.max(d); });
+        let valarray = value.map(function(d) { return d3.count(d); });
+        let maxN = d3.max(valarray);
+        maxWSval = d3.max(maxWS);
+        if (maxWSval > maxNumberVal) { maxNumberVal = maxWSval; }
+        if (maxN > maxNumber) { maxNumber = maxN; }
+    });
+
+    let xNumScale = d3.scaleLinear()
+        .range([x.bandwidth() / 2, x.bandwidth()])
+        .domain([0, maxNumber]);
+
+    svg.selectAll('violinBands')
+        .data(suma).enter()
+        .append('g')
+        .attr('transform', function(d) { return `translate(${x(d[0])},0)`; })
+        .append('path')
+        .attr('class', 'violinBands')
+        .datum(function(d) { return (d[1]) })
+        .style('stroke', 'none')
+        .attr('fill', '#66c600')
+        .attr("d", d3.area()
+            .x0(xNumScale(0))
+            .x1(function(d) { return xNumScale(d.length); })
+            .y(function(d) { return y(d.x0) })
+            .curve(d3.curveCatmullRom)
+        );
+
     // div for the tooltip
-    var tooltip = d3.select('#chart4').append('div')
+    let tooltip = d3.select('#chart4').append('div')
         .attr('class', 'tooltip')
         .style('opacity', 0);
 
@@ -368,7 +488,7 @@ function renderChart4(dataElements) {
             .style('border-radius', '6px')
             .style('pointer-events', 'none');
 
-        tooltip.html('In ' + d.year + ' ' + d.name + '\'s' + '<br/>' + 'speed was ' + d.max_wind + ' kn')
+        tooltip.html('In ' + d.year + ' ' + d.name + '\'s' + '<br/>' + 'speed was ' + d.maxWind + ' kn')
             .style('top', (e.pageY) + 'px')
             .style('left', (e.pageX) + 'px');
     }
@@ -379,45 +499,71 @@ function renderChart4(dataElements) {
             .style('opacity', 0);
     }
 
-    data = data.filter(d => d.year >= 2005);
-    svg.append('g')
-        .selectAll('circle')
+    svg.selectAll('violinPoints')
         .data(data)
-        .join('circle')
-        .attr('fill', '#66a61e')
-        .attr('cx', d => x(d.year))
-        .attr('cy', d => y(d.max_wind))
-        .attr('r', '0.3em')
+        .enter()
+        .append('circle')
+        .attr('cx', function(d) {
+            return (x(d.year) + x.bandwidth() / 2 - Math.random() * jitterWidth)
+        })
+        .attr('cy', function(d) {
+            return y(d.maxWind + Math.random() * jitterHeight);
+        })
+        .attr('r', 4.5)
+        .style('fill', '#66a61e')
+        .attr('stroke', 'white')
         .on('mouseenter', showTt)
         .on('mouseleave', hideTt);
 }
 
 // Chart 5
-function renderChart5(dataElements) {
-    let width = 800;
-    let height = 500;
-
-    // console.log(dataElements);
-
-    let years = new Set(dataElements.map((o) => +o.year));
-    let pr = d3.max(dataElements.map((o) => +o.min_pressure));
-
-    let data = dataElements.map((o) => ({
+function renderChart5(dataElements, startYear = 2010, endYear = 2015, numBins = 10) {
+    let dataPrep = dataElements.filter(d => +d.year >= startYear & +d.year <= endYear);
+    dataMap = dataPrep.map((o) => ({
         name: o.name,
-        pressure: +o.min_pressure,
+        minPressure: +o.min_pressure,
         year: +o.year
     }));
+    let data = [];
+    let nm = 'ARLENE';
+    let minPressureSpeed = 0;
+    let minVal = 1000;
+    let maxVal = 0;
+    dataMap.forEach(el => {
+        let val = +el.minPressure;
+        if (nm === el.name) {
+            if (minPressureSpeed < val) {
+                minPressureSpeed = +val;
+            }
+        } else {
+            data.push({ 'name': nm, 'minPressure': minPressureSpeed, 'year': +el.year })
+            nm = el.name;
+            minPressureSpeed = val;
+        }
+        if (minVal > val) {
+            minVal = val;
+        }
+        if (maxVal < val) {
+            maxVal = val;
+        }
+    })
+
+    let years = new Set(data.map((o) => { if (o.year >= startYear & o.year <= endYear) return o.year; }));
+    const meanVal = d3.mean(data, (d) => d.minPressure);
+    const jitterWidth = 30;
+    const jitterHeight = 1.5;
 
     let margin = { top: 50, right: 25, bottom: 40, left: 80 };
 
     let x = d3
-        .scaleLinear()
-        .domain([2004, 2016]).nice()
+        .scaleBand()
+        .domain(years)
+        .padding(0.05)
         .range([margin.left, width - margin.right]);
 
     let y = d3
         .scaleLinear()
-        .domain([850, pr]).nice()
+        .domain([minVal, maxVal + 10]).nice()
         .range([height - margin.bottom, margin.top]);
 
     let xAxis = (g) => g
@@ -434,10 +580,12 @@ function renderChart5(dataElements) {
         )
         .call(d3.axisLeft(y));
 
+    d3.selectAll("#chart5 > *").remove();
     const svg = d3.select('#chart5')
         .append('svg')
         .attr('width', width)
-        .attr('height', height);
+        .attr('height', height)
+        .attr('class', 'violin');
 
     svg.append('g')
         .call(xAxis);
@@ -445,8 +593,53 @@ function renderChart5(dataElements) {
     svg.append('g')
         .call(yAxis);
 
+    let hist = d3.bin()
+        .domain(y.domain())
+        .thresholds(y.ticks(numBins))
+        .value(d => d);
+
+    let suma = d3.rollup(data,
+        v => {
+            let input = v.map(el => el.minPressure);
+            return hist(input);
+        },
+        d => d.year
+    );
+
+    let maxNumber = 0;
+    let maxNumberVal = 0;
+
+    suma.forEach((value) => {
+        minP = value.map(function(d) { return d3.max(d); });
+        let valarray = value.map(function(d) { return d3.count(d); });
+        let maxN = d3.max(valarray);
+        minPval = d3.max(minP);
+        if (minPval > maxNumberVal) { maxNumberVal = minPval; }
+        if (maxN > maxNumber) { maxNumber = maxN; }
+    });
+
+    let xNumScale = d3.scaleLinear()
+        .range([x.bandwidth() / 2, x.bandwidth()])
+        .domain([0, maxNumber]);
+
+    svg.selectAll('violinBands')
+        .data(suma).enter()
+        .append('g')
+        .attr('transform', function(d) { return `translate(${x(d[0])},0)`; })
+        .append('path')
+        .attr('class', 'violinBands')
+        .datum(function(d) { return (d[1]) })
+        .style('stroke', 'none')
+        .attr('fill', '#cf7515')
+        .attr("d", d3.area()
+            .x0(xNumScale(0))
+            .x1(function(d) { return xNumScale(d.length); })
+            .y(function(d) { return y(d.x0) })
+            .curve(d3.curveCatmullRom)
+        );
+
     // div for the tooltip
-    var tooltip = d3.select('#chart5').append('div')
+    let tooltip = d3.select('#chart5').append('div')
         .attr('class', 'tooltip')
         .style('opacity', 0);
 
@@ -467,7 +660,7 @@ function renderChart5(dataElements) {
             .style('border-radius', '6px')
             .style('pointer-events', 'none');
 
-        tooltip.html('In ' + d.year + ' ' + d.name + '\'s' + '<br/>' + 'minimum pressure was ' + '<br/>' + d.pressure + ' millibars')
+        tooltip.html('In ' + d.year + ' ' + d.name + '\'s' + '<br/>' + 'pressure was ' + d.minPressure + ' millibars')
             .style('top', (e.pageY) + 'px')
             .style('left', (e.pageX) + 'px');
     }
@@ -478,25 +671,25 @@ function renderChart5(dataElements) {
             .style('opacity', 0);
     }
 
-    // console.log(data);
-    data = data.filter(d => d.year >= 2005);
-    svg.append('g')
-        .selectAll('circle')
+    svg.selectAll('violinPoints')
         .data(data)
-        .join('circle')
-        .attr('fill', '#ffa61e')
-        .attr('cx', d => x(d.year))
-        .attr('cy', d => y(d.pressure))
-        .attr('r', '0.3em')
+        .enter()
+        .append('circle')
+        .attr('cx', function(d) {
+            return (x(d.year) + x.bandwidth() / 2 - Math.random() * jitterWidth)
+        })
+        .attr('cy', function(d) {
+            return y(d.minPressure + Math.random() * jitterHeight);
+        })
+        .attr('r', 4.5)
+        .style('fill', '#df8515')
+        .attr('stroke', 'white')
         .on('mouseenter', showTt)
         .on('mouseleave', hideTt);
 }
 
 // Chart 6
 function renderChart6(dataElements) {
-    let width = 800;
-    let height = 400;
-
     // console.log(dataElements);
 
     let names = new Set(dataElements.map((o) => o.name));
@@ -511,10 +704,8 @@ function renderChart6(dataElements) {
         long: +o.long,
         year: +o.year
     }));
-    console.log(data);
-    let margin = { top: 50, right: 25, bottom: 40, left: 80 };
 
-    // console.log(d3.extent(long));
+    let margin = { top: 50, right: 25, bottom: 40, left: 80 };
     let x = d3
         .scaleLinear()
         .domain([longmi, longma]).nice()
@@ -601,11 +792,29 @@ function renderChart6(dataElements) {
         .on('mouseleave', hideTt);
 }
 
-// Charts
+// https://observablehq.com/@sarah37/snapping-range-slider-with-d3-brush - ?
 
-function renderCharts(dataElements) {
+function chart4listener(dataElements) {
     renderChart4(dataElements);
+    // chart4 update year range listener
+    d3.select("#chart4slider").on("change", function(d) {
+        selectedValue = +this.value;
+        renderChart4(dataElements, selectedValue, selectedValue + 5);
+    });
+}
+
+function chart5listener(dataElements) {
     renderChart5(dataElements);
+    // chart4 update year range listener
+    d3.select("#chart5slider").on("change", function(d) {
+        selectedValue = +this.value;
+        renderChart5(dataElements, selectedValue, selectedValue + 5);
+    });
+}
+// Charts
+function renderCharts(dataElements) {
+    chart4listener(dataElements);
+    chart5listener(dataElements);
     renderChart6(dataElements);
 }
 d3.csv(
