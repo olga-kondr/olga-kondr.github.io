@@ -28,7 +28,7 @@
             <nav id="nav">
                 <ul>
                     <li><a href="dv-project.html" id="project"><span class="icon solid fa-th">Final Project</span></a></li>
-                    <li><a href="#alpha" id="top-link"><span >Alpha Release Report</span></a></li>
+                    <li><a href="#alpha" id="top-link"><span>Release Reports</span></a></li>
                     <li><a href="#objective" id="top-link"><span >Objective</span></a></li>
                     <li><a href="#data" id="top-link"><span >Data</span></a></li>
                     <li><a href="#objective1" id="top-link"><span >Saffir–Simpson Scale Plus</span></a></li>
@@ -77,16 +77,25 @@
         <!-- Alpha Release -->
         <section id="alpha" class="three">
             <div class="container">
-
                 <header>
-                    <h2>Alpha Release Report</h2>
+                    <h3>Release Reports</h3>
                 </header>
+                <h4>Alpha Release Report</h4>
                 <div class="row">
                     <div class="block">
                         <a href="pdf/Alpha_Release.pdf"><img src="images/ar.png" alt="" height="60px" /></a>
                     </div>
                     <div class="block">
                         <a href="pdf/Alpha_Release.pdf">Alpha_Release_Report</a>
+                    </div>
+                </div>
+                <h4>Beta Release Update</h4>
+                <div class="row">
+                    <div class="block">
+                        <a href="https://docs.google.com/presentation/d/1TpiFIpkhnjteaYnilDjCG5A-bLhUJJjo2Wo45KyI2Ls/edit?usp=sharing"><img src="images/beta.png" alt="" height="40px" /></a>
+                    </div>
+                    <div class="block">
+                        <a href="https://docs.google.com/presentation/d/1TpiFIpkhnjteaYnilDjCG5A-bLhUJJjo2Wo45KyI2Ls/edit?usp=sharing">Beta_Release_Update</a>
                     </div>
                 </div>
             </div>
@@ -97,7 +106,7 @@
             <div class="container">
 
                 <header>
-                    <h2>Objective</h2>
+                    <h3>Objective</h3>
                 </header>
                 <p>
                     First things first: <br/><b>Tropical cyclone</b> is a rapidly rotating storm system characterized by a low-pressure center, a closed low-level atmospheric circulation, strong winds, and a spiral arrangement of thunderstorms that produce
@@ -139,7 +148,7 @@
             <div class="container">
 
                 <header>
-                    <h2>Data</h2>
+                    <h3>Data</h3>
                 </header>
                 <p>
                     Main dataset is <a href="https://www.kaggle.com/noaa/hurricane-database">https://www.kaggle.com/noaa/hurricane-database</a>
@@ -152,7 +161,7 @@
             <div class="container">
 
                 <header>
-                    <h2>Saffir–Simpson Scale Plus</h2>
+                    <h3>Saffir–Simpson Scale Plus</h3>
                 </header>
                 <p>
                     The Saffir–Simpson hurricane wind scale, classifies hurricanes Western Hemisphere tropical cyclones that exceed the intensities of tropical depressions and tropical storms – into five categories distinguished by the intensities of their sustained winds.
@@ -170,7 +179,7 @@
             <div class="container">
 
                 <header>
-                    <h2>Types of Storms in Atlantic Ocean</h2>
+                    <h3>Types of Storms in Atlantic Ocean</h3>
                 </header>
                 <p>
                     Total Amount of Storms by Type
@@ -189,7 +198,7 @@
             <div class="container">
 
                 <header>
-                    <h2>Length of Storms </h2>
+                    <h3>Length of Storms </h3>
                 </header>
                 <p>
                     Length of Hurricanes
@@ -202,7 +211,7 @@
             <div class="container">
 
                 <header>
-                    <h2>Wind</h2>
+                    <h3>Wind</h3>
                 </header>
                 <p>
                     Maximum Wind Speed (kn)
@@ -219,7 +228,7 @@
             <div class="container">
 
                 <header>
-                    <h2>Minimum Pressure</h2>
+                    <h3>Pressure</h3>
                 </header>
                 <p>
                     Minimum Pressure (millibars)
@@ -237,12 +246,16 @@
             <div class="container">
 
                 <header>
-                    <h2>Hurricane Trajectories</h2>
+                    <h3>Hurricane Trajectories</h3>
                 </header>
                 <p>
                     Atlantic Ocean
                 </p>
-                <div id="chart6" style="background-image: url('images/map.png');background-repeat: no-repeat;background-size: 70%;background-position: left -25% bottom -50%"></div>
+
+                <div id="chart6back">
+                    <div id="chart6"></div>
+                </div>
+                <!--style="background-image: url('images/map-of-atlantic-ocean.jpg');background-repeat: no-repeat;background-size: 80%;background-position: left -25% bottom -50%-->
             </div>
         </section>
 
@@ -251,7 +264,7 @@
             <div class="container">
 
                 <header>
-                    <h2>Interactive Map</h2>
+                    <h3>Interactive Map</h3>
                 </header>
                 <p>
                     Interactive map of trajectories with filtering and hovering over the hurricane.

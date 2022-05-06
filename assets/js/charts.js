@@ -805,7 +805,7 @@ function chart4listener(dataElements) {
 
 function chart5listener(dataElements) {
     renderChart5(dataElements);
-    // chart4 update year range listener
+    // chart5 update year range listener
     d3.select("#chart5slider").on("change", function(d) {
         selectedValue = +this.value;
         renderChart5(dataElements, selectedValue, selectedValue + 5);
