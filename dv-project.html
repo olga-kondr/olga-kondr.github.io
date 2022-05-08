@@ -177,19 +177,37 @@
         <!-- Objective 2 -->
         <section id="objective2" class="three">
             <div class="container">
-
                 <header>
                     <h3>Types of Storms in Atlantic Ocean</h3>
                 </header>
-                <p>
-                    Total Amount of Storms by Type
-                </p>
-                <div id="histogram21"></div>
+                <!-- <div id="histogram21"></div> -->
+                <div style="display:flex; flex-direction: row; justify-content: center; align-items: top">
+                    <div style="padding: 0.3em;">
+                        Total Amount of Storms by Type Based on Wind Speed
+                        <br/> Types of Weather Events in the Atlantic Ocean
+                        <div id="histogram21"></div>
+                    </div>
+                    <div style="padding: 0.3em;">
+                        Total Amount of Storms by Type Based on Weather System Condition<br/> Types of Weather Events in the Atlantic Ocean
+                        <div id="histogram212"></div>
+                    </div>
+                </div>
                 <br/>
                 <p>
                     Amount of Storms per Decade and by Type
                 </p>
                 <div id="chart22"></div>
+                <!-- Add a slider -->
+                <label>Start with Decade:</label> <br/> 1856-1865
+                <input type="range" name="chart22slider" id="chart221slider" class="slider221range" min="1" max="12" value="12"> 1966-1975 + 5 Decades
+                <!-- <input type="range" name="chart22slider" id="chart221slider" class="slider221range" min="1856" max="2010" value="2010"> 2010-2015 -->
+
+                <div id="chart222"></div>
+                <!-- Add a slider -->
+                <label>Start with Decade:</label> <br/> 1856-1865
+                <input type="range" name="chart22slider" id="chart222slider" class="slider222range" min="1" max="12" value="12"> 1966-1975 + 5 Decades
+                <!-- <input type="range" name="chart22slider" id="chart222slider" class="slider222range" min="1856" max="2010" value="2010"> 2010-2015 -->
+
             </div>
         </section>
 
@@ -292,7 +310,10 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="https://d3js.org/d3.v6.min.js"></script>
-    <script src="assets/js/charts.js"></script>
+    <script src="assets/js/chartVars.js"></script>
+    <script src="assets/js/charts1to2.js"></script>
+    <script src="assets/js/charts3to5.js"></script>
+    <script src="assets/js/charts6to7.js"></script>
     <script src="assets/js/main.js"></script>
 
 </body>
