@@ -181,6 +181,24 @@ function renderChart2_1(dataElements) {
         .attr('font', 'inherit')
         .attr('color', '#888')
         .text('from 1851 to 2015');
+
+    let typeList = colorShortClassifications.map(element => element.abbr);
+    let colorList = colorShortClassifications.map(element => element.colorHex);
+
+    // colors for legend
+    const colors = d3.scaleOrdinal()
+        .domain(typeList)
+        .range(colorList);
+
+    // legend
+    let legend = d3.legendColor()
+        .scale(colors)
+        .title("Types");
+
+    svg.append("g")
+        .attr("transform", `translate(${width2 - 50}, ${margin.top + 30})`)
+        .style("font-size", "14px")
+        .call(legend);
 }
 
 d3.csv(
@@ -315,6 +333,24 @@ function renderChart2_1_2(dataElements) {
         .attr('font-size', '100%')
         .attr('font', 'inherit')
         .text('from 1851 to 2015');
+
+    let typeList = colorShortClassifications.map(element => element.abbr);
+    let colorList = colorShortClassifications.map(element => element.colorHex);
+
+    // colors for legend
+    const colors = d3.scaleOrdinal()
+        .domain(typeList)
+        .range(colorList);
+
+    // legend
+    let legend = d3.legendColor()
+        .scale(colors)
+        .title("Types");
+
+    svg.append("g")
+        .attr("transform", `translate(${width2 - 50}, ${margin.top + 30})`)
+        .style("font-size", "14px")
+        .call(legend);
 }
 
 d3.csv(
@@ -458,6 +494,24 @@ function renderChart2_2_1(dataElements, startId = 12, endId = 16) {
         .attr('font-size', '100%')
         .attr('font', 'inherit')
         .text('range: 1851 to 2015');
+
+    let typeList = colorShortClassifications.map(element => element.abbr);
+    let colorList = colorShortClassifications.map(element => element.colorHex);
+
+    // colors for legend
+    const colors = d3.scaleOrdinal()
+        .domain(typeList)
+        .range(colorList);
+
+    // legend
+    let legend = d3.legendColor()
+        .scale(colors)
+        .title("Types");
+
+    svg.append("g")
+        .attr("transform", `translate(${width - 50}, ${margin.top + 30})`)
+        .style("font-size", "14px")
+        .call(legend);
 }
 // Chart 2.2.2
 function renderChart2_2_2(dataElements, startId = 12, endId = 16) {
@@ -591,6 +645,24 @@ function renderChart2_2_2(dataElements, startId = 12, endId = 16) {
         .attr('font-size', '100%')
         .attr('font', 'inherit')
         .text('range: 1851 to 2015');
+
+    let typeList = colorShortClassifications.map(element => element.abbr);
+    let colorList = colorShortClassifications.map(element => element.colorHex);
+
+    // colors for legend
+    const colors = d3.scaleOrdinal()
+        .domain(typeList)
+        .range(colorList);
+
+    // legend
+    let legend = d3.legendColor()
+        .scale(colors)
+        .title("Types");
+
+    svg.append("g")
+        .attr("transform", `translate(${width - 50}, ${margin.top + 30})`)
+        .style("font-size", "14px")
+        .call(legend);
 }
 
 function chart221listener(dataElements) {
