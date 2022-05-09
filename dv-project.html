@@ -291,7 +291,7 @@
                     <img src="images/storm.gif">
                 </p>
                 <p>
-                    Minimum pressure in millibars registered.
+                    Minimum pressure registered in millibars.
                 </p>
                 <div id="chart5"></div>
                 <!-- Add a slider -->
@@ -312,10 +312,13 @@
                     Atlantic Ocean
                 </p>
 
-                <div id="chart6back">
-                    <div id="chart6"></div>
-                </div>
-                <!--style="background-image: url('images/map-of-atlantic-ocean.jpg');background-repeat: no-repeat;background-size: 80%;background-position: left -25% bottom -50%-->
+                <div id="chart6map"></div>
+                <!-- Add a slider -->
+                <label>Start Year:</label> <br/> 1950
+                <input type="range" name="chart6slider" id="chart6slider" class="slider6range" min="1950" max="2015" value="2011"> 2015
+                <br/>
+                <label for="chart6years" style="display: inline-block;  text-align: right">Interval in Years = <span id="chart6value"></span></label>
+                <input type="number" min="1" max="100" step="1" value="4" id="chart6years">
             </div>
         </section>
 

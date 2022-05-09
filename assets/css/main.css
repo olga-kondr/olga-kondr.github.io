@@ -386,17 +386,20 @@ br.clear {
     position: relative;
 }
 
-.container #chart6back {
-    width: 100%;
-    background-image: url('../../images/map-of-atlantic-ocean.jpg');
-    background-repeat: no-repeat;
-    /* background-size: 80%; */
-    background-size: 80.8%;
-    padding-left: 40px;
+.container #chart6slider {
+    width: 60%;
+    height: 5px;
+    border-radius: 2px;
+    background-color: #7178a2;
+    position: relative;
 }
 
-.container #chart6 {
-    background-size: 80%;
+.container #chart6years {
+    width: 50px;
+    height: auto;
+    border-radius: 2px;
+    background-color: #d3d9fe14;
+    position: relative;
 }
 
 .hutable {
