@@ -244,9 +244,9 @@ function renderCharts6to7(dataGeo, dataElements) {
     chart7listener(dataGeo, dataElements);
 }
 
-// Load world shape AND list of connection
+// load world shape and list of trajectories
 Promise.all([
-    d3.json('https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson'), // World shape
+    d3.json('https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson'),
     d3.csv('https://gist.githubusercontent.com/olga-kondr/0ffc7e15398f5c8e424ee35152d0aa39/raw/1c2d4097dc652534914f5a6bca2ee5c56706ecbe/atlantic_cleaned.csv'),
 ]).then(
     function(initialize) {
