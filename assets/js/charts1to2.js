@@ -101,22 +101,6 @@ function renderChart2_1(dataElements) {
     d3.selectAll('g.tick')
         .attr('class', 'forTicks');
 
-    svg.append('text')
-        .attr('fill', 'black')
-        .attr('x', offset - 20)
-        .attr('y', '15')
-        .attr('font-size', '100%')
-        .attr('font', 'inherit')
-        .text('Types of Weather Events in the Atlantic Ocean');
-
-    svg.append('text')
-        .attr('fill', 'black')
-        .attr('x', offset - 20)
-        .attr('y', '35')
-        .attr('font-size', '100%')
-        .attr('font', 'inherit')
-        .text('from 1950 to 2015');
-
     // div for the tooltip
     var tooltip = d3.select('#histogram21').append('div')
         .attr('class', 'tooltip')
@@ -139,7 +123,8 @@ function renderChart2_1(dataElements) {
             .style('border-radius', '6px')
             .style('pointer-events', 'none');
 
-        tooltip.html('Type ' + d[0] + '<br/>' + 'Total Count ' + d[1])
+        let dscr = colorShortClassifications.filter(o => o.abbr == d[0]);
+        tooltip.html(d[0] + ' - ' + dscr[0].descr + '<br/>' + 'Total Count ' + d[1])
             .style('top', (e.pageY) + 'px')
             .style('left', (e.pageX) + 'px');
     }
@@ -164,7 +149,7 @@ function renderChart2_1(dataElements) {
         .on('mouseleave', hideTt);
 
     svg.append('text')
-        .attr('fill', 'black')
+        .attr('fill', '#888')
         .attr('x', offset + 100)
         .attr('y', height - 5)
         .attr('font-size', '100%')
@@ -172,13 +157,30 @@ function renderChart2_1(dataElements) {
         .text('Type');
 
     svg.append('text')
-        .attr('fill', 'black')
+        .attr('fill', '#888')
         .attr('x', '5')
-        .attr('y', '-10')
+        .attr('y', '-15')
         .attr('transform', 'translate(30, 300) rotate(270)')
         .attr('font-size', '100%')
         .attr('font', 'inherit')
         .text('Count');
+
+    svg.append('text')
+        .attr('fill', '#888')
+        .attr('x', width2 / 5)
+        .attr('y', '15')
+        .attr('font-size', '100%')
+        .attr('font', 'inherit')
+        .text('Types of Storm Events in the Atlantic Ocean');
+
+    svg.append('text')
+        .attr('fill', '#888')
+        .attr('x', offset - 20)
+        .attr('y', '35')
+        .attr('font-size', '100%')
+        .attr('font', 'inherit')
+        .attr('color', '#888')
+        .text('from 1851 to 2015');
 }
 
 d3.csv(
@@ -234,22 +236,6 @@ function renderChart2_1_2(dataElements) {
     svg.append('g')
         .call(yAxis);
 
-    svg.append('text')
-        .attr('fill', 'black')
-        .attr('x', offset - 20)
-        .attr('y', '15')
-        .attr('font-size', '100%')
-        .attr('font', 'inherit')
-        .text('Types of Weather Events in the Atlantic Ocean');
-
-    svg.append('text')
-        .attr('fill', 'black')
-        .attr('x', offset - 20)
-        .attr('y', '35')
-        .attr('font-size', '100%')
-        .attr('font', 'inherit')
-        .text('from 1851 to 2015');
-
     // div for the tooltip
     var tooltip = d3.select('#histogram212').append('div')
         .attr('class', 'tooltip')
@@ -272,7 +258,8 @@ function renderChart2_1_2(dataElements) {
             .style('border-radius', '6px')
             .style('pointer-events', 'none');
 
-        tooltip.html('Type ' + d[0] + '<br/>' + 'Total Count ' + d[1])
+        let dscr = colorShortClassifications.filter(o => o.abbr == d[0]);
+        tooltip.html(d[0] + ' - ' + dscr[0].descr + '<br/>' + 'Total Count ' + d[1])
             .style('top', (e.pageY) + 'px')
             .style('left', (e.pageX) + 'px');
     }
@@ -297,7 +284,7 @@ function renderChart2_1_2(dataElements) {
         .on('mouseleave', hideTt);
 
     svg.append('text')
-        .attr('fill', 'black')
+        .attr('fill', '#888')
         .attr('x', offset + 100)
         .attr('y', height - 5)
         .attr('font-size', '100%')
@@ -305,13 +292,29 @@ function renderChart2_1_2(dataElements) {
         .text('Type');
 
     svg.append('text')
-        .attr('fill', 'black')
+        .attr('fill', '#888')
         .attr('x', '5')
         .attr('y', '-15')
         .attr('transform', 'translate(30, 300) rotate(270)')
         .attr('font-size', '100%')
         .attr('font', 'inherit')
         .text('Count');
+
+    svg.append('text')
+        .attr('fill', '#888')
+        .attr('x', width2 / 5)
+        .attr('y', '15')
+        .attr('font-size', '100%')
+        .attr('font', 'inherit')
+        .text('Types of Weather Events in the Atlantic Ocean');
+
+    svg.append('text')
+        .attr('fill', '#888')
+        .attr('x', offset - 20)
+        .attr('y', '35')
+        .attr('font-size', '100%')
+        .attr('font', 'inherit')
+        .text('from 1851 to 2015');
 }
 
 d3.csv(
@@ -433,6 +436,31 @@ function renderChart2_2_1(dataElements, startId = 12, endId = 16) {
         .attr('fill', d => color(d.key))
         .on('mouseenter', showTt)
         .on('mouseleave', hideTt);
+
+    svg.append('text')
+        .attr('fill', '#888')
+        .attr('x', '5')
+        .attr('y', -width / 17)
+        .attr('transform', 'translate(30, 300) rotate(270)')
+        .attr('font-size', '100%')
+        .attr('font', 'inherit')
+        .text('Count');
+
+    svg.append('text')
+        .attr('fill', '#888')
+        .attr('x', width / 5)
+        .attr('y', -height / 23)
+        .attr('font-size', '100%')
+        .attr('font', 'inherit')
+        .text('Types of Storms by Decade in the Atlantic Ocean');
+
+    svg.append('text')
+        .attr('fill', '#888')
+        .attr('x', width / 4)
+        .attr('y', -height / 55)
+        .attr('font-size', '100%')
+        .attr('font', 'inherit')
+        .text('range: 1851 to 2015');
 }
 // Chart 2.2.2
 function renderChart2_2_2(dataElements, startId = 12, endId = 16) {
@@ -541,6 +569,31 @@ function renderChart2_2_2(dataElements, startId = 12, endId = 16) {
         .attr('fill', d => color(d.key))
         .on('mouseenter', showTt)
         .on('mouseleave', hideTt);
+
+    svg.append('text')
+        .attr('fill', '#888')
+        .attr('x', '5')
+        .attr('y', -width / 17)
+        .attr('transform', 'translate(30, 300) rotate(270)')
+        .attr('font-size', '100%')
+        .attr('font', 'inherit')
+        .text('Count');
+
+    svg.append('text')
+        .attr('fill', '#888')
+        .attr('x', width / 5)
+        .attr('y', -height / 23)
+        .attr('font-size', '100%')
+        .attr('font', 'inherit')
+        .text('Types of Other Weather Systems by Decade in the Atlantic Ocean');
+
+    svg.append('text')
+        .attr('fill', '#888')
+        .attr('x', width / 4)
+        .attr('y', -height / 55)
+        .attr('font-size', '100%')
+        .attr('font', 'inherit')
+        .text('range: 1851 to 2015');
 }
 
 function chart221listener(dataElements) {
@@ -558,7 +611,7 @@ function chart222listener(dataElements) {
     // chart2 update year range listener
     d3.select('#chart222slider').on('change', function(d) {
         selectedValue = +this.value;
-        renderChart2_2_2(dataElements, selectedValue, selectedValue + 5);
+        renderChart2_2_2(dataElements, selectedValue, selectedValue + 4);
     });
 }
 

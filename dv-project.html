@@ -31,7 +31,7 @@
                     <li><a href="#alpha" id="top-link"><span>Release Reports</span></a></li>
                     <li><a href="#objective" id="top-link"><span >Objective</span></a></li>
                     <li><a href="#data" id="top-link"><span >Data</span></a></li>
-                    <li><a href="#objective1" id="top-link"><span >Saffir–Simpson Scale Plus</span></a></li>
+                    <li><a href="#objective1" id="top-link"><span >Overview</span></a></li>
                     <li><a href="#objective2" id="top-link"><span >Types of Storms</span></a></li>
                     <li><a href="#objective3" id="top-link"><span >Storm Length</span></a></li>
                     <li><a href="#objective4" id="top-link"><span >Wind</span></a></li>
@@ -161,14 +161,25 @@
             <div class="container">
 
                 <header>
-                    <h3>Saffir–Simpson Scale Plus</h3>
+                    <h3>Overview and Saffir–Simpson Scale </h3>
                 </header>
                 <p>
-                    The Saffir–Simpson hurricane wind scale, classifies hurricanes Western Hemisphere tropical cyclones that exceed the intensities of tropical depressions and tropical storms – into five categories distinguished by the intensities of their sustained winds.
+                    As it is <a href="https://www.encyclopedie-environnement.org/en/air-en/tropical-cyclones-development-and-organization/">stated</a> a mature tropical cyclone is a thermal engine whose heat source is the condensation of water vapour.
+                    This is not the result, as has long been believed, of the presence of large-scale thunderstorm instability. The tropical oceanic atmosphere is generally close to neutrality, which does not allow the development of large-scale upward
+                    movements. A very large part of the energy of cyclones comes from evaporation at the ocean surface, forced by winds of increasing intensity.
+                    <a href="http://worldlywise.pbworks.com/f/1271584718/crosssection.gif"> <img src="http://worldlywise.pbworks.com/f/1271584718/crosssection.gif" /></a>
+                </p>
+                <p>
+                    According to <a href="https://www.nhc.noaa.gov/climo/">NOAA</a> the Atlantic hurricane season runs from June 1 to November 30. The Atlantic basin includes the Atlantic Ocean, Caribbean Sea, and Gulf of Mexico. Based on a 30-year climate
+                    period from 1991 to 2020, an average Atlantic hurricane season has 14 named storms, 7 hurricanes, and 3 major hurricanes (Category 3, 4, or 5 on the Saffir-Simpson Hurricane Wind Scale). The first named storm typically forms in mid
+                    to late June, the first hurricane tends to form in early to mid-August, and the first major hurricane forms in late August or early September.
+                </p>
+                <p>
+                    The Saffir–Simpson hurricane wind scale, classifies hurricanes: Western Hemisphere tropical cyclones that exceed the intensities of tropical depressions and tropical storms – into five categories distinguished by the intensities of their sustained winds.
                     <a href="https://en.wikipedia.org/wiki/Saffir–Simpson_scale">[wiki]</a>
                 </p>
                 <p>
-                    I've combined it with definitions of Tropical Storm and Tropical Depression to get the whole picture.
+                    Here is a combination of with definitions of the Saffir–Simpson hurricane wind scale, Tropical Storm and Tropical Depression to give the whole picture of wind speed ranges.
                 </p>
                 <div id="hurtable" class="hutable"></div>
             </div>
@@ -178,36 +189,63 @@
         <section id="objective2" class="three">
             <div class="container">
                 <header>
-                    <h3>Types of Storms in Atlantic Ocean</h3>
+                    <h3>Storms in Atlantic Ocean</h3>
                 </header>
+                <p>
+                    According to <a href="https://www.nhc.noaa.gov/climo/">NOAA</a> a <b>tropical cyclone</b> is a rotating, organized system of clouds and thunderstorms that originates over tropical or subtropical waters and has a closed low-level circulation.
+                    Tropical cyclones rotate counterclockwise in the Northern Hemisphere. They are classified as follows:
+                    <ul>
+                        <li>Tropical Depression: A tropical cyclone with maximum sustained winds of 38 mph (33 knots) or less.</li>
+                        <li>Tropical Storm: A tropical cyclone with maximum sustained winds of 39 to 73 mph (34 to 63 knots). </li>
+                        <li>Hurricane: A tropical cyclone with maximum sustained winds of 74 mph (64 knots) or higher. </li>
+                        <li>Major Hurricane: A tropical cyclone with maximum sustained winds of 111 mph (96 knots) or higher, corresponding to a Category 3, 4 or 5 on the Saffir-Simpson Hurricane Wind Scale (shown above).</li>
+                    </ul>
+                    In the western North Pacific, hurricanes are called typhoons; similar storms in the Indian Ocean and South Pacific Ocean are called cyclones. Tropical cyclones forming between 5 and 30 degrees North latitude typically move toward the west. Sometimes the
+                    winds in the middle and upper levels of the atmosphere change and steer the cyclone toward the north and northwest. When tropical cyclones reach latitudes near 30 degrees North, they often move northeast.
+                </p>
                 <!-- <div id="histogram21"></div> -->
+                <p>
+                    Most of the weather systems have several categories as they develope from one type to another over the time. Here are 2 charts that show what are the highest types of weather systems were recorded over a period of time from 1851 to 2015 years.
+                </p>
                 <div style="display:flex; flex-direction: row; justify-content: center; align-items: top">
-                    <div style="padding: 0.3em;">
-                        Total Amount of Storms by Type Based on Wind Speed
-                        <br/> Types of Weather Events in the Atlantic Ocean
+                    <div style="padding: 0.7em;">
+                        <p>Total amount of storms by type based on the highest wind speed recorded.</p>
                         <div id="histogram21"></div>
                     </div>
-                    <div style="padding: 0.3em;">
-                        Total Amount of Storms by Type Based on Weather System Condition<br/> Types of Weather Events in the Atlantic Ocean
+                    <div style="padding: 0.7em;">
+                        <p>Total amount of storms by type based on weather system condition.</p>
                         <div id="histogram212"></div>
                     </div>
                 </div>
-                <br/>
+                <h3>
+                    Storms by Type per Decade
+                </h3>
                 <p>
-                    Amount of Storms per Decade and by Type
+                    Now we can compare storm amount per decade to see any potential changes in the storm data. As done above, there are two ways too look at the data: in terms of high wind speed or in terms of other conditions apart from wind speed which is not the main
+                    factor. Mostly second chart is showing alternative way of looking at weather systems compared to the first chart.
                 </p>
+                <p>
+                    It is possible to change ranges to compare data for the 5 consequent decades.
+                </p>
+                <p>Categories included: Tropical depression, Tropical storm, Hurricane, Subtropical depression, Subtropical storm</p>
                 <div id="chart22"></div>
                 <!-- Add a slider -->
                 <label>Start with Decade:</label> <br/> 1856-1865
-                <input type="range" name="chart22slider" id="chart221slider" class="slider221range" min="1" max="12" value="12"> 1966-1975 + 5 Decades
-                <!-- <input type="range" name="chart22slider" id="chart221slider" class="slider221range" min="1856" max="2010" value="2010"> 2010-2015 -->
-
+                <input type="range" name="chart22slider" id="chart221slider" class="slider221range" min="1" max="12" value="12"> 1966-1975 + 4 Following Decades
+                <br/><br/><br/>
+                <p>
+                    <ul>
+                        Categories explained:
+                        <li>Extratropical cyclone (of any intensity) </li>
+                        <li>A low that is neither a tropical cyclone, a subtropical cyclone, nor an extratropical cyclone (of any intensity) </li>
+                        <li>Tropical Wave (of any intensity)</li>
+                        <li> Disturbance (of any intensity)</li>
+                    </ul>
+                </p>
                 <div id="chart222"></div>
                 <!-- Add a slider -->
                 <label>Start with Decade:</label> <br/> 1856-1865
-                <input type="range" name="chart22slider" id="chart222slider" class="slider222range" min="1" max="12" value="12"> 1966-1975 + 5 Decades
-                <!-- <input type="range" name="chart22slider" id="chart222slider" class="slider222range" min="1856" max="2010" value="2010"> 2010-2015 -->
-
+                <input type="range" name="chart22slider" id="chart222slider" class="slider222range" min="1" max="12" value="12"> 1966-1975 + 4 Following Decades
             </div>
         </section>
 
@@ -237,7 +275,7 @@
                 <div id="chart4"></div>
                 <!-- Add a slider -->
                 <label>Start Year:</label> <br/> 1950
-                <input type="range" name="chart4slider" id="chart4slider" class="sliider4range" min="1950" max="2010" value="2010"> 2010
+                <input type="range" name="chart4slider" id="chart4slider" class="sliider4range" min="1950" max="2011" value="2011"> 2011 + 4 Following Years
             </div>
         </section>
 
@@ -249,12 +287,16 @@
                     <h3>Pressure</h3>
                 </header>
                 <p>
-                    Minimum Pressure (millibars)
+                    Tropical storms are areas of low pressure, that's why it is important to look into it. This <a href="https://i.pinimg.com/originals/f8/1a/38/f81a38ec648c75bb279a8e78c73cd5c3.gif"> image</a> is showing the pressure aspect of the storm:
+                    <img src="images/storm.gif">
+                </p>
+                <p>
+                    Minimum pressure in millibars registered.
                 </p>
                 <div id="chart5"></div>
                 <!-- Add a slider -->
                 <label>Start Year:</label> <br/> 1950
-                <input type="range" name="chart5slider" id="chart5slider" class="sliider5range" min="1950" max="2010" value="2010"> 2010
+                <input type="range" name="chart5slider" id="chart5slider" class="sliider5range" min="1950" max="2011" value="2011"> 2011 + 4 Following Years
 
             </div>
         </section>

@@ -1,5 +1,5 @@
 // Chart 4
-function renderChart4(dataElements, startYear = 2010, endYear = 2015, numBins = 10) {
+function renderChart4(dataElements, startYear = 2011, endYear = 2015, numBins = 10) {
     let dataPrep = dataElements.filter(d => +d.year >= startYear & +d.year <= endYear);
     dataMap = dataPrep.map((o) => ({
         name: o.name,
@@ -168,10 +168,19 @@ function renderChart4(dataElements, startYear = 2010, endYear = 2015, numBins = 
         .attr('stroke', 'white')
         .on('mouseenter', showTt)
         .on('mouseleave', hideTt);
+
+    svg.append('text')
+        .attr('fill', '#888')
+        .attr('x', -width / 10)
+        .attr('y', '-5')
+        .attr('transform', 'translate(30, 300) rotate(270)')
+        .attr('font-size', '100%')
+        .attr('font', 'inherit')
+        .text('Wind Speed in Knots (kn)');
 }
 
 // Chart 5
-function renderChart5(dataElements, startYear = 2010, endYear = 2015, numBins = 10) {
+function renderChart5(dataElements, startYear = 2011, endYear = 2015, numBins = 10) {
     let dataPrep = dataElements.filter(d => +d.year >= startYear & +d.year <= endYear);
     dataMap = dataPrep.map((o) => ({
         name: o.name,
@@ -290,7 +299,7 @@ function renderChart5(dataElements, startYear = 2010, endYear = 2015, numBins = 
         .attr('class', 'violinBands')
         .datum(function(d) { return (d[1]) })
         .style('stroke', 'none')
-        .attr('fill', '#cf7515')
+        .attr('fill', '#f7cb1b')
         .attr('d', d3.area()
             .x0(xNumScale(0))
             .x1(function(d) { return xNumScale(d.length); })
@@ -342,10 +351,19 @@ function renderChart5(dataElements, startYear = 2010, endYear = 2015, numBins = 
             return y(d.minPressure + Math.random() * jitterHeight);
         })
         .attr('r', 4.5)
-        .style('fill', '#df8515')
+        .style('fill', '#f5bc38')
         .attr('stroke', 'white')
         .on('mouseenter', showTt)
         .on('mouseleave', hideTt);
+
+    svg.append('text')
+        .attr('fill', '#888')
+        .attr('x', -width / 10)
+        .attr('y', '-5')
+        .attr('transform', 'translate(30, 300) rotate(270)')
+        .attr('font-size', '100%')
+        .attr('font', 'inherit')
+        .text('Pressure in Millibars');
 }
 
 
@@ -356,7 +374,7 @@ function chart4listener(dataElements) {
     // chart4 update year range listener
     d3.select('#chart4slider').on('change', function(d) {
         selectedValue = +this.value;
-        renderChart4(dataElements, selectedValue, selectedValue + 5);
+        renderChart4(dataElements, selectedValue, selectedValue + 4);
     });
 }
 
@@ -365,7 +383,7 @@ function chart5listener(dataElements) {
     // chart5 update year range listener
     d3.select('#chart5slider').on('change', function(d) {
         selectedValue = +this.value;
-        renderChart5(dataElements, selectedValue, selectedValue + 5);
+        renderChart5(dataElements, selectedValue, selectedValue + 4);
     });
 }
 
