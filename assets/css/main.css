@@ -398,6 +398,22 @@ br.clear {
     width: 50px;
     height: auto;
     border-radius: 2px;
+    background-color: #fed5d314;
+    position: relative;
+}
+
+.container #chart7slider {
+    width: 60%;
+    height: 5px;
+    border-radius: 2px;
+    background-color: #a27771;
+    position: relative;
+}
+
+.container #chart7years {
+    width: 50px;
+    height: auto;
+    border-radius: 2px;
     background-color: #d3d9fe14;
     position: relative;
 }

@@ -336,11 +336,8 @@ function renderChart2_2_1(dataElements, startId = 12, endId = 16) {
     if (decade.has(undefined)) {
         decade.delete(undefined);
     }
-    console.log(decade);
     let type = new Set(dataElements.map(o => o.Type));
-    console.log('type', type);
     let max = d3.max(dataElements.map(o => +o.Value));
-    console.log('val', max);
     let margin = ({ top: 45, right: 45, bottom: 45, left: 45 });
 
     // clear svg
@@ -601,7 +598,6 @@ function chart221listener(dataElements) {
     // chart221 update year range listener
     d3.select('#chart221slider').on('change', function(d) {
         selectedValue = +this.value;
-        console.log('selectedValue', selectedValue);
         renderChart2_2_1(dataElements, selectedValue, selectedValue + 4);
     });
 }

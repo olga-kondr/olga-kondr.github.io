@@ -33,7 +33,7 @@
                     <li><a href="#data" id="top-link"><span >Data</span></a></li>
                     <li><a href="#objective1" id="top-link"><span >Overview</span></a></li>
                     <li><a href="#objective2" id="top-link"><span >Types of Storms</span></a></li>
-                    <li><a href="#objective3" id="top-link"><span >Storm Length</span></a></li>
+                    <!-- <li><a href="#objective3" id="top-link"><span >Storm Length</span></a></li> -->
                     <li><a href="#objective4" id="top-link"><span >Wind</span></a></li>
                     <li><a href="#objective5" id="top-link"><span >Pressure</span></a></li>
                     <li><a href="#objective6" id="top-link"><span >Hurricane Trajectories</span></a></li>
@@ -166,8 +166,8 @@
                 <p>
                     As it is <a href="https://www.encyclopedie-environnement.org/en/air-en/tropical-cyclones-development-and-organization/">stated</a> a mature tropical cyclone is a thermal engine whose heat source is the condensation of water vapour.
                     This is not the result, as has long been believed, of the presence of large-scale thunderstorm instability. The tropical oceanic atmosphere is generally close to neutrality, which does not allow the development of large-scale upward
-                    movements. A very large part of the energy of cyclones comes from evaporation at the ocean surface, forced by winds of increasing intensity.
-                    <img src="images/storm.gif" alt="http://worldlywise.pbworks.com/f/1271584718/crosssection.gif" />
+                    movements. A very large part of the energy of cyclones comes from evaporation at the ocean surface, forced by winds of increasing intensity.<br/>
+                    <img src="images/crosssection.gif" alt="http://worldlywise.pbworks.com/f/1271584718/crosssection.gif" /> <a href="http://worldlywise.pbworks.com/w/page/25349490/Unit%202%20Section%20C%20-%20Causes%20and%20effects%20of%20tropical%20storms%20and%20responses%20to%20them">link</a>
                 </p>
                 <p>
                     According to <a href="https://www.nhc.noaa.gov/climo/">NOAA</a> the Atlantic hurricane season runs from June 1 to November 30. The Atlantic basin includes the Atlantic Ocean, Caribbean Sea, and Gulf of Mexico. Based on a 30-year climate
@@ -250,7 +250,7 @@
         </section>
 
         <!-- Objective 3 -->
-        <section id="objective3" class="three">
+        <!-- <section id="objective3" class="three">
             <div class="container">
 
                 <header>
@@ -260,7 +260,7 @@
                     Length of Hurricanes
                 </p>
             </div>
-        </section>
+        </section> -->
 
         <!-- Objective 4 -->
         <section id="objective4" class="three">
@@ -306,16 +306,16 @@
             <div class="container">
 
                 <header>
-                    <h3>Hurricane Trajectories</h3>
+                    <h3>Weather System Trajectories</h3>
                 </header>
                 <p>
-                    Atlantic Ocean
+                    Atlantic Ocean map shows trajectories of weather systems including tropical storms, tropical depressions, hurricanes, etc.
                 </p>
 
                 <div id="chart6map"></div>
                 <!-- Add a slider -->
-                <label>Start Year:</label> <br/> 1950
-                <input type="range" name="chart6slider" id="chart6slider" class="slider6range" min="1950" max="2015" value="2011"> 2015
+                <label>Start Year:</label> <br/> 1851
+                <input type="range" name="chart6slider" id="chart6slider" class="slider6range" min="1851" max="2015" value="2011"> 2015
                 <br/>
                 <label for="chart6years" style="display: inline-block;  text-align: right">Interval in Years = <span id="chart6value"></span></label>
                 <input type="number" min="1" max="100" step="1" value="4" id="chart6years">
@@ -327,11 +327,18 @@
             <div class="container">
 
                 <header>
-                    <h3>Interactive Map</h3>
+                    <h3>Interactive map of <b>Hurricanes</b> </h3>
                 </header>
                 <p>
-                    Interactive map of trajectories with filtering and hovering over the hurricane.
+                    As it was mentioned above not every weatherr system turns into hurricane, so here gathered only hurricanes.
                 </p>
+                <div id="chart7map"></div>
+                <!-- Add a slider -->
+                <label>Start Year:</label> <br/> 1851
+                <input type="range" name="chart7slider" id="chart7slider" class="slider7range" min="1851" max="2015" value="2015"> 2015
+                <br/>
+                <label for="chart7years" style="display: inline-block;  text-align: right">Interval in Years = <span id="chart7value"></span></label>
+                <input type="number" min="1" max="165" step="1" value="1" id="chart7years">
             </div>
         </section>
     </div>
