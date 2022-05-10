@@ -22,9 +22,9 @@ var colorClassifications = [
     { abbr: 'HU3', descr: 'Hurricane of category three', colorHex: colors4[2] },
     { abbr: 'HU4', descr: 'Hurricane of category four', colorHex: colors4[1] },
     { abbr: 'HU5', descr: 'Hurricane of category five', colorHex: colors4[0] },
-    { abbr: 'EX', descr: 'Extratropical cyclone (of any intensity)', colorHex: colors4[7] },
     { abbr: 'SD', descr: 'Subtropical cyclone of subtropical depression intensity (less than 34 knots)', colorHex: colors4[8] },
     { abbr: 'SS', descr: 'Subtropical cyclone of subtropical storm intensity (> 34 knots)', colorHex: colors9[9] }, //colors4[9] },
+    { abbr: 'EX', descr: 'Extratropical cyclone (of any intensity)', colorHex: colors4[7] },
     { abbr: 'LO', descr: 'A low that is neither a tropical cyclone, a subtropical cyclone, nor an extratropical cyclone (of any intensity)', colorHex: '#000' },
     { abbr: 'WV', descr: 'Tropical Wave (of any intensity)', colorHex: '#ccc' },
     { abbr: 'DB', descr: 'Disturbance (of any intensity)', colorHex: '#ffa0f9' }
@@ -37,9 +37,9 @@ let colorShortClassifications = [
     { abbr: 'TD', descr: 'Tropical cyclone of tropical depression intensity (less than 34 knots)', colorHex: colors4[6] },
     { abbr: 'TS', descr: 'Tropical cyclone of tropical storm intensity (34-63 knots)', colorHex: colors4[5] },
     { abbr: 'HU', descr: 'Tropical cyclone of hurricane intensity (> 64 knots)', colorHex: colors4[2] },
-    { abbr: 'EX', descr: 'Extratropical cyclone (of any intensity)', colorHex: colors4[7] },
     { abbr: 'SD', descr: 'Subtropical cyclone of subtropical depression intensity (less than 34 knots)', colorHex: colors4[8] },
     { abbr: 'SS', descr: 'Subtropical cyclone of subtropical storm intensity (> 34 knots)', colorHex: colors9[9] },
+    { abbr: 'EX', descr: 'Extratropical cyclone (of any intensity)', colorHex: colors4[7] },
     { abbr: 'LO', descr: 'A low that is neither a tropical cyclone, a subtropical cyclone, nor an extratropical cyclone (of any intensity)', colorHex: '#000' },
     { abbr: 'WV', descr: 'Tropical Wave (of any intensity)', colorHex: '#ccc' },
     { abbr: 'DB', descr: 'Disturbance (of any intensity)', colorHex: '#ffa0f9' }
