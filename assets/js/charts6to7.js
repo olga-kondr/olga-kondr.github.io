@@ -350,10 +350,12 @@ function chart6listener(dataGeo, dataElements) {
     let startYear = 2011;
     d3.select('#chart6slider').on('change', function(d) {
         startYear = +this.value;
+        document.getElementById('chart6year').innerHTML = startYear;
         renderChart6(dataGeo, dataElements, startYear, years - 1);
     });
     d3.select('#chart6years').on('change', function(d) {
         years = +this.value;
+        document.getElementById('chart6year').innerHTML = startYear;
         renderChart6(dataGeo, dataElements, startYear, years - 1);
     });
 }
@@ -366,10 +368,12 @@ function chart7listener(dataGeo, dataElements) {
     let startYear = 2015;
     d3.select('#chart7slider').on('change', function(d) {
         startYear = +this.value;
+        document.getElementById('chart7year').innerHTML = startYear;
         renderChart7(dataGeo, dataElements, startYear, years - 1);
     });
     d3.select('#chart7years').on('change', function(d) {
         years = +this.value;
+        document.getElementById('chart7year').innerHTML = startYear;
         renderChart7(dataGeo, dataElements, startYear, years - 1);
     });
 }

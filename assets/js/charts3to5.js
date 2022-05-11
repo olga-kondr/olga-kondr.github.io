@@ -374,6 +374,7 @@ function chart4listener(dataElements) {
     // chart4 update year range listener
     d3.select('#chart4slider').on('change', function(d) {
         selectedValue = +this.value;
+        document.getElementById('chart4year').innerHTML = selectedValue;
         renderChart4(dataElements, selectedValue, selectedValue + 4);
     });
 }
@@ -383,6 +384,7 @@ function chart5listener(dataElements) {
     // chart5 update year range listener
     d3.select('#chart5slider').on('change', function(d) {
         selectedValue = +this.value;
+        document.getElementById('chart5year').innerHTML = selectedValue;
         renderChart5(dataElements, selectedValue, selectedValue + 4);
     });
 }
