@@ -38,17 +38,23 @@ function renderChart6(dataGeo, dataElements, startYear = 2011, interval = 4) {
         .style('stroke', '#fff')
         .style('stroke-width', 0);
 
-    // console.log('data elems', dataElements);
+    console.log('data elems', dataElements);
 
     let data = dataElements.map((o) => ({
         name: o.Name,
         lat: +o.Latitude,
         long: +o.Longitude,
         year: +o.Year,
-        status: o.Status
+        // status: o.Status,
+        // wind: +o['Maximum Wind'],
+        // pressure: +o['Minimum Pressure'],
+        // day: +o.Day,
+        // month: +o.Month,
+        // time: +o.Time
     }));
 
     data = data.filter(d => d.year >= startYear & d.year <= endYear);
+    console.log('data ', data);
     let dataGrouped = d3.group(data, d => d.name);
     let dt = [];
     let names = [];
@@ -84,6 +90,18 @@ function renderChart6(dataGeo, dataElements, startYear = 2011, interval = 4) {
         };
         dt.push(temp);
     });
+    // temp = {
+    //     'name': storm[i].name,
+    //     'day': storm[i].day,
+    //     'month': storm[i].month,
+    //     'time': storm[i].time,
+    //     'year': storm[i].year,
+    //     'coords': coords,
+    //     'points': points,
+    //     'status': storm[i].status,
+    //     'wind': storm[i].wind,
+    //     'pressure': storm[i].pressure,
+    // };
     // console.log('dt-->', dt);
 
     const color = d3.scaleOrdinal()
@@ -114,6 +132,7 @@ function renderChart6(dataGeo, dataElements, startYear = 2011, interval = 4) {
                 .style('pointer-events', 'none');
 
             tooltip.html(d.year + ' - ' + d.name)
+                // tooltip.html(d.name + ' - ' + d.day + ' of ' + d.month + ' ' + d.year + '< br/>' + 'Status: ' + d.status + ', max wind speed: ' + d.wind + ', min pressure: ' + d.pressure)
                 .style('top', (e.pageY) + 'px')
                 .style('left', (e.pageX) + 'px');
         }
@@ -310,15 +329,15 @@ function renderChart7(dataGeo, dataElements, startYear = 2015, interval = 1) {
 function chart6listener(dataGeo, dataElements) {
     renderChart6(dataGeo, dataElements);
     // chart6 update year range listener
-    let years = 4;
+    let years = 5;
     let startYear = 2011;
     d3.select('#chart6slider').on('change', function(d) {
         startYear = +this.value;
-        renderChart6(dataGeo, dataElements, startYear, years);
+        renderChart6(dataGeo, dataElements, startYear, years - 1);
     });
     d3.select('#chart6years').on('change', function(d) {
         years = +this.value;
-        renderChart6(dataGeo, dataElements, startYear, years);
+        renderChart6(dataGeo, dataElements, startYear, years - 1);
     });
 }
 
@@ -326,15 +345,15 @@ function chart6listener(dataGeo, dataElements) {
 function chart7listener(dataGeo, dataElements) {
     renderChart7(dataGeo, dataElements);
     // chart7 update year range listener
-    let years = 1;
+    let years = 0;
     let startYear = 2015;
     d3.select('#chart7slider').on('change', function(d) {
         startYear = +this.value;
-        renderChart7(dataGeo, dataElements, startYear, years);
+        renderChart7(dataGeo, dataElements, startYear, years - 1);
     });
     d3.select('#chart7years').on('change', function(d) {
         years = +this.value;
-        renderChart7(dataGeo, dataElements, startYear, years);
+        renderChart7(dataGeo, dataElements, startYear, years - 1);
     });
 }
 
