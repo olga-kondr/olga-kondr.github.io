@@ -19,6 +19,8 @@ function renderChart6(dataGeo, dataElements, startYear = 2011, interval = 4) {
         .attr('width', widthCh6)
         .attr('height', heightCh6);
 
+    let g = svg.append("g");
+
     // map and projection
     const projection = d3.geoMercator()
         .scale(270)
@@ -29,7 +31,7 @@ function renderChart6(dataGeo, dataElements, startYear = 2011, interval = 4) {
         .projection(projection)
 
     // show the map
-    svg.append('g')
+    g.append('g')
         .selectAll('path')
         .data(dataGeo.features)
         .join('path')
@@ -37,8 +39,6 @@ function renderChart6(dataGeo, dataElements, startYear = 2011, interval = 4) {
         .attr('d', path)
         .style('stroke', '#fff')
         .style('stroke-width', 0);
-
-    console.log('data elems', dataElements);
 
     let data = dataElements.map((o) => ({
         name: o.Name,
@@ -54,7 +54,6 @@ function renderChart6(dataGeo, dataElements, startYear = 2011, interval = 4) {
     }));
 
     data = data.filter(d => d.year >= startYear & d.year <= endYear);
-    console.log('data ', data);
     let dataGrouped = d3.group(data, d => d.name);
     let dt = [];
     let names = [];
@@ -102,7 +101,6 @@ function renderChart6(dataGeo, dataElements, startYear = 2011, interval = 4) {
     //     'wind': storm[i].wind,
     //     'pressure': storm[i].pressure,
     // };
-    // console.log('dt-->', dt);
 
     const color = d3.scaleOrdinal()
         .domain(names)
@@ -143,14 +141,14 @@ function renderChart6(dataGeo, dataElements, startYear = 2011, interval = 4) {
                 .style('opacity', 0);
         }
 
-        svg.selectAll('stormLines')
+        g.selectAll('stormLines')
             .data(storm.coords)
             .join('path')
             .attr('d', function(d) { return path(d) })
             .style('fill', 'none')
             .style('stroke', color(storm.name))
             .style('stroke-width', 4);
-        svg.selectAll('stormPoints')
+        g.selectAll('stormPoints')
             .data(storm.points)
             .join('path')
             .attr('d', function(d) { return path(d) })
@@ -158,7 +156,7 @@ function renderChart6(dataGeo, dataElements, startYear = 2011, interval = 4) {
             .style('stroke', '#ccc')
             .style('stroke-linecap', 'round')
             .style('stroke-width', 5);
-        svg.selectAll('stormPointsDot')
+        g.selectAll('stormPointsDot')
             .data(storm.points)
             .join('path')
             .attr('d', function(d) { return path(d) })
@@ -170,6 +168,15 @@ function renderChart6(dataGeo, dataElements, startYear = 2011, interval = 4) {
             .on('mouseenter', showTt)
             .on('mouseleave', hideTt);
     });
+
+    let zoom = d3.zoom()
+        .scaleExtent([1, 8])
+        .on('zoom', function(event) {
+            g.selectAll('path')
+                .attr('transform', event.transform);
+        });
+
+    svg.call(zoom);
 }
 
 
@@ -189,6 +196,7 @@ function renderChart7(dataGeo, dataElements, startYear = 2015, interval = 1) {
         .attr('width', widthCh7)
         .attr('height', heightCh7);
 
+    let g = svg.append("g");
     // map and projection
     const projection = d3.geoMercator()
         .scale(400)
@@ -199,7 +207,7 @@ function renderChart7(dataGeo, dataElements, startYear = 2015, interval = 1) {
         .projection(projection)
 
     // show the map
-    svg.append('g')
+    g
         .selectAll('path')
         .data(dataGeo.features)
         .join('path')
@@ -297,14 +305,14 @@ function renderChart7(dataGeo, dataElements, startYear = 2015, interval = 1) {
                 .style('opacity', 0);
         }
 
-        svg.selectAll('stormLines')
+        g.selectAll('stormLines')
             .data(storm.coords)
             .join('path')
             .attr('d', function(d) { return path(d) })
             .style('fill', 'none')
             .style('stroke', color(storm.name))
             .style('stroke-width', 4);
-        svg.selectAll('stormPoints')
+        g.selectAll('stormPoints')
             .data(storm.points)
             .join('path')
             .attr('d', function(d) { return path(d) })
@@ -312,7 +320,7 @@ function renderChart7(dataGeo, dataElements, startYear = 2015, interval = 1) {
             .style('stroke', '#ccc')
             .style('stroke-linecap', 'round')
             .style('stroke-width', 5);
-        svg.selectAll('stormPointsDot')
+        g.selectAll('stormPointsDot')
             .data(storm.points)
             .join('path')
             .attr('d', function(d) { return path(d) })
@@ -324,6 +332,15 @@ function renderChart7(dataGeo, dataElements, startYear = 2015, interval = 1) {
             .on('mouseenter', showTt)
             .on('mouseleave', hideTt);
     });
+
+    let zoom = d3.zoom()
+        .scaleExtent([1, 8])
+        .on('zoom', function(event) {
+            g.selectAll('path')
+                .attr('transform', event.transform);
+        });
+
+    svg.call(zoom);
 }
 
 function chart6listener(dataGeo, dataElements) {
@@ -366,7 +383,6 @@ function renderCharts6to7(dataGeo, dataElements) {
 // load world shape and list of trajectories
 Promise.all([
     d3.json('https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson'),
-    // d3.csv('https://gist.githubusercontent.com/olga-kondr/0ffc7e15398f5c8e424ee35152d0aa39/raw/1c2d4097dc652534914f5a6bca2ee5c56706ecbe/atlantic_cleaned.csv'),
     d3.csv('https://gist.githubusercontent.com/olga-kondr/d39b5ce41ab7efdddf5ba82539ba0bfb/raw/e3b4874d752da237630b7188dd76ad7db9f03a96/atlantic_full_updated.csv'),
 ]).then(
     function(initialize) {
