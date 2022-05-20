@@ -24,6 +24,7 @@ function haversine(coords) {
 }
 
 // Chart 3
+// inspired by https://d3-graph-gallery.com/graph/boxplot_show_individual_points.html
 function renderChart3(dataElements, startYear = 2011, interval = 4) {
     let endYear = startYear + interval;
     if (endYear > 2015) {
