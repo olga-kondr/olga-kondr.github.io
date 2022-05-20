@@ -193,11 +193,11 @@ function renderChart2_1(dataElements) {
     // legend
     let legend = d3.legendColor()
         .scale(colors)
-        .title("Types");
+        .title('Types');
 
-    svg.append("g")
-        .attr("transform", `translate(${width2 - 50}, ${margin.top + 30})`)
-        .style("font-size", "14px")
+    svg.append('g')
+        .attr('transform', `translate(${width2 - 50}, ${margin.top + 30})`)
+        .style('font-size', '14px')
         .call(legend);
 }
 
@@ -345,11 +345,11 @@ function renderChart2_1_2(dataElements) {
     // legend
     let legend = d3.legendColor()
         .scale(colors)
-        .title("Types");
+        .title('Types');
 
-    svg.append("g")
-        .attr("transform", `translate(${width2 - 50}, ${margin.top + 30})`)
-        .style("font-size", "14px")
+    svg.append('g')
+        .attr('transform', `translate(${width2 - 50}, ${margin.top + 30})`)
+        .style('font-size', '14px')
         .call(legend);
 }
 
@@ -506,11 +506,11 @@ function renderChart2_2_1(dataElements, startId = 12, endId = 16) {
     // legend
     let legend = d3.legendColor()
         .scale(colors)
-        .title("Types");
+        .title('Types');
 
-    svg.append("g")
-        .attr("transform", `translate(${width - 50}, ${margin.top + 30})`)
-        .style("font-size", "14px")
+    svg.append('g')
+        .attr('transform', `translate(${width - 50}, ${margin.top + 30})`)
+        .style('font-size', '14px')
         .call(legend);
 }
 // Chart 2.2.2
@@ -647,7 +647,6 @@ function renderChart2_2_2(dataElements, startId = 12, endId = 16) {
         .text('range: 1851 to 2015');
 
     let typeList = colorShortClassifications.map(element => element.abbr);
-    console.log('typeList', typeList.slice(0, 5));
     let colorList = colorShortClassifications.map(element => element.colorHex);
 
     // colors for legend
@@ -658,11 +657,11 @@ function renderChart2_2_2(dataElements, startId = 12, endId = 16) {
     // legend
     let legend = d3.legendColor()
         .scale(colors)
-        .title("Types");
+        .title('Types');
 
-    svg.append("g")
-        .attr("transform", `translate(${width - 50}, ${margin.top + 30})`)
-        .style("font-size", "14px")
+    svg.append('g')
+        .attr('transform', `translate(${width - 50}, ${margin.top + 30})`)
+        .style('font-size', '14px')
         .call(legend);
 }
 

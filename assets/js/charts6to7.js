@@ -1,8 +1,9 @@
-// Chart 6 
+// references:
 // https://d3-wiki.readthedocs.io/zh_CN/master/Geo-Paths/
 // https://github.com/d3/d3-geo
 // https://d3-graph-gallery.com/graph/connectionmap_csv.html
 
+// Chart 6 
 function renderChart6(dataGeo, dataElements, startYear = 2011, interval = 4) {
 
     let widthCh6 = 1000;
@@ -19,7 +20,7 @@ function renderChart6(dataGeo, dataElements, startYear = 2011, interval = 4) {
         .attr('width', widthCh6)
         .attr('height', heightCh6);
 
-    let g = svg.append("g");
+    let g = svg.append('g');
 
     // map and projection
     const projection = d3.geoMercator()
@@ -44,13 +45,7 @@ function renderChart6(dataGeo, dataElements, startYear = 2011, interval = 4) {
         name: o.Name,
         lat: +o.Latitude,
         long: +o.Longitude,
-        year: +o.Year,
-        // status: o.Status,
-        // wind: +o['Maximum Wind'],
-        // pressure: +o['Minimum Pressure'],
-        // day: +o.Day,
-        // month: +o.Month,
-        // time: +o.Time
+        year: +o.Year
     }));
 
     data = data.filter(d => d.year >= startYear & d.year <= endYear);
@@ -89,18 +84,6 @@ function renderChart6(dataGeo, dataElements, startYear = 2011, interval = 4) {
         };
         dt.push(temp);
     });
-    // temp = {
-    //     'name': storm[i].name,
-    //     'day': storm[i].day,
-    //     'month': storm[i].month,
-    //     'time': storm[i].time,
-    //     'year': storm[i].year,
-    //     'coords': coords,
-    //     'points': points,
-    //     'status': storm[i].status,
-    //     'wind': storm[i].wind,
-    //     'pressure': storm[i].pressure,
-    // };
 
     const color = d3.scaleOrdinal()
         .domain(names)
@@ -130,7 +113,6 @@ function renderChart6(dataGeo, dataElements, startYear = 2011, interval = 4) {
                 .style('pointer-events', 'none');
 
             tooltip.html(d.year + ' - ' + d.name)
-                // tooltip.html(d.name + ' - ' + d.day + ' of ' + d.month + ' ' + d.year + '< br/>' + 'Status: ' + d.status + ', max wind speed: ' + d.wind + ', min pressure: ' + d.pressure)
                 .style('top', (e.pageY) + 'px')
                 .style('left', (e.pageX) + 'px');
         }
@@ -196,7 +178,7 @@ function renderChart7(dataGeo, dataElements, startYear = 2015, interval = 1) {
         .attr('width', widthCh7)
         .attr('height', heightCh7);
 
-    let g = svg.append("g");
+    let g = svg.append('g');
     // map and projection
     const projection = d3.geoMercator()
         .scale(400)

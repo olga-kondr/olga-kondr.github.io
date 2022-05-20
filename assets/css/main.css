@@ -370,11 +370,19 @@ br.clear {
     position: relative;
 }
 
+.container #chart3slider {
+    width: 60%;
+    height: 5px;
+    border-radius: 2px;
+    background-color: #8091b1;
+    position: relative;
+}
+
 .container #chart4slider {
     width: 60%;
     height: 5px;
     border-radius: 2px;
-    background-color: #888;
+    background-color: #88a485;
     position: relative;
 }
 
@@ -382,7 +390,7 @@ br.clear {
     width: 60%;
     height: 5px;
     border-radius: 2px;
-    background-color: #888;
+    background-color: #efc484;
     position: relative;
 }
 
@@ -390,7 +398,7 @@ br.clear {
     width: 60%;
     height: 5px;
     border-radius: 2px;
-    background-color: #7178a2;
+    background-color: #888;
     position: relative;
 }
 
@@ -406,7 +414,7 @@ br.clear {
     width: 60%;
     height: 5px;
     border-radius: 2px;
-    background-color: #a27771;
+    background-color: #888;
     position: relative;
 }
 
