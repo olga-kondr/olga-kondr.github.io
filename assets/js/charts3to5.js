@@ -220,6 +220,14 @@ function renderChart3(dataElements, startYear = 2011, interval = 4) {
         .attr('font-size', '100%')
         .attr('font', 'inherit')
         .text('Length in km');
+
+    svg.append('text')
+        .attr('fill', '#888')
+        .attr('x', width / 3)
+        .attr('y', '15')
+        .attr('font-size', '100%')
+        .attr('font', 'inherit')
+        .text('Lengths of Storms from 1851 to 2015');
 }
 
 // Chart 4
@@ -401,6 +409,14 @@ function renderChart4(dataElements, startYear = 2011, endYear = 2015, numBins = 
         .attr('font-size', '100%')
         .attr('font', 'inherit')
         .text('Wind Speed in Knots (kn)');
+
+    svg.append('text')
+        .attr('fill', '#888')
+        .attr('x', width / 4)
+        .attr('y', '15')
+        .attr('font-size', '100%')
+        .attr('font', 'inherit')
+        .text('Maximum Wind Speed from 1950 to 2015');
 }
 
 // Chart 5
@@ -588,6 +604,14 @@ function renderChart5(dataElements, startYear = 2011, endYear = 2015, numBins = 
         .attr('font-size', '100%')
         .attr('font', 'inherit')
         .text('Pressure in Millibars');
+
+    svg.append('text')
+        .attr('fill', '#888')
+        .attr('x', width / 4)
+        .attr('y', '15')
+        .attr('font-size', '100%')
+        .attr('font', 'inherit')
+        .text('Minimum Pressure from 1950 to 2015');
 }
 
 
