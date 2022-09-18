@@ -336,6 +336,18 @@ br.clear {
     clear: both;
 }
 
+.cie {
+    text-align: left;
+}
+
+.dv {
+    text-align: left;
+}
+
+.sea-battle {
+    text-align: left;
+}
+
 
 /* Container */
 
