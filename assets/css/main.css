@@ -2212,9 +2212,27 @@ button:active,
     background-position: center center;
 }
 
-#main>section.one {
+#main > section.one {
+    position: relative;
     background-color: #81918E;
-    background-image: url("../../images/bckgrnd.png");
+    overflow: hidden;
+}
+
+#main > section.one::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    height: 20vh;
+
+    background-image: url("../../images/back_gg_light.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto;
+
+    pointer-events: none;
 }
 
 #main>section.two {
