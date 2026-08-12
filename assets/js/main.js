@@ -124,6 +124,7 @@
 
 document.querySelectorAll("[data-section]").forEach(async (element) => {
     const section = element.dataset.section;
+	console.log("new version")
 
     try {
         const response = await fetch(`sections/${section}.html`);
