@@ -2215,10 +2215,12 @@ button:active,
 #main > section.one {
     position: relative;
     background-color: #81918E;
+    background-image: url("../../images/back_gg_light.png");
+    background-position: center center;
     overflow: hidden;
 }
 
-#main > section.one::before {
+/* #main > section.one::before {
     content: "";
     position: absolute;
     top: 0;
@@ -2233,7 +2235,7 @@ button:active,
     background-size: auto;
 
     pointer-events: none;
-}
+} */
 
 #main>section.two {
     background-color: #f5fafa;
