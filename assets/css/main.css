@@ -2215,8 +2215,6 @@ button:active,
 #main > section.one {
     position: relative;
     background-color: #81918E;
-    background-image: url("../../images/back_gg_light.png");
-    background-position: center center;
     overflow: hidden;
 }
 
@@ -2226,18 +2224,20 @@ button:active,
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-
+    
     height: 20vh;
-
+    
     background-image: url("../../images/back_gg_light.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: auto;
-
+    
     pointer-events: none;
-} */
-
-#main>section.two {
+    } */
+    
+    #main>section.two {
+    background-image: url("../../images/back_gg_light.png");
+    background-position: center center;
     background-color: #f5fafa;
 }
 

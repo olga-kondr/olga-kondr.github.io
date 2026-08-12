@@ -121,3 +121,19 @@
 				});
 
 })(jQuery);
+
+document.querySelectorAll("[data-section]").forEach(async (element) => {
+    const section = element.dataset.section;
+
+    try {
+        const response = await fetch(`sections/${section}.html`);
+
+        if (!response.ok) {
+            throw new Error(`Failed to load ${section}`);
+        }
+
+        element.innerHTML = await response.text();
+    } catch (error) {
+        console.error(error);
+    }
+});
