@@ -1705,6 +1705,7 @@ article:last-child {
     width: 48px;
     height: 48px;
     background: #f00;
+    margin: 0.2em 0.2em 0.2em 0.2em;
 }
 
 .image.avatar48 img {
@@ -2056,7 +2057,7 @@ button:active,
 
 #logo {
     position: relative;
-    margin: 1.75em 1.5em 1.5em 1.5em;
+    margin: 0em 1.5em 1.5em 1.5em;
     min-height: 48px;
     cursor: default;
 }
