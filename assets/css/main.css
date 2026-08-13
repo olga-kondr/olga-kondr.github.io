@@ -223,7 +223,7 @@ h5,
 h6 {
     font-weight: 300;
     color: #070a07;
-    line-height: 0.5em;
+    line-height: 1em;
 }
 
 h1 a,
@@ -329,7 +329,7 @@ ul,
 ol,
 dl,
 table {
-    margin-bottom: 2em;
+    margin-bottom: 0.5em;
 }
 
 br.clear {
