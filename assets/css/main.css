@@ -2234,12 +2234,12 @@ button:active,
     
     pointer-events: none;
     } */
-    
+/*     
 #main>section.two {
     background-image: url("../../images/back_gg_light.png");
     background-position: center center;
     background-repeat: no-repeat;
-    /* background-color: #f5fafa;  */
+    /* background-color: #f5fafa;  
     background-color: #dce3e2;
 }
 
@@ -2255,9 +2255,9 @@ button:active,
 }
 
 #main>section.four {
-    /* background-color: #e8edec; */
+    /* background-color: #e8edec; 
     background-color: #81918E;
-}
+} */
 
 
 /* Wide */
