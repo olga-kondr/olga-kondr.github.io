@@ -2214,13 +2214,30 @@ button:active,
     background-position: center center;
 }
 
-#main > section.one {
+#main>section.light {
+    color: #fff;
+}
+
+#main>section.light h1,
+#main>section.light h2,
+#main>section.light h3,
+#main>section.light h4,
+#main>section.light h5,
+#main>section.light h6 {
+    color: inherit;
+}
+
+#main>section.light a {
+    color: #3a2929;
+    border-color: inherit;
+}
+
+/* #main > section.one {
     position: relative;
     background-color: #81918E;
     overflow: hidden;
-}
-
-/* #main > section.one::before {
+} 
+#main > section.one::before {
     content: "";
     position: absolute;
     top: 0;
