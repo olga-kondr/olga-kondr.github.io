@@ -170,7 +170,6 @@ textarea {
     display: inline-block;
 }
 
-​
 /* Basic */
 
 html {
@@ -223,7 +222,18 @@ h5,
 h6 {
     font-weight: 300;
     color: #070a07;
-    line-height: 1.5em;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.7em;
+}
+
+h4,
+h5,
+h6 {
+    line-height: 1.3em;
 }
 
 h1 a,
@@ -263,7 +273,7 @@ h3 {
 }
 
 header {
-    margin: 0 0 2em 0;
+    margin: 1em;
 }
 
 header>p {
@@ -2068,6 +2078,7 @@ button:active,
     font-weight: 600;
     font-size: 1em;
     line-height: 1em;
+    padding: 1em;
 }
 
 #logo p {
