@@ -2182,7 +2182,7 @@ button:active,
 
 #main>section.dark {
     color: #ddd;
-    color: rgba(255, 255, 255, 0.75);
+    /* color: rgba(255, 255, 255, 0.75); */
 }
 
 #main>section.dark h1,
