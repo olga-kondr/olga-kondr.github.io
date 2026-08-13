@@ -223,7 +223,7 @@ h5,
 h6 {
     font-weight: 300;
     color: #070a07;
-    line-height: 1em;
+    line-height: 1.5em;
 }
 
 h1 a,
@@ -2328,7 +2328,7 @@ button:active,
         font-size: 16pt;
     }
     .container {
-        padding: 0.5em 2em 0.5em 2em;
+        padding: 1em 2em 1em 2em;
     }
     /* Icons */
     ul.icons li a {
