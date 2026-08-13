@@ -2067,10 +2067,10 @@ button:active,
 
 #logo {
     position: relative;
-    margin: 1.5em;
+    /* margin: 1.5em; */
     min-height: 48px;
     cursor: default;
-    padding: 1em;
+    padding: 1.5em;
 }
 
 #logo h1 {
