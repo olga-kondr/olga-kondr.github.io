@@ -2224,7 +2224,7 @@ button:active,
 #main>section.light h4,
 #main>section.light h5,
 #main>section.light h6 {
-    color: inherit;
+    color: #333;
 }
 
 #main>section.light a {
