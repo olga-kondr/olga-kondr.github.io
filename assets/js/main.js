@@ -5,12 +5,37 @@
 */
 
 (function($) {
-
 	var	$window = $(window),
-		$body = $('body'),
+		$body = $('body');
+
+	// Load HTML sections first.
+	async function loadSections() {
+	    var sectionElements = $('[data-section]');
+	    try {
+	        for (const element of sectionElements) {
+	            var section = $(element).data('section');
+
+	            const response = await fetch('sections/' + section + '.html');
+
+	            if (!response.ok) {
+	                throw new Error('Failed to load ' + section);
+	            }
+	            const html = await response.text();
+	            // Replace the placeholder div with the actual section.
+	            element.outerHTML = html;
+	        }
+	        // Sections are now direct children of #main.
+	        initializePage();
+	    } catch (error) {
+	        console.error('Error loading sections:', error);
+	    }
+	}
+
+	// Initialize the Prologue template AFTER sections are loaded.
+    function initializePage() {
 		$nav = $('#nav');
 
-	// Breakpoints.
+		// Breakpoints.
 		breakpoints({
 			wide:      [ '961px',  '1880px' ],
 			normal:    [ '961px',  '1620px' ],
@@ -19,14 +44,14 @@
 			mobile:    [ null,     '736px'  ]
 		});
 
-	// Play initial animations on page load.
+		// Play initial animations on page load.
 		$window.on('load', function() {
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
 			}, 100);
 		});
 
-	// Nav.
+		// Nav.
 		var $nav_a = $nav.find('a');
 
 		$nav_a
@@ -94,10 +119,10 @@
 
 			});
 
-	// Scrolly.
+		// Scrolly.
 		$('.scrolly').scrolly();
 
-	// Header (narrower + mobile).
+		// Header (narrower + mobile).
 
 		// Toggle.
 			$(
@@ -119,5 +144,7 @@
 					target: $body,
 					visibleClass: 'header-visible'
 				});
-
+    }
+    // Start everything.
+    loadSections();	
 })(jQuery);

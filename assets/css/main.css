@@ -2631,3 +2631,21 @@ input, select, textarea {
 				}
 
 	}
+
+.intro-buttons .secondary-button {
+	margin-left: 0.75em;
+	background-color: #2a9d8f !important;
+	border-color: #2a9d8f !important;
+}
+
+.intro-buttons .secondary-button:hover {
+	background-color: #38b2a3 !important;
+	border-color: #38b2a3 !important;
+}
+
+@media screen and (max-width: 736px) {
+	.intro-buttons .secondary-button {
+		margin-left: 0;
+		margin-top: 0.75em;
+	}
+}
