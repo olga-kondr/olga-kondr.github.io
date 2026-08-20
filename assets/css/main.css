@@ -2631,7 +2631,7 @@ input, select, textarea {
 				}
 
 	}
-
+/* CV button */
 .intro-buttons .secondary-button {
 	margin-left: 0.75em;
 	background-color: #2a9d8f !important;
@@ -2642,10 +2642,269 @@ input, select, textarea {
 	background-color: #38b2a3 !important;
 	border-color: #38b2a3 !important;
 }
-
+/* Mobile */
 @media screen and (max-width: 736px) {
 	.intro-buttons .secondary-button {
 		margin-left: 0;
 		margin-top: 0.75em;
 	}
+}
+/* =========================================================
+   Timeline
+   ========================================================= */
+
+.timeline-section {
+    position: relative;
+    background-image: url("../../images/sf_ai_day.png") !important;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+/* Timeline section header */
+.timeline-section header h2 {
+    color: #ffffff;
+}
+
+.timeline-section header p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Dark overlay over the background image */
+.timeline-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 25, 30, 0.40);
+    z-index: 0;
+}
+
+/* Keep all timeline content above the overlay */
+.timeline-section > .container {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Mobile */
+@media screen and (max-width: 736px) {
+    .timeline-section {
+        background-attachment: scroll;
+    }
+}
+
+
+/* =========================================================
+   Timeline container
+   ========================================================= */
+
+.timeline {
+    position: relative;
+	z-index: 0;
+}
+
+/* Central vertical line */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 40px;
+    width: 4px;
+    transform: translateX(-50%);
+    z-index: 1;
+
+    background: linear-gradient(
+        to bottom,
+        #5eead4 0%,
+        #5eead4 75%,
+        rgba(94, 234, 212, 0.7) 88%,
+        rgba(94, 234, 212, 0.25) 96%,
+        transparent 100%
+    );
+
+    box-shadow: 0 0 8px rgba(79, 209, 197, 0.8);
+}
+
+/* =========================================================
+   Timeline items
+   ========================================================= */
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 0.35em 0;
+    margin-bottom: -3em;
+    box-sizing: border-box;
+}
+
+/* Left-side items */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+    padding-right: 1.5em;
+}
+
+
+/* Right-side items */
+.timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+    padding-left: 1.5em;
+}
+
+/* =========================================================
+   Horizontal connectors
+   ========================================================= */
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 2.45em;
+    width: 1.5em;
+    height: 2px;
+    background: #5eead4;
+    z-index: 1;
+}
+
+
+/* Left-side connector */
+.timeline-item:nth-child(odd)::before {
+    right: 0;
+}
+
+
+/* Right-side connector */
+.timeline-item:nth-child(even)::before {
+    left: 0;
+}
+
+
+/* =========================================================
+   Timeline dots
+   ========================================================= */
+
+.timeline-item::after {
+    content: "";
+    position: absolute;
+    top: 2em;
+    width: 12px;
+    height: 12px;
+    background: #5eead4;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    z-index: 2;
+    box-sizing: content-box;
+}
+
+
+/* Left-side dot */
+.timeline-item:nth-child(odd)::after {
+    right: -7px;
+}
+
+
+/* Right-side dot */
+.timeline-item:nth-child(even)::after {
+    left: -7px;
+}
+
+
+/* =========================================================
+   Timeline cards
+   ========================================================= */
+
+.timeline-card {
+    width: 100%;
+    max-width: 300px;
+    padding: 1em 1.25em;
+    border-radius: 8px;
+    box-sizing: border-box;
+
+    /* Light card background */
+    background-size: cover;
+    background-position: center;
+	background: rgba(255, 255, 255, 0.92);
+    color: #333;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Keep left cards close to center */
+.timeline-item:nth-child(odd) .timeline-card {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+
+/* Keep right cards close to center */
+.timeline-item:nth-child(even) .timeline-card {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   Timeline text
+   ========================================================= */
+
+.timeline-year {
+    color: #2a9d8f;
+    font-size: 0.9em;
+    font-weight: 700;
+    margin-bottom: 0.3em;
+}
+
+
+/* Job / event title */
+.timeline-card h3 {
+    color: #333;
+    font-size: 1em;
+    margin: 0 0 0.25em;
+}
+
+
+/* Description */
+.timeline-card p {
+    color: #555;
+    font-size: 0.85em;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* =========================
+   TIMELINE NOW MARKER
+   ========================= */
+
+.timeline-now {
+    position: absolute;
+    left: 50%;
+    top: -1.1em;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+
+.timeline-now span {
+    display: block;
+    width: 72px;
+    height: 34px;
+    line-height: 34px;
+
+    background: #4fd1c5;
+    color: #172126;
+
+    border: 2px solid #4fd1c5;
+    border-radius: 6px;
+
+    box-sizing: border-box;
+
+    font-size: 0.75em;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-align: center;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.35),
+        0 0 10px rgba(79, 209, 197, 0.45);
 }
