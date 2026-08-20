@@ -3202,7 +3202,7 @@ input, select, textarea {
     padding: 1.5em 1.5em 0.5em 1.5em;
 
 	background: rgba(240, 245, 244, 0.7);
-	
+
     border: 1px solid rgba(42, 157, 143, 0.18);
     border-left: 4px solid #2a9d8f;
 
@@ -3242,6 +3242,84 @@ input, select, textarea {
     margin: 0;
 }
 
+/* =========================================================
+   Expandable Department Details
+   ========================================================= */
+
+.experience-department-details {
+    margin-top: 1em;
+}
+
+/* Remove default browser marker */
+.experience-department-details summary {
+    list-style: none;
+    cursor: pointer;
+}
+
+.experience-department-details summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Show details */
+.experience-department-details summary span {
+    display: inline-block;
+
+    color: #e76f51;
+
+    font-size: 0.75em;
+    font-weight: 700;
+
+    transition: color 0.2s ease;
+}
+
+.experience-department-details summary span::after {
+    content: " ↓";
+}
+
+/* Hover */
+.experience-department-details summary:hover span {
+    color: #d85d42;
+}
+
+/* Default: Show details */
+
+.experience-department-details .hide-details {
+    display: none;
+}
+
+.experience-department-details .show-details::after {
+    content: " ↓";
+}
+
+/* Expanded: Hide details */
+.experience-department-details[open] .show-details {
+    display: none;
+}
+
+.experience-department-details[open] .hide-details {
+    display: inline;
+}
+
+.experience-department-details .hide-details::after {
+    content: " ↑";
+}
+
+
+/* Detailed content */
+
+.experience-department-content {
+    margin-top: 0.9em;
+    padding-top: 0.9em;
+
+    border-top: 1px solid rgba(42, 157, 143, 0.18);
+}
+/* Detailed content */
+.experience-department-content {
+    margin-top: 0.9em;
+    padding-top: 0.9em;
+
+    border-top: 1px solid rgba(42, 157, 143, 0.18);
+}
 /* Experience Subsections */
 
 .experience-subsection {
@@ -3266,4 +3344,166 @@ input, select, textarea {
     font-weight: 700;
 
     margin: 0 0 0.6em 0;
+}
+
+/* =========================================================
+   Portfolio
+   ========================================================= */
+
+.portfolio-section {
+    position: relative;
+}
+
+.portfolio-section header {
+    margin-bottom: 3em;
+}
+
+/* Portfolio grid */
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2em;
+    align-items: stretch;
+}
+
+/* Portfolio card */
+
+.portfolio-card {
+    display: flex;
+
+    background: linear-gradient(
+        135deg,
+        rgba(240, 245, 244, 0.95),
+        rgba(225, 235, 233, 0.95)
+    );
+
+    border-radius: 10px;
+
+    border-left: 4px solid #2a9d8f;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.08);
+
+    box-sizing: border-box;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Card hover */
+
+.portfolio-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* Card content */
+
+.portfolio-card-content {
+    width: 100%;
+    padding: 1.75em 2em;
+}
+
+/* Date */
+
+.portfolio-date {
+    margin-bottom: 0.4em;
+
+    color: #2a9d8f;
+
+    font-size: 0.75em;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+/* Project title */
+
+.portfolio-card h3 {
+    margin: 0 0 0.45em;
+
+    color: #333;
+
+    font-size: 1.2em;
+    line-height: 1.3;
+}
+
+/* Project type */
+
+.portfolio-type {
+    margin-bottom: 1.25em;
+
+    color: #e76f51;
+
+    font-size: 0.72em;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+}
+
+/* Description */
+
+.portfolio-card p {
+    margin: 0 0 0.9em;
+
+    color: #555;
+
+    font-size: 0.85em;
+    line-height: 1.55;
+}
+
+/* Highlights */
+
+.portfolio-highlights {
+    margin: 1.25em 0 0;
+    padding-left: 1.25em;
+
+    color: #555;
+
+    font-size: 0.82em;
+    line-height: 1.5;
+}
+
+.portfolio-highlights li {
+    margin-bottom: 0.5em;
+    padding-left: 0.2em;
+}
+
+.portfolio-highlights li:last-child {
+    margin-bottom: 0;
+}
+
+/* Technology stack */
+
+.portfolio-tech {
+    margin-top: 1.5em;
+    padding-top: 0.9em;
+
+    border-top: 1px solid rgba(42, 157, 143, 0.2);
+
+    color: #287f78;
+
+    font-size: 0.72em;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 736px) {
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+    }
+
+    .portfolio-card-content {
+        padding: 1.5em 1.25em;
+    }
+
+    .portfolio-card h3 {
+        font-size: 1.1em;
+    }
+
 }
