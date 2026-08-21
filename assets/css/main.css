@@ -3710,10 +3710,7 @@ input, select, textarea {
     margin-bottom: 0;
 }
 
-/* =========================================================
-   Mobile
-   ========================================================= */
-
+/* Mobile */
 @media screen and (max-width: 736px) {
 
     .about-intro {
@@ -3728,6 +3725,300 @@ input, select, textarea {
 
     .about-text {
         text-align: left;
+    }
+
+}
+
+/* Credentials */
+#certs {
+    background: #fafcfb;
+}
+
+#certs header {
+    margin-bottom: 3em;
+}
+
+/* Diploma */
+.credential-diploma-card {
+    max-width: 850px;
+    margin: 0 auto 3em;
+}
+
+.credential-diploma-card h3 {
+    margin: 0 0 1em;
+
+    color: #333;
+
+    font-size: 1em;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.credential-diploma {
+    padding: 1em;
+
+    background: #fff;
+
+    border: 1px solid rgba(42, 157, 143, 0.12);
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.06);
+
+    box-sizing: border-box;
+}
+
+.credential-diploma img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border-radius: 4px;
+}
+
+/* Certifications Grid */
+.credential-certifications {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 1.5em;
+
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Certification Card */
+.credential-card {
+    display: flex;
+    flex-direction: column;
+
+    padding: 1.25em;
+
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        135deg,
+        rgba(250, 252, 251, 0.98),
+        rgba(242, 247, 245, 0.98)
+    );
+
+    border: 1px solid rgba(42, 157, 143, 0.12);
+    border-left: 4px solid #2a9d8f;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Card hover */
+.credential-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.10);
+}
+
+/* Thumbnail */
+/* Certificate thumbnail */
+
+.credential-thumbnail {
+    width: 120px;
+    height: 150px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    background: #fff;
+
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 5px;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.credential-thumbnail img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    background: #fff;
+}
+
+.credential-card-header {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 1.25em;
+}
+/* Certificate information */
+.credential-card-info {
+    flex: 1;
+}
+
+.credential-card-info h3 {
+    margin: 0 0 0.65em;
+
+    color: #333;
+
+    font-size: 0.9em;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.credential-card-info p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 0.75em;
+    line-height: 1.5;
+}
+
+/* Certificate title */
+.credential-card h3 {
+    margin: 0 0 0.75em;
+
+    color: #333;
+
+    font-size: 0.95em;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* Certificate description */
+.credential-card p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 0.78em;
+    line-height: 1.5;
+}
+
+/* Certificate Button */
+/* .credential-button {
+    display: inline-block;
+
+    width: fit-content;
+
+    margin-top: auto;
+    padding: 0.55em 1.1em;
+
+    background-color: #2a9d8f;
+    color: #fff !important;
+
+    border-radius: 0.35em;
+
+    text-decoration: none !important;
+
+    font-size: 0.75em;
+    font-weight: 600;
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.2s ease;
+} */
+
+/* Small view button */
+.credential-button {
+    display: inline-block;
+
+    width: fit-content;
+
+    margin-top: 1em;
+    margin-left: auto;
+
+    padding: 0.35em 0.8em;
+
+    background: transparent;
+
+    color: #2a9d8f !important;
+
+    border: 1px solid rgba(42, 157, 143, 0.45);
+    border-radius: 0.3em;
+
+    text-decoration: none !important;
+
+    font-size: 0.7em;
+    font-weight: 600;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+/* Button hover */
+.credential-button:hover {
+    background-color: #2a9d8f;
+
+    color: #fff !important;
+
+    border-color: #2a9d8f;
+}
+
+/* .credential-button:hover {
+    background-color: #38b2a3;
+
+    transform: translateY(-1px);
+} */
+
+.credential-button:active {
+    background-color: #238579;
+
+    transform: translateY(0);
+}
+/* Certificate date */
+
+.credential-date {
+    margin-top: 0.65em;
+
+    color: #2a9d8f;
+
+    font-size: 0.7em;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+@media screen and (max-width: 736px) {
+
+    .credential-diploma-card {
+        margin-bottom: 2em;
+    }
+
+    .credential-diploma {
+        padding: 0.5em;
+    }
+
+    .credential-certifications {
+        grid-template-columns: 1fr;
+
+        gap: 1em;
+    }
+
+    .credential-card {
+        padding: 1.25em;
+    }
+
+    .credential-thumbnail {
+        width: 90px;
+        height: 115px;
     }
 
 }
