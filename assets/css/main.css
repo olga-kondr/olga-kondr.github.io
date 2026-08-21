@@ -3507,3 +3507,227 @@ input, select, textarea {
     }
 
 }
+
+/* =========================================================
+   Personal Interests Gallery
+   ========================================================= */
+
+.about-interest-gallery {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.25em;
+}
+
+.about-interests {
+    /* margin-top: 2.5em; */
+	/* margin-top: 0.5em; */
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.about-interests > h3 {
+	margin-top: 0;
+    margin-bottom: 1.5em;
+}
+
+/* Interest Card */
+
+.about-interest-card {
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: #f4f8f8;
+
+    border: 1px solid rgba(42, 157, 143, 0.12);
+    border-radius: 10px;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.08);
+
+    grid-column: span 2;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Interest Image */
+.about-interest-image {
+    min-height: 220px;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Interest Text */
+.about-interest-text {
+    padding: 1.25em 1.4em 1.4em;
+
+    background: #f4f8f8;
+}
+
+/* Title */
+
+.about-interest-text h4 {
+    margin: 0 0 0.5em;
+
+    color: #333;
+
+    font-size: 0.95em;
+    font-weight: 700;
+}
+
+/* Description */
+
+.about-interest-text p {
+    margin: 0;
+
+    color: #555;
+
+    font-size: 0.78em;
+    line-height: 1.5;
+}
+
+/* Hover */
+.about-interest-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 9px 25px rgba(0, 0, 0, 0.14);
+}
+
+/* Interest Images */
+.about-travel .about-interest-image {
+    background-image: url("../../images/about/travel.png");
+}
+
+.about-languages .about-interest-image {
+    background-image: url("../../images/about/languages.png");
+}
+
+.about-kayaking .about-interest-image {
+    background-image: url("../../images/about/kayaking.png");
+}
+
+.about-games .about-interest-image {
+    background-image: url("../../images/about/games.png");
+}
+
+.about-books .about-interest-image {
+    background-image: url("../../images/about/books.jpg");
+}
+
+/* Center Last Two Cards */
+.about-interest-card:nth-child(4) {
+    grid-column: 2 / span 2;
+}
+
+.about-interest-card:nth-child(5) {
+    grid-column: 4 / span 2;
+}
+
+/* Mobile */
+@media screen and (max-width: 736px) {
+
+    .about-interest-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .about-interest-card,
+    .about-interest-card:nth-child(4),
+    .about-interest-card:nth-child(5) {
+        grid-column: auto;
+    }
+
+    .about-interest-image {
+        min-height: 220px;
+    }
+
+}
+
+/* =========================================================
+   About Introduction
+   ========================================================= */
+
+.about-intro {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 2.5em;
+
+    align-items: start;
+
+    margin-bottom: 0.5em;
+}
+
+/* Profile image column */
+
+.about-image {
+    width: 220px;
+}
+
+/* Profile images */
+
+.about-image img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    margin-bottom: 0.75em;
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(42, 157, 143, 0.15);
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.10);
+}
+
+.about-image img:last-child {
+    margin-bottom: 0;
+}
+
+
+/* About text */
+
+.about-text {
+    text-align: left;
+}
+
+.about-text p {
+    margin: 0 0 1em;
+
+    color: #555;
+
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media screen and (max-width: 736px) {
+
+    .about-intro {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+    }
+
+    .about-image {
+        width: 180px;
+        margin: 0 auto;
+    }
+
+    .about-text {
+        text-align: left;
+    }
+
+}
