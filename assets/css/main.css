@@ -3993,9 +3993,7 @@ input, select, textarea {
     letter-spacing: 0.03em;
 }
 
-/* =========================================================
-   Mobile
-   ========================================================= */
+/* Mobile */
 @media screen and (max-width: 736px) {
 
     .credential-diploma-card {
@@ -4021,4 +4019,24 @@ input, select, textarea {
         height: 115px;
     }
 
+}
+
+/* =========================================================
+   Contact
+   ========================================================= */
+/* Contact emphasis */
+
+#contact strong {
+    color: #287f78;
+    font-weight: 700;
+}
+
+/* Direct email spacing */
+
+#contact form + p {
+    margin-top: 2em;
+}
+
+.contact-direct-email {
+    margin-top: 2.5em ;
 }
