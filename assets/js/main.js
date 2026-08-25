@@ -33,77 +33,169 @@
 
 	function initializePortfolioCarousel() {
 
-	    var $carousel = $('.portfolio-carousel');
-	    if ($carousel.length === 0)
-	        return;
-	    var $track = $carousel.find('.portfolio-carousel-track');
-	    var $cards = $track.find('.portfolio-card');
-	    var $prevButton = $carousel.find('.portfolio-carousel-prev');
-	    var $nextButton = $carousel.find('.portfolio-carousel-next');
-	    var currentIndex = 0;
+		var $carousel = $('.portfolio-carousel');
 
-	    function getCardsPerView() {
-	        if (window.innerWidth <= 736)
-	            return 1;
-	        return 2;
-	    }
+		if ($carousel.length === 0)
+			return;
 
-	    function getMaxIndex() {
-	        var cardsPerView = getCardsPerView();
+		var $track = $carousel.find('.portfolio-carousel-track');
+		var $originalCards = $track.find('.portfolio-card');
 
-	        return Math.max(
-	            0,
-	            $cards.length - cardsPerView
-	        );
-	    }
+		var $prevButton = $carousel.find('.portfolio-carousel-prev');
+		var $nextButton = $carousel.find('.portfolio-carousel-next');
 
-		function updateCarousel() {
-		
-		    if ($cards.length === 0)
-		        return;
-		
-		    var cardWidth = $cards.first().outerWidth();
-		    var gap = parseFloat($track.css('gap')) || 0;
-		
-		    var offset = currentIndex * (cardWidth + gap);
-		
-		    $track.css(
-		        'transform',
-		        'translateX(-' + offset + 'px)'
-		    );
+		var currentIndex = 0;
+		var isAnimating = false;
+
+
+		function getCardsPerView() {
+
+			if (window.innerWidth <= 736)
+				return 1;
+
+			return 2;
+		}
+
+		function createClones() {
+
+			// Remove previously created clones.
+			$track.find('.portfolio-card-clone').remove();
+
+			var cardsPerView = getCardsPerView();
+			var $cards = $track.find('.portfolio-card');
+
+			if ($cards.length === 0)
+				return;
+
+			// Clone the last visible cards and place them before the originals.
+			$cards
+				.slice(-cardsPerView)
+				.clone()
+				.addClass('portfolio-card-clone')
+				.prependTo($track);
+
+			// Clone the first visible cards and place them after the originals.
+			$cards
+				.slice(0, cardsPerView)
+				.clone()
+				.addClass('portfolio-card-clone')
+				.appendTo($track);
+		}
+
+		function getAllCards() {
+			return $track.find('.portfolio-card');
 		}
 
 
-	    function goNext() {
-	        var maxIndex = getMaxIndex();
-	        if (currentIndex >= maxIndex)
-	            currentIndex = 0;
-	        else
-	            currentIndex++;
-	        updateCarousel();
-	    }
+		function getCardStep() {
 
-	    function goPrevious() {
-	        var maxIndex = getMaxIndex();
-	        if (currentIndex <= 0)
-	            currentIndex = maxIndex;
-	        else
-	            currentIndex--;
-	        updateCarousel();
-	    }
+			var $cards = getAllCards();
 
-	    $nextButton.on('click', goNext);
-	    $prevButton.on('click', goPrevious);
+			if ($cards.length === 0)
+				return 0;
 
-		$window.on('resize', function() {
-	        currentIndex = Math.min(
-	            currentIndex,
-	            getMaxIndex()
-	        );
-	        updateCarousel();
-	    });
-	    updateCarousel();
+			var cardWidth = $cards.first().outerWidth();
+			var gap = parseFloat($track.css('gap')) || 0;
+
+			return cardWidth + gap;
+		}
+
+		function moveCarousel(animate) {
+			var step = getCardStep();
+			var cardsPerView = getCardsPerView();
+			var offset = (currentIndex + cardsPerView) * step;
+
+			if (animate) {
+				$track.css(
+					'transition',
+					'transform 0.45s ease'
+				);
+			} else {
+				$track.css(
+					'transition',
+					'none'
+				);
+			}
+			$track.css(
+				'transform',
+				'translate3d(-' + offset + 'px, 0, 0)'
+			);
+		}
+
+		function resetAfterClone() {
+			var originalCount = $originalCards.length;
+
+			// We moved into the clones at the beginning.
+			if (currentIndex < 0) {
+				currentIndex = originalCount - 1;
+				moveCarousel(false);
+			}
+			// We moved into the clones at the end.
+			else if (currentIndex >= originalCount) {
+				currentIndex = 0;
+				moveCarousel(false);
+			}
+		}
+
+
+		function goNext() {
+			if (isAnimating)
+				return;
+			isAnimating = true;
+			currentIndex++;
+			moveCarousel(true);
+		}
+
+		function goPrevious() {
+			if (isAnimating)
+				return;
+
+			isAnimating = true;
+			currentIndex--;
+			moveCarousel(true);
+		}
+
+		$nextButton.on(
+			'click',
+			goNext
+		);
+
+		$prevButton.on(
+			'click',
+			goPrevious
+		);
+
+		$track.on(
+			'transitionend',
+			function() {
+				resetAfterClone();
+				isAnimating = false;
+
+			}
+		);
+
+		/*
+		* Rebuild the clones when the screen changes
+		* between desktop and mobile.
+		*/
+		$window.on(
+			'resize',
+			function() {
+				createClones();
+				currentIndex = 0;
+				moveCarousel(false);
+				isAnimating = false;
+			}
+		);
+
+		/*
+		* Initial setup.
+		*/
+		createClones();
+		currentIndex = 0;
+		moveCarousel(false);
 	}
+
 
 	// Initialize the Prologue template AFTER sections are loaded.
     function initializePage() {
