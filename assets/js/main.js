@@ -31,6 +31,80 @@
 	    }
 	}
 
+	function initializePortfolioCarousel() {
+
+	    var $carousel = $('.portfolio-carousel');
+	    if ($carousel.length === 0)
+	        return;
+	    var $track = $carousel.find('.portfolio-carousel-track');
+	    var $cards = $track.find('.portfolio-card');
+	    var $prevButton = $carousel.find('.portfolio-carousel-prev');
+	    var $nextButton = $carousel.find('.portfolio-carousel-next');
+	    var currentIndex = 0;
+
+	    function getCardsPerView() {
+	        if (window.innerWidth <= 736)
+	            return 1;
+	        return 2;
+	    }
+
+	    function getMaxIndex() {
+	        var cardsPerView = getCardsPerView();
+
+	        return Math.max(
+	            0,
+	            $cards.length - cardsPerView
+	        );
+	    }
+
+		function updateCarousel() {
+		
+		    if ($cards.length === 0)
+		        return;
+		
+		    var cardWidth = $cards.first().outerWidth();
+		    var gap = parseFloat($track.css('gap')) || 0;
+		
+		    var offset = currentIndex * (cardWidth + gap);
+		
+		    $track.css(
+		        'transform',
+		        'translateX(-' + offset + 'px)'
+		    );
+		}
+
+
+	    function goNext() {
+	        var maxIndex = getMaxIndex();
+	        if (currentIndex >= maxIndex)
+	            currentIndex = 0;
+	        else
+	            currentIndex++;
+	        updateCarousel();
+	    }
+
+	    function goPrevious() {
+	        var maxIndex = getMaxIndex();
+	        if (currentIndex <= 0)
+	            currentIndex = maxIndex;
+	        else
+	            currentIndex--;
+	        updateCarousel();
+	    }
+
+	    $nextButton.on('click', goNext);
+	    $prevButton.on('click', goPrevious);
+
+		$window.on('resize', function() {
+	        currentIndex = Math.min(
+	            currentIndex,
+	            getMaxIndex()
+	        );
+	        updateCarousel();
+	    });
+	    updateCarousel();
+	}
+
 	// Initialize the Prologue template AFTER sections are loaded.
     function initializePage() {
 		$nav = $('#nav');
@@ -167,7 +241,8 @@
 				}
 			});
 		});
-
+		// Portfolio carousel.
+		initializePortfolioCarousel();
     }
     // Start everything.
     loadSections();	

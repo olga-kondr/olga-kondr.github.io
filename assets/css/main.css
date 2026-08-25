@@ -3508,6 +3508,36 @@ input, select, textarea {
     line-height: 1.5;
 }
 
+/* Project Link */
+
+.portfolio-project-link {
+    margin-top: 0.25em;
+}
+
+.portfolio-project-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+
+    color: #2a9d8f;
+
+    font-size: 0.78em;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        gap 0.2s ease;
+}
+
+.portfolio-project-link a:hover {
+    color: #287f78;
+
+    gap: 0.6em;
+}
+
+
 @media screen and (max-width: 736px) {
 
     .portfolio-grid {
@@ -3965,12 +3995,6 @@ input, select, textarea {
     border-color: #2a9d8f;
 }
 
-/* .credential-button:hover {
-    background-color: #38b2a3;
-
-    transform: translateY(-1px);
-} */
-
 .credential-button:active {
     background-color: #238579;
 
@@ -4156,4 +4180,195 @@ input, select, textarea {
 		font-size: 1.5em;
 	}
 }
+
+/* =========================================================
+   Portfolio Carousel
+   ========================================================= */
+
+.portfolio-carousel {
+    display: flex;
+    align-items: center;
+    gap: 1.25em;
+
+    width: 100%;
+}
+
+/* Carousel Window */
+.portfolio-carousel-window {
+    flex: 1;
+
+    min-width: 0;
+
+    overflow: hidden;
+}
+
+/* Track: Portfolio Carousel Layout */
+.portfolio-carousel-track {
+    display: flex;
+    gap: 1.5em;
+
+	margin: 0;
+    padding: 0;
+
+    transition: transform 0.45s ease;
+}
+
+/* Cards */
+.portfolio-carousel .portfolio-card {
+    /* flex: 0 0 50%; */
+    /* flex: 0 0 calc(50% - 0.75em); */
+	flex: 0 0 calc((100% - 1.5em) / 2);
+    box-sizing: border-box;
+
+    padding: 0 0.625em;
+
+}
+
+/* Navigation Buttons */
+.portfolio-carousel-button {
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    padding: 0;
+
+    border: 1px solid #287f78;
+    border-radius: 50%;
+
+    background: #287f78;
+
+    color: #ffffff;
+
+    font-size: 1.5em;
+    font-weight: 700;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.15);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.portfolio-carousel-button:hover {
+    background: #2a9d8f;
+
+    color: #ffffff;
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-carousel-button:focus-visible {
+    outline: 3px solid rgba(42, 157, 143, 0.35);
+    outline-offset: 3px;
+}
+
+/* Indicators */
+.portfolio-carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+
+    margin-top: 1.25em;
+}
+
+
+.portfolio-carousel-dot {
+    width: 9px;
+    height: 9px;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: #c8d9d7;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.portfolio-carousel-dot:hover {
+    background: #8fbab5;
+}
+
+
+.portfolio-carousel-dot.active {
+    background: #2a9d8f;
+
+    transform: scale(1.25);
+}
+
+/* Portfolio Card Text */
+
+.portfolio-card-content {
+    text-align: left;
+}
+
+.portfolio-card-content h3,
+.portfolio-card-content p,
+.portfolio-card-content ul,
+.portfolio-card-content .portfolio-date,
+.portfolio-card-content .portfolio-type,
+.portfolio-card-content .portfolio-tech {
+    text-align: left;
+}
+
+/* Tablet */
+@media screen and (max-width: 980px) {
+
+    .portfolio-carousel {
+        gap: 0.75em;
+    }
+
+    .portfolio-carousel-button {
+        width: 46px;
+        height: 46px;
+
+        font-size: 1.3em;
+    }
+
+}
+
+/* Mobile */
+@media screen and (max-width: 736px) {
+
+    .portfolio-carousel {
+        gap: 0.5em;
+    }
+
+    .portfolio-carousel .portfolio-card {
+        flex: 0 0 100%;
+
+        padding: 0;
+    }
+
+    .portfolio-carousel-button {
+        width: 40px;
+        height: 40px;
+
+        font-size: 1.1em;
+    }
+	
+	.portfolio-carousel-track {
+        gap: 0;
+    }
+}
+
 
