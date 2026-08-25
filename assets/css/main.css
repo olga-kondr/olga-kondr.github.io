@@ -2628,17 +2628,34 @@ input, select, textarea {
 /* CV button */
 .intro-buttons .secondary-button {
 	margin-left: 0.75em;
-	background-color: #2a9d8f !important;
-	border-color: #2a9d8f !important;
+	background-color: #2a9d8f ;
+	border-color: #2a9d8f ;
 }
 
 .intro-buttons .secondary-button:hover {
-	background-color: #38b2a3 !important;
-	border-color: #38b2a3 !important;
+	background-color: #38b2a3 ;
+	border-color: #38b2a3 ;
 }
+
+.intro-buttons .thirdly-button {
+	margin-left: 0.75em;
+	background-color: #1f6f67;
+	border-color: #dff3f1;
+	color: #237f76;
+}
+
+.intro-buttons .thirdly-button:hover {
+	background-color: #237f76;
+	border-color: #237f76;
+}
+
 /* Mobile */
 @media screen and (max-width: 736px) {
 	.intro-buttons .secondary-button {
+		margin-left: 0;
+		margin-top: 0.75em;
+	}
+	.intro-buttons .thirdly-button {
 		margin-left: 0;
 		margin-top: 0.75em;
 	}
@@ -3909,28 +3926,6 @@ input, select, textarea {
 }
 
 /* Certificate Button */
-/* .credential-button {
-    display: inline-block;
-
-    width: fit-content;
-
-    margin-top: auto;
-    padding: 0.55em 1.1em;
-
-    background-color: #2a9d8f;
-    color: #fff !important;
-
-    border-radius: 0.35em;
-
-    text-decoration: none !important;
-
-    font-size: 0.75em;
-    font-weight: 600;
-
-    transition:
-        background-color 0.25s ease,
-        transform 0.2s ease;
-} */
 
 /* Small view button */
 .credential-button {
@@ -4115,3 +4110,50 @@ input, select, textarea {
     }
 
 }
+
+/* CV */
+
+.cv-content {
+	margin: 3em auto 0 auto;
+	max-width: 1000px;
+	padding: 3em;
+	background: rgba(255, 255, 255, 0.96);
+	color: #333;
+	text-align: left;
+	border-radius: 0.35em;
+}
+
+.cv-content h2 {
+	margin-bottom: 1.5em;
+	color: #2a9d8f;
+	text-align: center;
+}
+
+.cv-section {
+	margin-bottom: 2.5em;
+}
+
+.cv-section h3 {
+	margin-bottom: 0.75em;
+	color: #2a9d8f;
+}
+
+.cv-section p {
+	margin-bottom: 1em;
+}
+
+.cv-section ul {
+	margin-bottom: 1em;
+}
+
+@media screen and (max-width: 736px) {
+	.cv-content {
+		margin-top: 2em;
+		padding: 1.5em;
+	}
+
+	.cv-content h2 {
+		font-size: 1.5em;
+	}
+}
+

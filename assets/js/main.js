@@ -78,10 +78,17 @@
 			})
 			.each(function() {
 
-				var	$this = $(this),
-					id = $this.attr('href'),
-					$section = $(id);
+				// var	$this = $(this),
+				// 	id = $this.attr('href'),
+				// 	$section = $(id);
+    			var $this = $(this),
+    			    id = $this.attr('href');
 
+    			// External link? Bail.
+    			if (!id || id.charAt(0) != '#')
+    			    return;
+			
+    			var $section = $(id);
 				// No section for this link? Bail.
 					if ($section.length < 1)
 						return;
@@ -144,6 +151,23 @@
 					target: $body,
 					visibleClass: 'header-visible'
 				});
+
+		// CV toggle.
+		$('#cvButton').on('click', function(e) {
+			e.preventDefault();
+		
+			var $button = $(this);
+			var $cv = $('#cv');
+		
+			$cv.stop(true, true).slideToggle(300, function() {
+				if ($cv.is(':visible')) {
+					$button.text('Hide My CV');
+				} else {
+					$button.text('View My CV');
+				}
+			});
+		});
+
     }
     // Start everything.
     loadSections();	
