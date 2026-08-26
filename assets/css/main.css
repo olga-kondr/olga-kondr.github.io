@@ -122,7 +122,7 @@ input, select, textarea {
 	}
 
 		h1 a strong, h2 a strong, h3 a strong, h4 a strong, h5 a strong, h6 a strong {
-			color: #333;
+			color: #000;
 		}
 
 	h2 {
@@ -1729,7 +1729,7 @@ input, select, textarea {
 /* Sections/Article */
 
 	section, article {
-		margin-bottom: 3em;
+		margin-bottom: 1em;
 	}
 
 		section > :last-child,
@@ -1927,7 +1927,7 @@ input, select, textarea {
 		}
 
 		table thead {
-			background: #444;
+			background: #000;
 			color: #fff;
 		}
 
@@ -2703,7 +2703,6 @@ input, select, textarea {
 }
 
 /* Timeline container */
-
 .timeline {
     position: relative;
 	z-index: 0;
@@ -2821,7 +2820,7 @@ input, select, textarea {
     background-size: cover;
     background-position: center;
 	background: rgba(255, 255, 255, 0.92);
-    color: #333;
+    color: #000;
 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
@@ -2852,7 +2851,7 @@ input, select, textarea {
 
 /* Job / event title */
 .timeline-card h3 {
-    color: #333;
+    color: #000;
     font-size: 1em;
     margin: 0 0 0.25em;
 }
@@ -2916,7 +2915,7 @@ input, select, textarea {
 }
 
 .experience-section header h2 {
-    color: #333;
+    color: #000;
 }
 
 .experience-section header p {
@@ -2983,13 +2982,13 @@ input, select, textarea {
 /* Main experience headings */
 
 .experience-card h3 {
-    color: #333;
+    color: #000;
     font-size: 1.35em;
     margin: 0 0 0.25em;
 }
 
 .experience-card h3 a {
-    color: #333;
+    color: #000;
     border-bottom-color: rgba(51, 51, 51, 0.25);
 }
 
@@ -3020,7 +3019,7 @@ input, select, textarea {
     margin-top: 2.5em;
     margin-bottom: 1em;
 
-    color: #333;
+    color: #000;
 
     font-size: 0.8em;
     font-weight: 700;
@@ -3199,7 +3198,7 @@ input, select, textarea {
     margin-bottom: 0.55em;
     padding-left: 0.35em;
     line-height: 1.45;
-    color: #555;
+    color: #000;
     font-size: 0.9em;
 }
 
@@ -3228,7 +3227,6 @@ input, select, textarea {
 
 
 /* Department header */
-
 .experience-department-header {
     margin-bottom: 1.5em;
     padding-bottom: 0.85em;
@@ -3238,7 +3236,6 @@ input, select, textarea {
 
 
 /* Department date */
-
 .experience-department-date {
     color: #2a9d8f;
     font-size: 0.75em;
@@ -3250,9 +3247,8 @@ input, select, textarea {
 
 
 /* Department name */
-
 .experience-department-header h4 {
-    color: #333;
+    color: #000;
     font-size: 1.05em;
     font-weight: 700;
 
@@ -3323,7 +3319,6 @@ input, select, textarea {
 
 
 /* Detailed content */
-
 .experience-department-content {
     margin-top: 0.9em;
     padding-top: 0.9em;
@@ -3354,9 +3349,9 @@ input, select, textarea {
 
 
 /* Subsection title */
-
 .experience-subsection h5 {
-    color: #444;
+    /* color: #444; */
+    color: #000;
     font-size: 0.9em;
     font-weight: 700;
 
@@ -3372,11 +3367,10 @@ input, select, textarea {
 }
 
 .portfolio-section header {
-    margin-bottom: 3em;
+    margin-bottom: 2em;
 }
 
 /* Portfolio grid */
-
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3385,25 +3379,18 @@ input, select, textarea {
 }
 
 /* Portfolio card */
-
 .portfolio-card {
     display: flex;
-
     background: linear-gradient(
         135deg,
         rgba(240, 245, 244, 0.95),
         rgba(225, 235, 233, 0.95)
     );
-
     border-radius: 10px;
-
     border-left: 4px solid #2a9d8f;
-
     box-shadow:
         0 4px 15px rgba(0, 0, 0, 0.08);
-
     box-sizing: border-box;
-
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
@@ -3412,7 +3399,6 @@ input, select, textarea {
 /* Card hover */
 .portfolio-card:hover {
     transform: translateY(-3px);
-
     box-shadow:
         0 8px 22px rgba(0, 0, 0, 0.12);
 }
@@ -3426,19 +3412,15 @@ input, select, textarea {
 /* Date */
 .portfolio-date {
     margin-bottom: 0;
-
-    color: #2a9d8f;
-
+    color: #000;
     font-size: 0.75em;
-    font-weight: 700;
     letter-spacing: 0.03em;
 }
 
 .portfolio-card-content .portfolio-company {
     margin-bottom: 0.3em;
-    color: #777;
+    color: #000;
     font-size: 0.75em;
-    font-weight: 400;
 }
 
 .portfolio-card-content h3 {
@@ -3446,49 +3428,40 @@ input, select, textarea {
     text-align: left;
 }
 
-
 /* Project title */
 .portfolio-card h3 {
     margin: 0 0 0.45em;
-
-    color: #333;
-
+    color: #000;
     font-size: 1.2em;
     line-height: 1.3;
+	margin: 0 0 0.45em;
+	font-weight: bold;
 }
 
 /* Project type */
-
 .portfolio-type {
     margin-bottom: 1.25em;
-
-    color: #e76f51;
-
+    /* color: #e76f51; */
+    color: #000;
     font-size: 0.72em;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: 0.05em;
     line-height: 1.4;
 }
 
 /* Description */
-
 .portfolio-card p {
     margin: 0 0 0.9em;
-
-    color: #555;
-
+    color: #000;
     font-size: 0.85em;
     line-height: 1.55;
 }
 
 /* Highlights */
-
 .portfolio-highlights {
     margin: 1.25em 0 0;
     padding-left: 1.25em;
-
-    color: #555;
-
+    color: #000;
     font-size: 0.82em;
     line-height: 1.5;
 }
@@ -3518,34 +3491,36 @@ input, select, textarea {
 }
 
 /* Project Link */
-
 .portfolio-project-link {
-    margin-top: 0.25em;
-}
-
-.portfolio-project-link a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4em;
-
-    color: #2a9d8f;
-
-    font-size: 0.78em;
-    font-weight: 700;
-
+	display: inline-block;
+    width: fit-content;
+    margin-top: 1em;
+    margin-left: auto;
+    padding: 0.35em 0.8em;
+    background: transparent;
+    /* color: #2a9d8f ;  */
+    color: #287f78 ; 
+    border: 1px solid rgba(42, 157, 143, 0.45);
+    border-radius: 0.3em;
     text-decoration: none;
-
+    font-size: 0.7em;
+    font-weight: 600;
     transition:
+        background-color 0.2s ease,
         color 0.2s ease,
-        gap 0.2s ease;
+        border-color 0.2s ease;
 }
 
-.portfolio-project-link a:hover {
-    color: #287f78;
-
-    gap: 0.6em;
+.portfolio-project-link:hover {
+    background-color: #2a9d8f;
+    color: #fff ;
+    border-color: #2a9d8f;
 }
 
+.portfolio-project-link:active {
+    background-color: #238579;
+    transform: translateY(0);
+}
 
 @media screen and (max-width: 736px) {
 
@@ -3630,7 +3605,7 @@ input, select, textarea {
 .about-interest-text h4 {
     margin: 0 0 0.5em;
 
-    color: #333;
+    color: #000;
 
     font-size: 0.95em;
     font-weight: 700;
@@ -3803,7 +3778,7 @@ input, select, textarea {
 .credential-diploma-card h3 {
     margin: 0 0 1em;
 
-    color: #333;
+    color: #000;
 
     font-size: 1em;
     font-weight: 700;
@@ -3927,7 +3902,7 @@ input, select, textarea {
 .credential-card-info h3 {
     margin: 0 0 0.65em;
 
-    color: #333;
+    color: #000;
 
     font-size: 0.9em;
     font-weight: 700;
@@ -3947,7 +3922,7 @@ input, select, textarea {
 .credential-card h3 {
     margin: 0 0 0.75em;
 
-    color: #333;
+    color: #000;
 
     font-size: 0.95em;
     font-weight: 700;
@@ -3969,26 +3944,17 @@ input, select, textarea {
 /* Small view button */
 .credential-button {
     display: inline-block;
-
     width: fit-content;
-
     margin-top: 1em;
     margin-left: auto;
-
     padding: 0.35em 0.8em;
-
     background: transparent;
-
     color: #2a9d8f !important;
-
     border: 1px solid rgba(42, 157, 143, 0.45);
     border-radius: 0.3em;
-
     text-decoration: none !important;
-
     font-size: 0.7em;
     font-weight: 600;
-
     transition:
         background-color 0.2s ease,
         color 0.2s ease,
@@ -4010,7 +3976,6 @@ input, select, textarea {
     transform: translateY(0);
 }
 /* Certificate date */
-
 .credential-date {
     margin-top: 0.65em;
 
@@ -4083,7 +4048,7 @@ input, select, textarea {
 .contact-direct h3 {
     margin-bottom: 0.75em;
 
-    color: #333;
+    color: #000;
 
     font-size: 1.1em;
     font-weight: 700;
@@ -4092,7 +4057,7 @@ input, select, textarea {
 .contact-direct-email {
     margin: 0;
 
-    color: #555;
+    color: #000;
 
     font-size: 0.85em;
     line-height: 1.6;
@@ -4101,9 +4066,7 @@ input, select, textarea {
 .contact-direct-email a {
     color: #2a9d8f;
     font-weight: 600;
-
     text-decoration: none;
-
     transition: color 0.2s ease;
 }
 
@@ -4151,7 +4114,7 @@ input, select, textarea {
 	max-width: 1000px;
 	padding: 3em;
 	background: rgba(255, 255, 255, 0.96);
-	color: #333;
+	color: #000;
 	text-align: left;
 	border-radius: 0.35em;
 }
@@ -4205,9 +4168,7 @@ input, select, textarea {
 /* Carousel Window */
 .portfolio-carousel-window {
     flex: 1;
-
     min-width: 0;
-
     overflow: hidden;
 }
 
@@ -4226,9 +4187,7 @@ input, select, textarea {
 .portfolio-carousel .portfolio-card {
 	flex: 0 0 calc((100% - 1.5em) / 2);
     box-sizing: border-box;
-
     padding: 0 0.625em;
-
 }
 
 /* Navigation Buttons */
@@ -4339,9 +4298,9 @@ input, select, textarea {
 .portfolio-card-content .portfolio-contributions-title {
     margin: 1.1em 0 0.2em 0;
 
-    color: #287f78;
+    /* color: #287f78; font-weight: 700; */
+    color: #000;
     font-size: 0.8em;
-    font-weight: 700;
     line-height: 1.3;
 }
 
