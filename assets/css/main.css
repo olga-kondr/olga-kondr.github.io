@@ -3484,7 +3484,7 @@ input, select, textarea {
    --------------------------------------------------------- */
 .portfolio-card-content {
     width: 100%;
-    padding: 1.15em 1.15em;
+    padding: 1em 0.8em 1em 1.2em;
 
     text-align: left;
 }
@@ -3687,9 +3687,7 @@ input, select, textarea {
 /* ---------------------------------------------------------
    Tablet
    --------------------------------------------------------- */
-
 @media screen and (max-width: 980px) {
-
     .portfolio-carousel {
         gap: 0.65em;
     }
@@ -3711,22 +3709,18 @@ input, select, textarea {
     }
 
     .portfolio-card-content {
-        padding: 1.1em 1.15em;
+        padding: 1em 1em;
     }
 
     .portfolio-carousel-indicators {
         justify-content: flex-start;
     }
-
 }
-
 
 /* ---------------------------------------------------------
    Mobile
    --------------------------------------------------------- */
-
 @media screen and (max-width: 736px) {
-
     .portfolio-carousel {
         gap: 0.45em;
     }
@@ -3752,17 +3746,12 @@ input, select, textarea {
     }
 
     .portfolio-card-content {
-        padding: 1.1em 1.1em;
+        padding: 1.05em 1em;
     }
 
     .portfolio-card h3 {
         font-size: 1.1em;
     }
-
-    .portfolio-carousel-dot {
-        min-width: 90px;
-    }
-
 }
 
 /* =========================================================
