@@ -43,7 +43,8 @@
 
 		var $prevButton = $carousel.find('.portfolio-carousel-prev');
 		var $nextButton = $carousel.find('.portfolio-carousel-next');
-
+		var $dots = $('.portfolio-carousel-dot');
+		
 		var currentIndex = 0;
 		var isAnimating = false;
 
@@ -54,6 +55,23 @@
 				return 1;
 
 			return 2;
+		}
+
+		function updateDots() {
+		    $dots.removeClass('active');
+		    var originalCount = $originalCards.length;
+		    if (originalCount === 0)
+		        return;
+		    var cardsPerView = getCardsPerView();
+		    // Highlight the cards currently visible.
+		    for (var i = 0; i < cardsPerView; i++) {
+		        var index = (currentIndex + i) % originalCount;
+		        if (index < 0)
+		            index += originalCount;
+		        $dots
+		            .filter('[data-index="' + index + '"]')
+		            .addClass('active');
+		    }
 		}
 
 		function createClones() {
@@ -86,7 +104,6 @@
 			return $track.find('.portfolio-card');
 		}
 
-
 		function getCardStep() {
 
 			var $cards = getAllCards();
@@ -116,6 +133,7 @@
 					'none'
 				);
 			}
+			updateDots();
 			$track.css(
 				'transform',
 				'translate3d(-' + offset + 'px, 0, 0)'
@@ -165,13 +183,37 @@
 			goPrevious
 		);
 
-		$track.on(
-			'transitionend',
-			function() {
-				resetAfterClone();
-				isAnimating = false;
+		$dots.on('click', function() {
+		    if (isAnimating)
+		        return;
+		    var targetIndex = parseInt(
+		        $(this).attr('data-index'),
+		        10
+		    );
+		    if (isNaN(targetIndex))
+		        return;
+		    var originalCount = $originalCards.length;
+		    if (originalCount === 0)
+		        return;
+		    targetIndex = targetIndex % originalCount;
+		    if (targetIndex === currentIndex)
+		        return;
+		    isAnimating = true;
+		    currentIndex = targetIndex;
+		    moveCarousel(true);
+		});
 
-			}
+		$track.on(
+		    'transitionend',
+		    function(e) {
+			
+		        if (e.originalEvent && e.originalEvent.propertyName !== 'transform')
+		            return;
+			
+		        resetAfterClone();
+
+		        isAnimating = false;
+		    }
 		);
 
 		/*
@@ -240,13 +282,8 @@
 					$this
 						.addClass('active')
 						.addClass('active-locked');
-
 			})
 			.each(function() {
-
-				// var	$this = $(this),
-				// 	id = $this.attr('href'),
-				// 	$section = $(id);
     			var $this = $(this),
     			    id = $this.attr('href');
 
@@ -258,20 +295,16 @@
 				// No section for this link? Bail.
 					if ($section.length < 1)
 						return;
-
 				// Scrollex.
 					$section.scrollex({
 						mode: 'middle',
 						top: '-10vh',
 						bottom: '-10vh',
 						initialize: function() {
-
 							// Deactivate section.
 								$section.addClass('inactive');
-
 						},
 						enter: function() {
-
 							// Activate section.
 								$section.removeClass('inactive');
 
@@ -282,21 +315,15 @@
 									$this.addClass('active');
 
 								}
-
 							// Otherwise, if this section's link is the one that's locked, unlock it.
 								else if ($this.hasClass('active-locked'))
 									$this.removeClass('active-locked');
-
 						}
 					});
-
 			});
-
 		// Scrolly.
 		$('.scrolly').scrolly();
-
 		// Header (narrower + mobile).
-
 		// Toggle.
 			$(
 				'<div id="headerToggle">' +

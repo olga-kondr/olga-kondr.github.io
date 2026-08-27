@@ -217,46 +217,42 @@ input, select, textarea {
 		max-width: 100%;
 		width: 1400px;
 	}
+@media screen and (min-width: 961px) and (max-width: 1320px) {
+    .container {
+        width: 90%;
+    }
+}
 
-		@media screen and (min-width: 961px) and (max-width: 1880px) {
+@media screen and (min-width: 1321px) and (max-width: 1620px) {
+    .container {
+        width: 90%;
+    }
+}
 
-			.container {
-				width: 1200px;
-			}
+@media screen and (min-width: 1621px) and (max-width: 1880px) {
+    .container {
+        width: 90%;
+    }
+}
 
-		}
+@media screen and (min-width: 1881px) {
+    .container {
+        width: 1400px;
+    }
+}
 
-		@media screen and (min-width: 961px) and (max-width: 1620px) {
+@media screen and (max-width: 960px) {
+    .container {
+        width: 100%;
+    }
+}
 
-			.container {
-				width: 960px;
-			}
+@media screen and (max-width: 736px) {
+    .container {
+        width: 100%;
+    }
+}
 
-		}
-
-		@media screen and (min-width: 961px) and (max-width: 1320px) {
-
-			.container {
-				width: 100%;
-			}
-
-		}
-
-		@media screen and (max-width: 960px) {
-
-			.container {
-				width: 100%;
-			}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			.container {
-				width: 100%;
-			}
-
-		}
 
 /* Row */
 
@@ -2320,7 +2316,7 @@ input, select, textarea {
 			}
 
 			.container {
-				padding: 0 2em 0 2em;
+				padding: 0 1em 0 1em;
 			}
 
 		/* Icons */
@@ -2399,7 +2395,7 @@ input, select, textarea {
 			}
 
 			.container {
-				padding: 0 2em 0 2em;
+				padding: 0 1em 0 1em;
 			}
 
 		/* Item */
@@ -4160,37 +4156,61 @@ input, select, textarea {
 .portfolio-carousel {
     display: flex;
     align-items: center;
-    gap: 1.25em;
+    gap: 1em;
 
     width: 100%;
 }
 
+
 /* Carousel Window */
+
 .portfolio-carousel-window {
-    flex: 1;
+    flex: 1 1 auto;
     min-width: 0;
+
+    /*
+     * Keep enough room around the cards for their shadows.
+     * The track itself is allowed to extend slightly beyond
+     * the visible card area.
+     */
+    padding: 0.5em 0.35em;
+
     overflow: hidden;
 }
 
-/* Track: Portfolio Carousel Layout */
+
+/* Track */
+
 .portfolio-carousel-track {
     display: flex;
-    gap: 1.5em;
+    gap: 1.25em;
 
-	margin: 0;
+    margin: 0;
     padding: 0;
 
     transition: transform 0.45s ease;
 }
 
+
 /* Cards */
+
 .portfolio-carousel .portfolio-card {
-	flex: 0 0 calc((100% - 1.5em) / 2);
+    flex: 0 0 calc((100% - 1.25em) / 2);
+
     box-sizing: border-box;
-    padding: 0 0.625em;
+
+    /*
+     * No artificial horizontal padding around the card.
+     * The card itself now fills its allocated space.
+     */
+    padding: 0;
 }
 
-/* Navigation Buttons */
+
+/* =========================================================
+   Navigation Buttons
+   ========================================================= */
+
 .portfolio-carousel-button {
     flex: 0 0 auto;
 
@@ -4207,12 +4227,10 @@ input, select, textarea {
     border-radius: 50%;
 
     background: #287f78;
-
     color: #ffffff;
 
     font-size: 1.5em;
     font-weight: 700;
-
     line-height: 1;
 
     cursor: pointer;
@@ -4228,7 +4246,6 @@ input, select, textarea {
 
 .portfolio-carousel-button:hover {
     background: #2a9d8f;
-
     color: #ffffff;
 
     transform: scale(1.05);
@@ -4242,48 +4259,14 @@ input, select, textarea {
     outline-offset: 3px;
 }
 
-/* Indicators */
-.portfolio-carousel-indicators {
-    display: flex;
-    justify-content: center;
-    gap: 0.5em;
-
-    margin-top: 1.25em;
-}
-
-
-.portfolio-carousel-dot {
-    width: 9px;
-    height: 9px;
-
-    padding: 0;
-
-    border: 0;
-    border-radius: 50%;
-
-    background: #c8d9d7;
-
-    cursor: pointer;
-
-    transition:
-        background 0.2s ease,
-        transform 0.2s ease;
-}
-
-.portfolio-carousel-dot:hover {
-    background: #8fbab5;
-}
-
-
-.portfolio-carousel-dot.active {
-    background: #2a9d8f;
-
-    transform: scale(1.25);
-}
-
-/* Portfolio Card Text */
+/* =========================================================
+   Portfolio Card Content
+   ========================================================= */
 
 .portfolio-card-content {
+    width: 100%;
+    padding: 1.15em 1.25em;
+
     text-align: left;
 }
 
@@ -4295,20 +4278,224 @@ input, select, textarea {
     text-align: left;
 }
 
-.portfolio-card-content .portfolio-contributions-title {
-    margin: 1.1em 0 0.2em 0;
 
-    /* color: #287f78; font-weight: 700; */
+/* Date */
+
+.portfolio-date {
+    margin-bottom: 0;
+
     color: #000;
+
+    font-size: 0.75em;
+    letter-spacing: 0.03em;
+}
+
+
+/* Company */
+
+.portfolio-card-content .portfolio-company {
+    margin-bottom: 0.3em;
+
+    color: #000;
+
+    font-size: 0.75em;
+}
+
+
+/* Project Title */
+
+.portfolio-card-content h3,
+.portfolio-card h3 {
+    margin: 0 0 0.4em;
+
+    color: #000;
+
+    font-size: 1.2em;
+    font-weight: 700;
+    line-height: 1.3;
+
+    text-align: left;
+}
+
+
+/* Project Type */
+
+.portfolio-type {
+    margin-bottom: 1em;
+
+    color: #000;
+
+    font-size: 0.72em;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+}
+
+
+/* Description */
+
+.portfolio-card p {
+    margin: 0 0 0.75em;
+
+    color: #000;
+
+    font-size: 0.85em;
+    line-height: 1.5;
+}
+
+
+/* Contributions Heading */
+
+.portfolio-card-content .portfolio-contributions-title {
+    margin: 0.9em 0 0.2em;
+
+    color: #000;
+
     font-size: 0.8em;
     line-height: 1.3;
 }
 
-/* Tablet */
+
+/* Highlights */
+
+.portfolio-highlights {
+    margin: 0.9em 0 0;
+
+    /*
+     * Reduced from 1.25em so the bullet marker sits
+     * closer to the card edge while the text lines up
+     * with the rest of the content.
+     */
+    padding-left: 1.05em;
+
+    color: #000;
+
+    font-size: 0.82em;
+    line-height: 1.45;
+}
+
+.portfolio-highlights li {
+    margin-bottom: 0.25em;
+
+    padding-left: 0;
+}
+
+.portfolio-highlights li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Technology Stack */
+
+.portfolio-tech {
+    margin-top: 1.15em;
+    padding-top: 0.75em;
+
+    border-top: 1px solid rgba(42, 157, 143, 0.2);
+
+    color: #287f78;
+
+    font-size: 0.72em;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   Current Project Label
+   ========================================================= */
+
+.portfolio-card-meta {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    gap: 1em;
+}
+
+.portfolio-current-project {
+    flex: 0 0 auto;
+
+    color: #e76f51;
+
+    font-size: 0.65em;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+
+    white-space: nowrap;
+}
+
+
+
+/* =========================================================
+   Project Navigation
+   ========================================================= */
+
+.portfolio-carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+
+    width: 100%;
+
+    margin-top: 1.25em;
+    padding: 0.25em 0;
+
+    overflow-x: auto;
+}
+
+
+/* Individual Project Navigation Item */
+.portfolio-carousel-dot {
+    flex: 0 0 auto;
+
+    width: 8px;
+    height: 8px;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: #c8d9d7;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.portfolio-carousel-dot:hover {
+    background: #8fbab5;
+}
+
+.portfolio-carousel-dot.active {
+    background: #2a9d8f;
+
+    transform: scale(1.3);
+}
+
+/* Current Project Indicator */
+.portfolio-carousel-dot.current-project {
+    border-color: #e76f51;
+}
+
+
+/* =========================================================
+   Tablet
+   ========================================================= */
+
 @media screen and (max-width: 980px) {
 
     .portfolio-carousel {
-        gap: 0.75em;
+        gap: 0.65em;
+    }
+
+    .portfolio-carousel-window {
+        padding-left: 0.25em;
+        padding-right: 0.25em;
     }
 
     .portfolio-carousel-button {
@@ -4318,19 +4505,42 @@ input, select, textarea {
         font-size: 1.3em;
     }
 
+    .portfolio-carousel .portfolio-card {
+        flex-basis: calc((100% - 1.25em) / 2);
+    }
+
+    .portfolio-card-content {
+        padding: 1.1em 1.15em;
+    }
+
+    .portfolio-carousel-indicators {
+        justify-content: flex-start;
+    }
+
 }
 
-/* Mobile */
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
 @media screen and (max-width: 736px) {
 
     .portfolio-carousel {
-        gap: 0.5em;
+        gap: 0.45em;
+    }
+
+    .portfolio-carousel-window {
+        padding: 0.35em 0.2em;
     }
 
     .portfolio-carousel .portfolio-card {
         flex: 0 0 100%;
-
         padding: 0;
+    }
+
+    .portfolio-carousel-track {
+        gap: 0;
     }
 
     .portfolio-carousel-button {
@@ -4339,8 +4549,17 @@ input, select, textarea {
 
         font-size: 1.1em;
     }
-	
-	.portfolio-carousel-track {
-        gap: 0;
+
+    .portfolio-card-content {
+        padding: 1.1em 1.1em;
     }
+
+    .portfolio-card h3 {
+        font-size: 1.1em;
+    }
+
+    .portfolio-carousel-dot {
+        min-width: 90px;
+    }
+
 }
