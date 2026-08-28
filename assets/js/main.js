@@ -20,16 +20,24 @@
 	            if (!response.ok) {
 	                throw new Error('Failed to load ' + section);
 	            }
+
 	            const html = await response.text();
-	            // Replace the placeholder div with the actual section.
+
+	            // Replace the placeholder with the actual section.
 	            element.outerHTML = html;
 	        }
-	        // Sections are now direct children of #main.
+	        // Sections are now loaded.
 	        initializePage();
+
+	        // Reveal the page after everything is ready.
+	        window.setTimeout(function() {
+	            $body.removeClass('is-preload');
+	        }, 100);
 	    } catch (error) {
 	        console.error('Error loading sections:', error);
 	    }
 	}
+
 
 	function initializePortfolioCarousel() {
 
@@ -252,13 +260,6 @@
 			mobile:    [ null,     '736px'  ]
 		});
 
-		// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
-
 		// Nav.
 		var $nav_a = $nav.find('a');
 
@@ -362,6 +363,18 @@
 		});
 		// Portfolio carousel.
 		initializePortfolioCarousel();
+		// after dynamically loaded sections are initialized.
+		if (window.location.hash) {
+		    var $target = $(window.location.hash);
+		    if ($target.length) {
+			
+		        setTimeout(function() {
+		            $('html, body').animate({
+		                scrollTop: $target.offset().top
+		            }, 0);
+		        }, 100);
+		    }
+		}
     }
     // Start everything.
     loadSections();	
