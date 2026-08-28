@@ -88,7 +88,7 @@ input, select, textarea {
 		font-size: 19pt;
 		font-weight: 300;
 		line-height: 1.75em;
-		color: #888;
+		color: #333;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -104,11 +104,11 @@ input, select, textarea {
 		body.is-preload {
 		    visibility: hidden;
 		}
-		
+
 		body:not(.is-preload) {
 		    visibility: visible;
 		}
-		
+
 
 	input, textarea, select {
 		font-family: 'Source Sans Pro', sans-serif;
@@ -120,7 +120,7 @@ input, select, textarea {
 
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 300;
-		color: #666;
+		color: #111;
 		line-height: 1.5em;
 	}
 
@@ -164,7 +164,7 @@ input, select, textarea {
 
 	strong, b {
 		font-weight: 300;
-		color: #666;
+		color: #333;
 	}
 
 	em, i {
@@ -220,11 +220,12 @@ input, select, textarea {
 
 /* Container */
 
-	.container {
-		margin: 0 auto;
-		max-width: 100%;
-		width: 1400px;
-	}
+.container {
+	margin: 0 auto;
+	max-width: 100%;
+	width: 1400px;
+}
+
 @media screen and (min-width: 961px) and (max-width: 1320px) {
     .container {
         width: 90%;
@@ -4232,46 +4233,34 @@ input, select, textarea {
    Contact
    ========================================================= */
 /* Contact emphasis */
-
 #contact strong {
     color: #287f78;
     font-weight: 700;
 }
 
-/* Direct email spacing */
-
-#contact form + p {
-    margin-top: 2em;
-}
-
-.contact-direct-email {
-    margin-top: 2.5em ;
+#contact p{
+	text-align: left;
 }
 
 /* ---------------------------------------------------------
    Contact Direct
    --------------------------------------------------------- */
 .contact-direct {
-    margin-top: 3em;
-    padding-top: 2em;
-
-    border-top: 1px solid rgba(42, 157, 143, 0.15);
+	margin-bottom: 1em;
+    /* border-top: 1px solid rgba(42, 157, 143, 0.15); */
 }
 
 .contact-direct h3 {
     margin-bottom: 0.75em;
-
     color: #000;
-
     font-size: 1.1em;
     font-weight: 700;
 }
 
 .contact-direct-email {
-    margin: 0;
-
+	margin-top: 1.5em ;
+    margin-bottom: 2.5em ;
     color: #000;
-
     font-size: 0.85em;
     line-height: 1.6;
 }
@@ -4287,18 +4276,20 @@ input, select, textarea {
     color: #287f78;
 }
 
+/* ---------------------------------------------------------
+   Contact Services
+   --------------------------------------------------------- */
 .contact-services-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.25em;
+	display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5em;
+    margin-top: 1.5em;
 }
 
 .contact-service-card {
-    display: flex;
+	display: flex;
     flex-direction: column;
-
-    padding: 1.5em;
-
+    padding: 1.5em 1.4em;
     background: #f4f8f8;
 
     border: 1px solid rgba(42, 157, 143, 0.12);
@@ -4307,17 +4298,69 @@ input, select, textarea {
 
     box-shadow:
         0 5px 18px rgba(0, 0, 0, 0.08);
+    text-align: left;
 }
 
-/* Mobile */
+.contact-service-icon {
+    margin-bottom: 0.6em;
+    text-align: left;
+	flex: 0 0 auto;
+    font-size: 1.4em;
+    line-height: 1;
+    transform: translateY(2px);
+}
 
+.contact-service-card h4 {
+    margin-bottom: 0.6em;
+    color: #000;
+	font-size: 1em;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: left;
+}
+
+.contact-service-card p {
+    margin: 0;
+    color: #333;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* Service card header */
+.contact-service-header {
+    display: flex;
+    align-items: center;
+    gap: 0.65em;
+    margin-bottom: 0.7em;
+}
+
+/* .contact-service-card h4 {
+    margin: 0;
+
+    color: #000;
+    font-size: 1em;
+    font-weight: 700;
+    line-height: 1.3;
+
+    text-align: left;
+} */
+ 
+/* Mobile */
 @media screen and (max-width: 736px) {
+
+    .contact-services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25em;
+    }
+
+    .contact-service-card {
+        padding: 1.25em 1.2em;
+    }
 
     .contact-direct {
         margin-top: 2em;
         padding-top: 1.5em;
     }
-
 }
 
 /* CV */
