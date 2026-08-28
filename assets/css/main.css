@@ -3281,16 +3281,16 @@ input, select, textarea {
 }
 
 /* Default: Show details */
-.experience-department-details .hide-details {
+/* .experience-department-details .hide-details {
     display: none;
 }
 
 .experience-department-details .show-details::after {
     content: " ↓";
-}
+} */
 
 /* Expanded: Hide details */
-.experience-department-details[open] .show-details {
+/* .experience-department-details[open] .show-details {
     display: none;
 }
 
@@ -3300,7 +3300,7 @@ input, select, textarea {
 
 .experience-department-details .hide-details::after {
     content: " ↑";
-}
+} */
 
 
 /* Detailed content */
