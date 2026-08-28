@@ -101,6 +101,14 @@ input, select, textarea {
 			-ms-transition: none !important;
 			transition: none !important;
 		}
+		body.is-preload {
+		    visibility: hidden;
+		}
+		
+		body:not(.is-preload) {
+		    visibility: visible;
+		}
+		
 
 	input, textarea, select {
 		font-family: 'Source Sans Pro', sans-serif;
