@@ -2899,11 +2899,13 @@ input, select, textarea {
         0 0 10px rgba(79, 209, 197, 0.45);
 }
 
-/* Experience */
+/* =========================
+   Experience
+   ========================= */
 .experience-section {
     position: relative;
     /* background-color: #f5fafa; */
-	background-color: #dce3e2;
+	/* background-color: #dce3e2; */
     overflow: hidden;
 }
 
@@ -2916,7 +2918,7 @@ input, select, textarea {
 }
 
 .experience-section header p {
-    color: #555;
+    color: #333;
 }
 
 /* Experience list */
@@ -2928,18 +2930,16 @@ input, select, textarea {
 
 /* Experience items */
 .experience-item {
-    margin-bottom: 2.5em;
+    margin-bottom: 1.5em;
 }
 
 .experience-item:last-child {
     margin-bottom: 0;
 }
 
-
 /* Experience cards */
 .experience-card {
     width: 100%;
-
     background: linear-gradient(
 	    135deg,
 	    #f2ede6,
@@ -2949,13 +2949,11 @@ input, select, textarea {
     border-radius: 10px;
     padding: 1.25em 1.5em;
     box-sizing: border-box;
-
     box-shadow:
         0 4px 15px rgba(0, 0, 0, 0.08);
 
     border-left: 4px solid #8ebebc;
 }
-
 
 /* Current experience */
 .experience-item.current .experience-card {
@@ -2966,16 +2964,16 @@ input, select, textarea {
 
 /* Dates */
 .experience-date {
-    color: #2a9d8f;
-    font-size: 0.85em;
-    font-weight: 700;
-    margin-bottom: 0.5em;
+    /* color: #2a9d8f; */
+    font-size: 0.72em;
+    font-weight: 500;
+    margin-bottom: 0.25em;
 }
 
 /* Main experience headings */
 .experience-card h3 {
     color: #000;
-    font-size: 1.35em;
+    font-size: 1.3em;
     margin: 0 0 0.25em;
 }
 
@@ -2990,60 +2988,40 @@ input, select, textarea {
 }
 
 .experience-card > h4 {
-    color: #555;
-    font-size: 0.95em;
-    font-weight: 600;
+    color: #333;
+    font-size: 1em;
+    font-weight: 500;
     margin: 0 0 1em;
 }
 
 /* Main experience descriptions */
-.experience-card > p {
-    color: #555;
-    font-size: 0.9em;
-    line-height: 1.55;
-    margin-bottom: 1em;
+.experience-card p {
+    color: #333;
+    font-size: 0.77em;
+    line-height: 1.5;
+    margin-bottom: 0.5em;
 }
 
 /* Subsection titles */
 .experience-subsection-title {
-    margin-top: 2.5em;
-    margin-bottom: 1em;
-
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
     color: #000;
-
     font-size: 0.8em;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-
-    padding-bottom: 0.5em;
+    padding-bottom: 0.25em;
     border-bottom: 2px solid #dce3e2;
 }
 
 /* Entry type */
 .experience-entry-type {
     display: block;
-
     color: #777;
-
     font-size: 0.72em;
     font-style: italic;
     line-height: 1.4;
-}
-
-/* Projects */
-.experience-project {
-    border-left-color: #8ebebc;
-}
-
-.experience-project-tech {
-    margin-top: 0.75em;
-
-    color: #2a9d8f;
-
-    font-size: 0.72em;
-    font-weight: 600;
-    line-height: 1.5;
 }
 
 /* Mobile */
@@ -3092,7 +3070,7 @@ input, select, textarea {
     padding: 0.55em 1.25em;
 
     background-color: #2a9d8f;
-    color: #fff !important;
+    color: #fff;
 
     border: 0;
     border-radius: 0.35em;
@@ -3134,12 +3112,9 @@ input, select, textarea {
 .experience-current-label {
     display: inline-flex;
     align-items: center;
-
     margin: 0;
     padding: 0;
-
     color: #e76f51;
-
     font-size: 0.7em;
     font-weight: 800;
     letter-spacing: 0.1em;
@@ -3152,10 +3127,8 @@ input, select, textarea {
     width: 7px;
     height: 7px;
     margin-right: 0.45em;
-
     background-color: #e76f51;
     border-radius: 50%;
-
     flex-shrink: 0;
 }
 
@@ -3177,7 +3150,7 @@ input, select, textarea {
 }
 /* List of work for experience workplace */
 .experience-details {
-    margin: 1em 0 0 0;
+    margin: 0.5em 0 0 0;
     padding-left: 1.25em;
     text-align: left;
 }
@@ -3185,9 +3158,9 @@ input, select, textarea {
 .experience-details li {
     margin-bottom: 0.55em;
     padding-left: 0.35em;
-    line-height: 1.45;
+    line-height: 1.4;
     color: #000;
-    font-size: 0.9em;
+    font-size: 0.77em;
 }
 
 .experience-details li:last-child {
@@ -3196,149 +3169,63 @@ input, select, textarea {
 
 .experience-card strong {
     color: #287f78;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 /* Experience Department */
 .experience-department {
-    margin-top: 2em;
-    padding: 1.5em 1.5em 0.5em 1.5em;
-
+    margin-top: 1em;
+    padding: 0.5em 0.5em 0.5em 1.5em;
 	background: rgba(240, 245, 244, 0.7);
-
     border: 1px solid rgba(42, 157, 143, 0.18);
     border-left: 4px solid #2a9d8f;
-
     border-radius: 8px;
 }
 
-
 /* Department header */
 .experience-department-header {
-    margin-bottom: 1.5em;
-    padding-bottom: 0.85em;
-
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
     border-bottom: 1px solid rgba(42, 157, 143, 0.25);
 }
 
 
 /* Department date */
 .experience-department-date {
-    color: #2a9d8f;
+    /* color: #2a9d8f; */
     font-size: 0.75em;
-    font-weight: 700;
+    /* font-weight: 500; */
     letter-spacing: 0.03em;
-
     margin-bottom: 0.25em;
 }
-
 
 /* Department name */
 .experience-department-header h4 {
     color: #000;
-    font-size: 1.05em;
-    font-weight: 700;
-
+    font-size: 1em;
+    font-weight: 500;
     margin: 0;
 }
 
 /* =========================================================
    Expandable Department Details
    ========================================================= */
-.experience-department-details {
-    margin-top: 1em;
-}
-
-/* Remove default browser marker */
-.experience-department-details summary {
-    list-style: none;
-    cursor: pointer;
-}
-
-.experience-department-details summary::-webkit-details-marker {
-    display: none;
-}
-
-/* Show details */
-.experience-department-details summary span {
-    display: inline-block;
-
-    color: #e76f51;
-
-    font-size: 0.75em;
-    font-weight: 700;
-
-    transition: color 0.2s ease;
-}
-
-.experience-department-details summary span::after {
-    content: " ↓";
-}
-
-/* Hover */
-.experience-department-details summary:hover span {
-    color: #d85d42;
-}
-
-/* Default: Show details */
-/* .experience-department-details .hide-details {
-    display: none;
-}
-
-.experience-department-details .show-details::after {
-    content: " ↓";
-} */
-
-/* Expanded: Hide details */
-/* .experience-department-details[open] .show-details {
-    display: none;
-}
-
-.experience-department-details[open] .hide-details {
-    display: inline;
-}
-
-.experience-department-details .hide-details::after {
-    content: " ↑";
-} */
-
 
 /* Detailed content */
 .experience-department-content {
-    margin-top: 0.9em;
-    padding-top: 0.9em;
+    margin-top: 0.5em;
+    padding-top: 0.5em;
 
     border-top: 1px solid rgba(42, 157, 143, 0.18);
 }
-/* Detailed content */
-.experience-department-content {
-    margin-top: 0.9em;
-    padding-top: 0.9em;
-
-    border-top: 1px solid rgba(42, 157, 143, 0.18);
-}
-/* Experience Subsections */
-.experience-subsection {
-    margin: 0;
-    padding: 0 0 1.25em 0;
-}
-
-
-/* Divider between subsections */
-.experience-subsection + .experience-subsection {
-    padding-top: 1.25em;
-    border-top: 1px solid rgba(0, 0, 0, 0.10);
-}
-
 
 /* Subsection title */
 .experience-subsection h5 {
     /* color: #444; */
     color: #000;
     font-size: 0.9em;
-    font-weight: 700;
-
-    margin: 0 0 0.6em 0;
+    font-weight: 500;
+    margin: 0 0 0.1em 0;
 }
 
 /* =========================================================
