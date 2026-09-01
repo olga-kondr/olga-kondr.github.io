@@ -3161,8 +3161,8 @@ input, select, textarea {
 }
 
 .experience-card strong {
-    color: #287f78;
-    font-weight: 500;
+    color: #111;
+    font-weight: 600;
 }
 
 /* Experience Department */
@@ -3208,8 +3208,6 @@ input, select, textarea {
 .experience-department-content {
     margin-top: 0.5em;
     padding-top: 0.5em;
-
-    border-top: 1px solid rgba(42, 157, 143, 0.18);
 }
 
 /* Subsection title */
@@ -3218,7 +3216,11 @@ input, select, textarea {
     color: #000;
     font-size: 0.9em;
     font-weight: 500;
-    margin: 0 0 0.1em 0;
+    margin: 0.9em 0 0.2em 0;
+}
+
+.experience-subsection:first-child h5 {
+    margin-top: 0;
 }
 
 /* =========================================================
