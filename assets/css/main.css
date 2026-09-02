@@ -2430,6 +2430,91 @@ input, select, textarea {
 				box-shadow: 0 0 0 2px rgba(42, 157, 143, 0.25);
 			}
 
+			body.dv-project input[type="number"] {
+				-moz-appearance: textfield;
+			}
+
+			body.dv-project input[type="number"]::-webkit-outer-spin-button,
+			body.dv-project input[type="number"]::-webkit-inner-spin-button {
+				-webkit-appearance: none;
+				appearance: none;
+				margin: 0;
+			}
+
+			/* Custom year stepper */
+			.dv-year-stepper {
+				position: relative;
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.dv-year-stepper input[type="number"] {
+				width: 6em;
+				padding-right: 1.8em;
+			}
+
+			.dv-year-stepper .dv-year-stepper-btns {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				width: 1.4em;
+				display: flex;
+				flex-direction: column;
+			}
+
+			.dv-year-stepper .dv-year-stepper-btns button {
+				flex: 1 1 50%;
+				padding: 0;
+				margin: 0;
+				border: 0;
+				border-left: 1px solid rgba(255, 255, 255, 0.5);
+				background-color: #a8d9d2;
+				color: #fff;
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				-moz-transition: background-color 0.25s ease-in-out;
+				-webkit-transition: background-color 0.25s ease-in-out;
+				-ms-transition: background-color 0.25s ease-in-out;
+				transition: background-color 0.25s ease-in-out;
+			}
+
+			.dv-year-stepper .dv-year-stepper-btns button:nth-child(1) {
+				border-radius: 0 calc(0.35em - 1px) 0 0;
+			}
+
+			.dv-year-stepper .dv-year-stepper-btns button:nth-child(2) {
+				border-radius: 0 0 calc(0.35em - 1px) 0;
+			}
+
+			.dv-year-stepper .dv-year-stepper-btns button:hover {
+				background-color: #bfe3de;
+			}
+
+			.dv-year-stepper .dv-year-stepper-btns button:active {
+				background-color: #96cfc7;
+			}
+
+			.dv-year-stepper .dv-year-stepper-btns button::before {
+				content: "";
+				width: 0;
+				height: 0;
+			}
+
+			.dv-year-stepper .dv-year-stepper-btns button.up::before {
+				border-left: 0.4em solid transparent;
+				border-right: 0.4em solid transparent;
+				border-bottom: 0.45em solid #fff;
+			}
+
+			.dv-year-stepper .dv-year-stepper-btns button.down::before {
+				border-left: 0.4em solid transparent;
+				border-right: 0.4em solid transparent;
+				border-top: 0.45em solid #fff;
+			}
+
 			@media screen and (max-width: 960px) {
 				html.dv-project, body.dv-project {
 					overflow-x: clip;

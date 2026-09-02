@@ -366,6 +366,30 @@ function renderCharts6to7(dataGeo, dataElements) {
     chart7listener(dataGeo, dataElements);
 }
 
+// Custom year stepper buttons
+function setupYearSteppers() {
+    document.querySelectorAll('.dv-year-stepper').forEach(function (stepper) {
+        var input = stepper.querySelector('input[type="number"]');
+        var buttons = stepper.querySelectorAll('button');
+        if (!input || buttons.length < 2) return;
+
+        var changeValue = function (dir) {
+            var min = input.min !== '' ? +input.min : -Infinity;
+            var max = input.max !== '' ? +input.max : Infinity;
+            var stepVal = +input.step || 1;
+            var next = (+input.value || 0) + dir * stepVal;
+            next = Math.min(max, Math.max(min, next));
+            input.value = next;
+            input.dispatchEvent(new Event('change', { bubbles: true }));
+        };
+
+        buttons[0].addEventListener('click', function () { changeValue(1); });
+        buttons[1].addEventListener('click', function () { changeValue(-1); });
+    });
+}
+
+setupYearSteppers();
+
 // load world shape and list of trajectories
 Promise.all([
     d3.json('https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson'),
