@@ -1,0 +1,730 @@
+<!DOCTYPE HTML> 
+<!-- 
+Prologue by HTML5 UP html5up.net | @ajlkn 
+Free for personal and commercial use under 
+the CCA 3.0 license (html5up.net/license) 
+--> 
+<html> 
+<head> 
+    <title>Olga K. — Data Visualization - Final Project</title> 
+    <meta charset="utf-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /> 
+    <link rel="stylesheet" href="assets/css/main.css" /> 
+</head> 
+<body class="is-preload dv-project">
+    <!-- Header -->
+	<div id="header">
+		<div class="top">
+			<!-- Logo -->
+            <div data-section="logo"></div>
+			<!-- Nav -->
+			<div data-section="nav"></div>
+		</div>
+		<div class="bottom">
+            <!-- Social Icons -->
+            <div data-section="social"></div>
+		</div>
+	</div>
+
+    <div class="bottom">
+        <!-- Shared Social Icons -->
+        <div data-section="social"></div>
+    </div>
+
+    <!-- Data Visualization Navigation -->
+    <nav id="dv-nav" aria-label="Data visualization navigation">
+        <div class="dv-nav-inner">
+            <a href="#intro">Intro</a>
+            <a href="#alpha">Release Reports</a>
+            <a href="#objective">Objective</a>
+            <a href="#data">Data</a>
+            <a href="#objective1">Overview</a>
+            <a href="#objective2">Types of Storms</a>
+            <a href="#objective3">Storm Length</a>
+            <a href="#objective4">Wind</a>
+            <a href="#objective5">Pressure</a>
+            <a href="#objective6">Trajectories</a>
+            <a href="#objective7">Interactive Map</a>
+        </div>
+    </nav>
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- Intro -->
+        <section id="intro" class="one dark cover">
+            <div class="container">
+                <header>
+                    <h2 class="alt">Hurricanes in the Atlantic Ocean</h2>
+                </header>
+                <div>
+                    <br><br>
+                    <p>
+                        The main question that I have is what has been going on 
+                        in the Atlantic Ocean for the past decades? I have 
+                        worked with hurricane data before by building models 
+                        that predict trajectories of hurricanes all over the 
+                        world. In this project I would like to visualize 
+                        trajectories in the Atlantic Ocean alongside with 
+                        analysis of weather conditions. I'm interested in this 
+                        geographic area compared to the entire world as it is 
+                        much closer to the US life.
+                    </p>
+                    <br><br>
+                </div>
+                <footer>
+                    <a href="#objective" class="button scrolly">Let's start!</a>
+                </footer>
+            </div>
+        </section>
+        <!-- Alpha Release -->
+        <section id="alpha" class="two">
+            <div class="container">
+                <header>
+                    <h3>Release Reports</h3>
+                </header>
+                <!-- <h4>Alpha Release Report</h4> -->
+                <div class="row">
+                    <div class="block">
+                        <a href="docs/dv/Alpha_Release.pdf">
+                            <img src="images/dv/ar.png" alt="" height="60px" />
+                        </a>
+                    </div>
+                    <div class="block">
+                        <a href="docs/dv/Alpha_Release.pdf">
+                            Alpha Release Report
+                        </a>
+                    </div>
+                </div>
+                <!-- <h4>Beta Release Update</h4> -->
+                <div class="row">
+                    <div class="block">
+                        <a href="https://docs.google.com/presentation/d/1TpiFIpkhnjteaYnilDjCG5A-bLhUJJjo2Wo45KyI2Ls/edit?usp=sharing">
+                            <img src="images/dv/beta.png" alt="" height="40px" />
+                        </a>
+                    </div>
+                    <div class="block">
+                        <a href="https://docs.google.com/presentation/d/1TpiFIpkhnjteaYnilDjCG5A-bLhUJJjo2Wo45KyI2Ls/edit?usp=sharing">
+                            Beta Release Update
+                        </a>
+                    </div>
+                </div>
+                <!-- <h4>Final Presentation</h4> -->
+                <div class="row">
+                    <div class="block">
+                        <a href="https://docs.google.com/presentation/d/1-IynciP6CXvfdItvdN23qcTbspAi71UKFtUQsO0ynSw/edit?usp=sharing">
+                            <img src="images/dv/final.png" alt="" height="40px" />
+                        </a>
+                    </div>
+                    <div class="block">
+                        <a href="https://docs.google.com/presentation/d/1-IynciP6CXvfdItvdN23qcTbspAi71UKFtUQsO0ynSw/edit?usp=sharing">
+                            Final Presentation
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Objective -->
+        <section id="objective" class="three">
+            <div class="container">
+                <header>
+                    <h3>Objective</h3>
+                </header>
+                <p>
+                    First things first: <br />
+                    <strong>Tropical cyclone</strong> is a rapidly rotating 
+                    storm system characterized by a low-pressure center, a 
+                    closed low-level atmospheric circulation, strong winds, 
+                    and a spiral arrangement of thunderstorms that produce
+                    heavy rain and/or squalls.
+                    <a href="https://en.wikipedia.org/wiki/Tropical_cyclone">
+                        [wiki]
+                    </a>
+                </p>
+                <p>
+                    An <strong>Atlantic hurricane</strong> or <strong>tropical 
+                    storm</strong> is a tropical cyclone that forms in the 
+                    Atlantic Ocean, primarily between the months of June and 
+                    November. A hurricane differs from a cyclone or typhoon 
+                    only on the basis of location.
+                </p>
+                <ul>
+                    Classifications:
+                    <li>TD - Tropical cyclone of tropical depression intensity (less than 34 knots)</li>
+                    <li>TS - Tropical cyclone of tropical storm intensity (34-63 knots)</li>
+                    <li>HU - Tropical cyclone of hurricane intensity (&gt; 64 knots). Let's foocus on this one for the prrorject.</li>
+                    <li>EX - Extratropical cyclone (of any intensity)</li>
+                    <li>SD - Subtropical cyclone of subtropical depression intensity ( less than 34 knots)</li>
+                    <li>SS - Subtropical cyclone of subtropical storm intensity (&gt; 34 knots)</li>
+                    <li>LO - A low that is neither a tropical cyclone, a subtropical cyclone, nor an extratropical cyclone (of any intensity)</li>
+                    <li>WV - Tropical Wave (of any intensity)</li>
+                    <li>DB - Disturbance (of any intensity)</li>
+                </ul>
+                <p>
+                    By working with tropical cyclones dataset I want to show 
+                    changes for the last several decades that are happening in 
+                    the Atlantic Ocean. Mostly I'm going to focus on hurricanes.
+                </p>
+                <ol>
+                    <li>
+                        How the amount of tropical cyclones changed from one 
+                        season to another in the time period of several last 
+                        decades.
+                    </li>
+                    <strong>
+                        After that I am going to analyze several components of 
+                        each tropical cyclone in the specified time frame.
+                    </strong>
+                    <li>
+                        How many types of tropical cyclones are there?
+                    </li>
+                    <li>
+                        How did the maximum wind speed change in the time period?
+                    </li>
+                    <li>
+                        How did the pressure change in the time period?
+                    </li>
+                    <strong>
+                        Next interesting part that I want to address is the 
+                        length of the tropical cyclone and its trajectory.
+                    </strong>
+                    <li>
+                        How tropical cyclones' length have changed for several decades.
+                    </li>
+                    <li>
+                        What are the trajectories of tropical cyclones in the specified time frame?
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+
+        <!-- Data -->
+        <section id="data" class="three">
+
+            <div class="container">
+
+                <header>
+                    <h3>Data</h3>
+                </header>
+
+                <p>
+                    Main dataset is
+                    <a href="https://www.kaggle.com/noaa/hurricane-database">
+                        https://www.kaggle.com/noaa/hurricane-database
+                    </a>
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Objective 1 -->
+        <section id="objective1" class="three">
+
+            <div class="container">
+
+                <header>
+                    <h3>Overview and Saffir–Simpson Scale</h3>
+                </header>
+
+                <p>
+                    As it is
+                    <a href="https://www.encyclopedie-environnement.org/en/air-en/tropical-cyclones-development-and-organization/">
+                        stated
+                    </a>
+                    a mature tropical cyclone is a thermal engine whose heat source is the condensation of water vapour.
+                    This is not the result, as has long been believed, of the presence of large-scale thunderstorm instability.
+                    The tropical oceanic atmosphere is generally close to neutrality, which does not allow the development of large-scale upward
+                    movements. A very large part of the energy of cyclones comes from evaporation at the ocean surface, forced by winds of increasing intensity.
+                    <br />
+
+                    <img src="images/dv/crosssection.gif"
+                        alt="Tropical cyclone cross section" />
+
+                    <a href="http://worldlywise.pbworks.com/w/page/25349490/Unit%202%20Section%20C%20-%20Causes%20and%20effects%20of%20tropical%20storms%20and%20responses%20to%20them">
+                        link
+                    </a>
+                </p>
+
+                <p>
+                    According to
+                    <a href="https://www.nhc.noaa.gov/climo/">NOAA</a>
+                    the Atlantic hurricane season runs from June 1 to November 30.
+                    The Atlantic basin includes the Atlantic Ocean, Caribbean Sea, and Gulf of Mexico.
+                    Based on a 30-year climate period from 1991 to 2020, an average Atlantic hurricane season has 14 named storms,
+                    7 hurricanes, and 3 major hurricanes (Category 3, 4, or 5 on the Saffir-Simpson Hurricane Wind Scale).
+                    The first named storm typically forms in mid to late June, the first hurricane tends to form in early to mid-August,
+                    and the first major hurricane forms in late August or early September.
+                </p>
+
+                <p>
+                    The Saffir-Simpson hurricane wind scale, classifies hurricanes:
+                    Western Hemisphere tropical cyclones that exceed the intensities of tropical depressions and tropical storms –
+                    into five categories distinguished by the intensities of their sustained winds.
+                    <a href="https://en.wikipedia.org/wiki/Saffir%E2%80%93Simpson_scale">[wiki]</a>
+                </p>
+
+                <p>
+                    Here is a combination of with definitions of the Saffir–Simpson hurricane wind scale,
+                    Tropical Storm and Tropical Depression to give the whole picture of wind speed ranges.
+                </p>
+
+                <div id="hurtable" class="hutable"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Objective 2 -->
+        <section id="objective2" class="three">
+
+            <div class="container">
+
+                <header>
+                    <h3>Storms in Atlantic Ocean</h3>
+                </header>
+
+                <p>
+                    According to
+                    <a href="https://www.nhc.noaa.gov/climo/">NOAA</a>
+                    a <b>tropical cyclone</b> is a rotating, organized system of clouds and thunderstorms that originates over tropical or subtropical waters and has a closed low-level circulation.
+                    Tropical cyclones rotate counterclockwise in the Northern Hemisphere.
+                    They are classified as follows:
+                </p>
+
+                <ul>
+                    <li>Tropical Depression: A tropical cyclone with maximum sustained winds of 38 mph (33 knots) or less.</li>
+                    <li>Tropical Storm: A tropical cyclone with maximum sustained winds of 39 to 73 mph (34 to 63 knots).</li>
+                    <li>Hurricane: A tropical cyclone with maximum sustained winds of 74 mph (64 knots) or higher.</li>
+                    <li>Major Hurricane: A tropical cyclone with maximum sustained winds of 111 mph (96 knots) or higher, corresponding to a Category 3, 4 or 5 on the Saffir-Simpson Hurricane Wind Scale (shown above).</li>
+                </ul>
+
+                <p>
+                    In the western North Pacific, hurricanes are called typhoons; similar storms in the Indian Ocean and South Pacific Ocean are called cyclones.
+                    Tropical cyclones forming between 5 and 30 degrees North latitude typically move toward the west.
+                    Sometimes the winds in the middle and upper levels of the atmosphere change and steer the cyclone toward the north and northwest.
+                    When tropical cyclones reach latitudes near 30 degrees North, they often move northeast.
+                </p>
+
+                <!-- <div id="histogram21"></div> -->
+
+                <p>
+                    Most of the weather systems have several categories as they develope from one type to another over the time.
+                    Here are 2 charts that show what are the highest types of weather systems were recorded over a period of time from 1851 to 2015 years.
+                </p>
+
+                <div class="dv-chart-pair">
+
+                    <div class="dv-chart-block">
+
+                        <p>
+                            Total amount of storms by type based on the highest wind speed recorded.
+                        </p>
+
+                        <div id="histogram21"></div>
+
+                    </div>
+
+                    <div class="dv-chart-block">
+
+                        <p>
+                            Total amount of storms by type based on weather system condition.
+                        </p>
+
+                        <div id="histogram212"></div>
+
+                    </div>
+
+                </div>
+
+                <h3>
+                    Storms by Type per Decade
+                </h3>
+
+                <p>
+                    Now we can compare storm amount per decade to see any potential changes in the storm data.
+                    As done above, there are two ways too look at the data: in terms of high wind speed or in terms of other conditions apart from wind speed which is not the main
+                    factor. Mostly second chart is showing alternative way of looking at weather systems compared to the first chart.
+                </p>
+
+                <p>
+                    It is possible to change ranges to compare data for the 5 consequent decades.
+                </p>
+
+                <p>
+                    Categories included: Tropical depression, Tropical storm, Hurricane, Subtropical depression, Subtropical storm
+                </p>
+
+                <div id="chart22"></div>
+
+                <div class="dv-chart-control">
+
+                    <label for="chart221slider">
+                        Start with Decade:
+                    </label>
+
+                    <br />
+
+                    1856-1865
+
+                    <input
+                        type="range"
+                        name="chart22slider"
+                        id="chart221slider"
+                        class="slider221range"
+                        min="1"
+                        max="12"
+                        value="12">
+
+                    1966-1975 + 4 Following Decades
+
+                </div>
+
+
+                <p>
+                    <ul>
+                        Categories explained:
+                        <li>Extratropical cyclone (of any intensity)</li>
+                        <li>A low that is neither a tropical cyclone, a subtropical cyclone, nor an extratropical cyclone (of any intensity)</li>
+                        <li>Tropical Wave (of any intensity)</li>
+                        <li>Disturbance (of any intensity)</li>
+                    </ul>
+                </p>
+
+                <div id="chart222"></div>
+
+                <div class="dv-chart-control">
+
+                    <label for="chart222slider">
+                        Start with Decade:
+                    </label>
+
+                    <br />
+
+                    1856-1865
+
+                    <input
+                        type="range"
+                        name="chart22slider"
+                        id="chart222slider"
+                        class="slider222range"
+                        min="1"
+                        max="12"
+                        value="12">
+
+                    1966-1975 + 4 Following Decades
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Objective 3 -->
+        <section id="objective3" class="three">
+
+            <div class="container">
+
+                <header>
+                    <h3>Length of Storms</h3>
+                </header>
+
+                <p>
+                    Length of Storms Including Hurricanes.
+                    <br />
+
+                    Length was calculated using
+                    <a href="https://en.wikipedia.org/wiki/Haversine_formula">
+                        haversine formula
+                    </a>
+                    and it may be improved later on.
+                    Since length is calculated using the data from the dataset where the step of measuring lalitude and longitude may vary depending on the year when it was recorded and available tools.
+                    General step is 6 hours. Modern times allow to take more precise measurements.
+                </p>
+
+                <div id="chart3"></div>
+
+                <div class="dv-chart-control">
+
+                    <label for="chart3slider">
+                        Start Year:
+                    </label>
+
+                    <span id="chart3year"></span>
+
+                    <br />
+
+                    1851
+
+                    <input
+                        type="range"
+                        name="chart3slider"
+                        id="chart3slider"
+                        class="slider3range"
+                        min="1851"
+                        max="2011"
+                        value="2011">
+
+                    2011 + 4 Following Years
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Objective 4 -->
+        <section id="objective4" class="three">
+
+            <div class="container">
+
+                <header>
+                    <h3>Wind</h3>
+                </header>
+
+                <p>
+                    Maximum Wind Speed (kn)
+                </p>
+
+                <div id="chart4"></div>
+
+                <div class="dv-chart-control">
+
+                    <label for="chart4slider">
+                        Start Year:
+                    </label>
+
+                    <span id="chart4year"></span>
+
+                    <br />
+
+                    1950
+
+                    <input
+                        type="range"
+                        name="chart4slider"
+                        id="chart4slider"
+                        class="sliider4range"
+                        min="1950"
+                        max="2011"
+                        value="2011">
+
+                    2011 + 4 Following Years
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Objective 5 -->
+        <section id="objective5" class="three">
+
+            <div class="container">
+
+                <header>
+                    <h3>Pressure</h3>
+                </header>
+
+                <p>
+                    Tropical storms are areas of low pressure, that's why it is important to look into it.
+                    This
+                    <a href="https://i.pinimg.com/originals/f8/1a/38/f81a38ec648c75bb279a8e78c73cd5c.gif">
+                        image
+                    </a>
+                    is showing the pressure aspect of the storm:
+
+                    <img
+                        src="images/dv/storm.gif"
+                        alt="Illustration of storm pressure" />
+                </p>
+
+                <p>
+                    Minimum pressure registered in millibars.
+                </p>
+
+                <div id="chart5"></div>
+
+                <div class="dv-chart-control">
+
+                    <label for="chart5slider">
+                        Start Year:
+                    </label>
+
+                    <span id="chart5year"></span>
+
+                    <br />
+
+                    1950
+
+                    <input
+                        type="range"
+                        name="chart5slider"
+                        id="chart5slider"
+                        class="sliider5range"
+                        min="1950"
+                        max="2011"
+                        value="2011">
+
+                    2011 + 4 Following Years
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Objective 6 -->
+        <section id="objective6" class="three">
+
+            <div class="container">
+
+                <header>
+                    <h3>Weather System Trajectories</h3>
+                </header>
+
+                <p>
+                    Atlantic Ocean map shows trajectories of weather systems including tropical storms, tropical depressions, hurricanes, etc.
+                </p>
+
+                <div id="chart6map"></div>
+
+                <div class="dv-chart-control">
+
+                    <label for="chart6slider">
+                        Start Year:
+                    </label>
+
+                    <span id="chart6year"></span>
+
+                    <br />
+
+                    1851
+
+                    <input
+                        type="range"
+                        name="chart6slider"
+                        id="chart6slider"
+                        class="slider6range"
+                        min="1851"
+                        max="2015"
+                        value="2011">
+
+                    2015
+
+                    <br />
+
+                    <label for="chart6years">
+                        Interval in Years =
+                        <span id="chart6value"></span>
+                    </label>
+
+                    <input
+                        type="number"
+                        min="1"
+                        max="100"
+                        step="1"
+                        value="5"
+                        id="chart6years">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Objective 7 -->
+        <section id="objective7" class="three">
+
+            <div class="container">
+
+                <header>
+                    <h3>Interactive map of <b>Hurricanes</b></h3>
+                </header>
+
+                <p>
+                    As it was mentioned above not every weatherr system turns into hurricane, so here gathered only hurricanes.
+                </p>
+
+                <div id="chart7map"></div>
+
+                <div class="dv-chart-control">
+
+                    <label for="chart7slider">
+                        Start Year:
+                    </label>
+
+                    <span id="chart7year"></span>
+
+                    <br />
+
+                    1851
+
+                    <input
+                        type="range"
+                        name="chart7slider"
+                        id="chart7slider"
+                        class="slider7range"
+                        min="1851"
+                        max="2015"
+                        value="2015">
+
+                    2015
+
+                    <br />
+
+                    <label for="chart7years">
+                        Interval in Years =
+                        <span id="chart7value"></span>
+                    </label>
+
+                    <input
+                        type="number"
+                        min="1"
+                        max="165"
+                        step="1"
+                        value="1"
+                        id="chart7years">
+
+                </div>
+
+            </div>
+
+        </section>
+    </div>
+    <!-- Footer -->
+    <div id="footer">
+
+        <ul class="copyright">
+            <li>&copy; Olga's Page. All rights reserved.</li>
+            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="assets/js/chartVars.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+    <script src="assets/js/charts1to2.js"></script>
+    <script src="assets/js/charts3to5.js"></script>
+    <script src="assets/js/charts6to7.js"></script>
+    <!-- Shared site JavaScript -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

@@ -2288,6 +2288,16 @@ input, select, textarea {
 				background-color: #e8edec;
 			}
 
+			body.dv-project #main > section p,
+			body.dv-project #main > section ul,
+			body.dv-project #main > section ol {
+				text-align: left;
+			}
+
+			body.dv-project strong {
+				font-weight: 500;
+			}
+
 /* Wide */
 
 	@media screen and (min-width: 961px) and (max-width: 1880px) {
