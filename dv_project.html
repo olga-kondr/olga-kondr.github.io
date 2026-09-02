@@ -4,7 +4,7 @@ Prologue by HTML5 UP html5up.net | @ajlkn
 Free for personal and commercial use under 
 the CCA 3.0 license (html5up.net/license) 
 --> 
-<html> 
+<html class="dv-project"> 
 <head> 
     <title>Olga K. — Data Visualization - Final Project</title> 
     <meta charset="utf-8" /> 
@@ -24,32 +24,26 @@ the CCA 3.0 license (html5up.net/license)
             <!-- Social Icons -->
             <div data-section="social"></div>
 		</div>
-	</div>
-
-    <div class="bottom">
-        <!-- Shared Social Icons -->
-        <div data-section="social"></div>
-    </div>
-
-    <!-- Data Visualization Navigation -->
-    <nav id="dv-nav" aria-label="Data visualization navigation">
-        <div class="dv-nav-inner">
-            <a href="#intro">Intro</a>
-            <a href="#alpha">Release Reports</a>
-            <a href="#objective">Objective</a>
-            <a href="#data">Data</a>
-            <a href="#objective1">Overview</a>
-            <a href="#objective2">Types of Storms</a>
-            <a href="#objective3">Storm Length</a>
-            <a href="#objective4">Wind</a>
-            <a href="#objective5">Pressure</a>
-            <a href="#objective6">Trajectories</a>
-            <a href="#objective7">Interactive Map</a>
-        </div>
-    </nav>
+</div>
 
     <!-- Main -->
     <div id="main">
+
+        <nav id="dv-nav" aria-label="Data visualization Navigation">
+            <div class="dv-nav-inner">
+                <a href="#intro">Intro</a>
+                <a href="#alpha">Release Reports</a>
+                <a href="#objective">Objective</a>
+                <a href="#data">Data</a>
+                <a href="#objective1">Overview</a>
+                <a href="#objective2">Types of Storms</a>
+                <a href="#objective3">Storm Length</a>
+                <a href="#objective4">Wind</a>
+                <a href="#objective5">Pressure</a>
+                <a href="#objective6">Trajectories</a>
+                <a href="#objective7">Interactive Map</a>
+            </div>
+        </nav>
 
         <!-- Intro -->
         <section id="intro" class="one dark cover">
@@ -197,57 +191,47 @@ the CCA 3.0 license (html5up.net/license)
                 </ol>
             </div>
         </section>
-
-
         <!-- Data -->
-        <section id="data" class="three">
-
+        <section id="data" class="four">
             <div class="container">
-
                 <header>
                     <h3>Data</h3>
                 </header>
-
                 <p>
                     Main dataset is
                     <a href="https://www.kaggle.com/noaa/hurricane-database">
                         https://www.kaggle.com/noaa/hurricane-database
                     </a>
                 </p>
-
             </div>
-
         </section>
-
-
         <!-- Objective 1 -->
-        <section id="objective1" class="three">
-
+        <section id="objective1" class="two">
             <div class="container">
-
                 <header>
-                    <h3>Overview and Saffir–Simpson Scale</h3>
+                    <h3>Overview and Saffir-Simpson Scale</h3>
                 </header>
-
                 <p>
                     As it is
                     <a href="https://www.encyclopedie-environnement.org/en/air-en/tropical-cyclones-development-and-organization/">
                         stated
                     </a>
-                    a mature tropical cyclone is a thermal engine whose heat source is the condensation of water vapour.
-                    This is not the result, as has long been believed, of the presence of large-scale thunderstorm instability.
-                    The tropical oceanic atmosphere is generally close to neutrality, which does not allow the development of large-scale upward
-                    movements. A very large part of the energy of cyclones comes from evaporation at the ocean surface, forced by winds of increasing intensity.
-                    <br />
-
-                    <img src="images/dv/crosssection.gif"
-                        alt="Tropical cyclone cross section" />
-
+                    a mature tropical cyclone is a thermal engine whose heat 
+                    source is the condensation of water vapour. This is not the 
+                    result, as has long been believed, of the presence of 
+                    large-scale thunderstorm instability. The tropical oceanic 
+                    atmosphere is generally close to neutrality, which does not 
+                    allow the development of large-scale upward movements. A 
+                    very large part of the energy of cyclones comes from 
+                    evaporation at the ocean surface, forced by winds of 
+                    increasing intensity.
+                </p>
+                <p>
+                    <img src="images/dv/crosssection.gif"  alt="Tropical Cyclone Cross Section" />
                     <a href="http://worldlywise.pbworks.com/w/page/25349490/Unit%202%20Section%20C%20-%20Causes%20and%20effects%20of%20tropical%20storms%20and%20responses%20to%20them">
                         link
                     </a>
                 </p>
-
                 <p>
                     According to
                     <a href="https://www.nhc.noaa.gov/climo/">NOAA</a>
@@ -258,35 +242,25 @@ the CCA 3.0 license (html5up.net/license)
                     The first named storm typically forms in mid to late June, the first hurricane tends to form in early to mid-August,
                     and the first major hurricane forms in late August or early September.
                 </p>
-
                 <p>
                     The Saffir-Simpson hurricane wind scale, classifies hurricanes:
                     Western Hemisphere tropical cyclones that exceed the intensities of tropical depressions and tropical storms –
                     into five categories distinguished by the intensities of their sustained winds.
                     <a href="https://en.wikipedia.org/wiki/Saffir%E2%80%93Simpson_scale">[wiki]</a>
                 </p>
-
                 <p>
                     Here is a combination of with definitions of the Saffir–Simpson hurricane wind scale,
                     Tropical Storm and Tropical Depression to give the whole picture of wind speed ranges.
                 </p>
-
                 <div id="hurtable" class="hutable"></div>
-
             </div>
-
         </section>
-
-
         <!-- Objective 2 -->
         <section id="objective2" class="three">
-
             <div class="container">
-
                 <header>
                     <h3>Storms in Atlantic Ocean</h3>
                 </header>
-
                 <p>
                     According to
                     <a href="https://www.nhc.noaa.gov/climo/">NOAA</a>
@@ -294,7 +268,6 @@ the CCA 3.0 license (html5up.net/license)
                     Tropical cyclones rotate counterclockwise in the Northern Hemisphere.
                     They are classified as follows:
                 </p>
-
                 <ul>
                     <li>Tropical Depression: A tropical cyclone with maximum sustained winds of 38 mph (33 knots) or less.</li>
                     <li>Tropical Storm: A tropical cyclone with maximum sustained winds of 39 to 73 mph (34 to 63 knots).</li>
@@ -308,68 +281,46 @@ the CCA 3.0 license (html5up.net/license)
                     Sometimes the winds in the middle and upper levels of the atmosphere change and steer the cyclone toward the north and northwest.
                     When tropical cyclones reach latitudes near 30 degrees North, they often move northeast.
                 </p>
-
                 <!-- <div id="histogram21"></div> -->
-
                 <p>
                     Most of the weather systems have several categories as they develope from one type to another over the time.
                     Here are 2 charts that show what are the highest types of weather systems were recorded over a period of time from 1851 to 2015 years.
                 </p>
-
                 <div class="dv-chart-pair">
-
                     <div class="dv-chart-block">
-
                         <p>
                             Total amount of storms by type based on the highest wind speed recorded.
                         </p>
-
                         <div id="histogram21"></div>
-
                     </div>
-
                     <div class="dv-chart-block">
-
                         <p>
                             Total amount of storms by type based on weather system condition.
                         </p>
-
                         <div id="histogram212"></div>
-
                     </div>
-
                 </div>
-
                 <h3>
                     Storms by Type per Decade
                 </h3>
-
                 <p>
                     Now we can compare storm amount per decade to see any potential changes in the storm data.
                     As done above, there are two ways too look at the data: in terms of high wind speed or in terms of other conditions apart from wind speed which is not the main
                     factor. Mostly second chart is showing alternative way of looking at weather systems compared to the first chart.
                 </p>
-
                 <p>
                     It is possible to change ranges to compare data for the 5 consequent decades.
                 </p>
-
                 <p>
                     Categories included: Tropical depression, Tropical storm, Hurricane, Subtropical depression, Subtropical storm
                 </p>
-
                 <div id="chart22"></div>
-
                 <div class="dv-chart-control">
-
                     <label for="chart221slider">
                         Start with Decade:
                     </label>
-
                     <br />
-
                     1856-1865
-
                     <input
                         type="range"
                         name="chart22slider"
@@ -378,12 +329,8 @@ the CCA 3.0 license (html5up.net/license)
                         min="1"
                         max="12"
                         value="12">
-
                     1966-1975 + 4 Following Decades
-
                 </div>
-
-
                 <p>
                     <ul>
                         Categories explained:
@@ -393,19 +340,13 @@ the CCA 3.0 license (html5up.net/license)
                         <li>Disturbance (of any intensity)</li>
                     </ul>
                 </p>
-
                 <div id="chart222"></div>
-
                 <div class="dv-chart-control">
-
                     <label for="chart222slider">
                         Start with Decade:
                     </label>
-
                     <br />
-
                     1856-1865
-
                     <input
                         type="range"
                         name="chart22slider"
@@ -414,29 +355,20 @@ the CCA 3.0 license (html5up.net/license)
                         min="1"
                         max="12"
                         value="12">
-
                     1966-1975 + 4 Following Decades
-
                 </div>
-
             </div>
-
         </section>
-
-
         <!-- Objective 3 -->
-        <section id="objective3" class="three">
-
+        <section id="objective3" class="four">
             <div class="container">
-
                 <header>
                     <h3>Length of Storms</h3>
                 </header>
-
                 <p>
                     Length of Storms Including Hurricanes.
-                    <br />
-
+                </p>
+                <p>
                     Length was calculated using
                     <a href="https://en.wikipedia.org/wiki/Haversine_formula">
                         haversine formula
@@ -445,21 +377,14 @@ the CCA 3.0 license (html5up.net/license)
                     Since length is calculated using the data from the dataset where the step of measuring lalitude and longitude may vary depending on the year when it was recorded and available tools.
                     General step is 6 hours. Modern times allow to take more precise measurements.
                 </p>
-
                 <div id="chart3"></div>
-
                 <div class="dv-chart-control">
-
                     <label for="chart3slider">
                         Start Year:
                     </label>
-
                     <span id="chart3year"></span>
-
                     <br />
-
                     1851
-
                     <input
                         type="range"
                         name="chart3slider"
@@ -468,43 +393,27 @@ the CCA 3.0 license (html5up.net/license)
                         min="1851"
                         max="2011"
                         value="2011">
-
                     2011 + 4 Following Years
-
                 </div>
-
             </div>
-
         </section>
-
-
         <!-- Objective 4 -->
-        <section id="objective4" class="three">
-
+        <section id="objective4" class="two">
             <div class="container">
-
                 <header>
                     <h3>Wind</h3>
                 </header>
-
                 <p>
                     Maximum Wind Speed (kn)
                 </p>
-
                 <div id="chart4"></div>
-
                 <div class="dv-chart-control">
-
                     <label for="chart4slider">
                         Start Year:
                     </label>
-
                     <span id="chart4year"></span>
-
                     <br />
-
                     1950
-
                     <input
                         type="range"
                         name="chart4slider"
@@ -513,25 +422,16 @@ the CCA 3.0 license (html5up.net/license)
                         min="1950"
                         max="2011"
                         value="2011">
-
                     2011 + 4 Following Years
-
                 </div>
-
             </div>
-
         </section>
-
-
         <!-- Objective 5 -->
         <section id="objective5" class="three">
-
             <div class="container">
-
                 <header>
                     <h3>Pressure</h3>
                 </header>
-
                 <p>
                     Tropical storms are areas of low pressure, that's why it is important to look into it.
                     This
@@ -539,30 +439,22 @@ the CCA 3.0 license (html5up.net/license)
                         image
                     </a>
                     is showing the pressure aspect of the storm:
-
                     <img
                         src="images/dv/storm.gif"
-                        alt="Illustration of storm pressure" />
+                        alt="Illustration of storm pressure"
+                        class="dv-centered" />
                 </p>
-
                 <p>
                     Minimum pressure registered in millibars.
                 </p>
-
                 <div id="chart5"></div>
-
                 <div class="dv-chart-control">
-
                     <label for="chart5slider">
                         Start Year:
                     </label>
-
                     <span id="chart5year"></span>
-
                     <br />
-
                     1950
-
                     <input
                         type="range"
                         name="chart5slider"
@@ -571,43 +463,27 @@ the CCA 3.0 license (html5up.net/license)
                         min="1950"
                         max="2011"
                         value="2011">
-
                     2011 + 4 Following Years
-
                 </div>
-
             </div>
-
         </section>
-
-
         <!-- Objective 6 -->
-        <section id="objective6" class="three">
-
+        <section id="objective6" class="four">
             <div class="container">
-
                 <header>
                     <h3>Weather System Trajectories</h3>
                 </header>
-
                 <p>
                     Atlantic Ocean map shows trajectories of weather systems including tropical storms, tropical depressions, hurricanes, etc.
                 </p>
-
                 <div id="chart6map"></div>
-
                 <div class="dv-chart-control">
-
                     <label for="chart6slider">
                         Start Year:
                     </label>
-
                     <span id="chart6year"></span>
-
                     <br />
-
                     1851
-
                     <input
                         type="range"
                         name="chart6slider"
@@ -616,16 +492,12 @@ the CCA 3.0 license (html5up.net/license)
                         min="1851"
                         max="2015"
                         value="2011">
-
                     2015
-
                     <br />
-
                     <label for="chart6years">
                         Interval in Years =
                         <span id="chart6value"></span>
                     </label>
-
                     <input
                         type="number"
                         min="1"
@@ -633,41 +505,26 @@ the CCA 3.0 license (html5up.net/license)
                         step="1"
                         value="5"
                         id="chart6years">
-
                 </div>
-
             </div>
-
         </section>
-
-
         <!-- Objective 7 -->
-        <section id="objective7" class="three">
-
+        <section id="objective7" class="two">
             <div class="container">
-
                 <header>
                     <h3>Interactive map of <b>Hurricanes</b></h3>
                 </header>
-
                 <p>
                     As it was mentioned above not every weatherr system turns into hurricane, so here gathered only hurricanes.
                 </p>
-
                 <div id="chart7map"></div>
-
                 <div class="dv-chart-control">
-
                     <label for="chart7slider">
                         Start Year:
                     </label>
-
                     <span id="chart7year"></span>
-
                     <br />
-
                     1851
-
                     <input
                         type="range"
                         name="chart7slider"
@@ -676,16 +533,12 @@ the CCA 3.0 license (html5up.net/license)
                         min="1851"
                         max="2015"
                         value="2015">
-
                     2015
-
                     <br />
-
                     <label for="chart7years">
                         Interval in Years =
                         <span id="chart7value"></span>
                     </label>
-
                     <input
                         type="number"
                         min="1"
@@ -693,23 +546,17 @@ the CCA 3.0 license (html5up.net/license)
                         step="1"
                         value="1"
                         id="chart7years">
-
                 </div>
-
             </div>
-
         </section>
     </div>
     <!-- Footer -->
     <div id="footer">
-
         <ul class="copyright">
             <li>&copy; Olga's Page. All rights reserved.</li>
             <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
         </ul>
-
     </div>
-
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
@@ -725,6 +572,5 @@ the CCA 3.0 license (html5up.net/license)
     <script src="assets/js/charts6to7.js"></script>
     <!-- Shared site JavaScript -->
     <script src="assets/js/main.js"></script>
-
 </body>
 </html>

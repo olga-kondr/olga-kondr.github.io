@@ -2294,8 +2294,169 @@ input, select, textarea {
 				text-align: left;
 			}
 
+			body.dv-project #main > section {
+				scroll-margin-top: 3em;
+			}
+
 			body.dv-project strong {
 				font-weight: 500;
+			}
+
+			/* Data visualization page top navigation */
+			#dv-nav {
+				position: sticky;
+				top: 0;
+				z-index: 1000;
+				background-color: #e2eae9;
+				border-bottom: 1px solid rgba(42, 157, 143, 0.18);
+				box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+			}
+
+			.dv-nav-inner {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.25em 0.8em;
+				max-width: 1400px;
+				margin: 0 auto;
+				padding: 0.35em 1.5em;
+			}
+
+			.dv-nav-inner a {
+				border: 0;
+				color: #2a9d8f;
+				text-decoration: none;
+				font-size: 0.7em;
+				font-weight: 500;
+				letter-spacing: 0.03em;
+				padding: 0.15em 0.45em;
+				border-radius: 0.3em;
+				-moz-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+				-webkit-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+				-ms-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+				transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+			}
+
+			.dv-nav-inner a:hover {
+				background-color: rgba(42, 157, 143, 0.12);
+				color: #2a9d8f;
+			}
+
+			body.dv-project img.dv-centered {
+				display: block;
+				margin: 0 auto;
+			}
+			/* Data visualization chart controls */
+			.dv-chart-control {
+				margin: 1em 0 1.5em 0;
+				font-size: 0.8em;
+				color: #555;
+				line-height: 1.9;
+			}
+
+			body.dv-project input[type="range"] {
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				width: 60%;
+				height: 6px;
+				border-radius: 3px;
+				background: #c8d4d3;
+				outline: none;
+				cursor: pointer;
+				vertical-align: middle;
+			}
+
+			body.dv-project input[type="range"]::-webkit-slider-thumb {
+				-webkit-appearance: none;
+				appearance: none;
+				width: 18px;
+				height: 18px;
+				border-radius: 50%;
+				background: #2a9d8f;
+				border: 2px solid #fff;
+				box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+				cursor: pointer;
+				-moz-transition: background-color 0.25s ease-in-out;
+				-webkit-transition: background-color 0.25s ease-in-out;
+				-ms-transition: background-color 0.25s ease-in-out;
+				transition: background-color 0.25s ease-in-out;
+			}
+
+			body.dv-project input[type="range"]::-moz-range-thumb {
+				width: 18px;
+				height: 18px;
+				border-radius: 50%;
+				background: #2a9d8f;
+				border: 2px solid #fff;
+				box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+				cursor: pointer;
+			}
+
+			body.dv-project input[type="range"]::-moz-range-track {
+				height: 6px;
+				border-radius: 3px;
+				background: #c8d4d3;
+			}
+
+			body.dv-project input[type="range"]::-moz-range-progress {
+				height: 6px;
+				border-radius: 3px;
+				background: #2a9d8f;
+			}
+
+			body.dv-project input[type="range"]:hover::-webkit-slider-thumb,
+			body.dv-project input[type="range"]:hover::-moz-range-thumb {
+				background: #38b2a3;
+			}
+
+			body.dv-project input[type="number"] {
+				width: 6em;
+				padding: 0.3em 0.5em;
+				border: 1px solid rgba(42, 157, 143, 0.4);
+				border-radius: 0.35em;
+				background: #fff;
+				color: #333;
+				font-size: 0.85em;
+				text-align: center;
+				-moz-transition: border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+				-webkit-transition: border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+				-ms-transition: border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+				transition: border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+			}
+
+			body.dv-project input[type="number"]:focus {
+				outline: none;
+				border-color: #2a9d8f;
+				box-shadow: 0 0 0 2px rgba(42, 157, 143, 0.25);
+			}
+
+			@media screen and (max-width: 960px) {
+				html.dv-project, body.dv-project {
+					overflow-x: clip;
+				}
+
+				.dv-nav-inner {
+					padding: 0.35em 0.9em;
+					justify-content: center;
+				}
+
+				.dv-nav-inner a {
+					font-size: 0.68em;
+					padding: 0.12em 0.4em;
+				}
+			}
+
+			@media screen and (max-width: 736px) {
+				.dv-nav-inner {
+					padding: 0.3em 0.6em;
+					gap: 0.15em 0.5em;
+					justify-content: center;
+				}
+
+				.dv-nav-inner a {
+					font-size: 0.65em;
+					padding: 0.1em 0.35em;
+				}
 			}
 
 /* Wide */
