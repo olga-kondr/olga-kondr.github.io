@@ -4195,6 +4195,32 @@ input, select, textarea {
     border-radius: 4px;
 }
 
+/* Diploma thumbnail: small preview, swaps to full image on click */
+.credential-diploma .credential-diploma-thumb {
+    width: 260px;
+    max-width: 100%;
+    margin: 0 auto;
+
+    display: block;
+
+    cursor: zoom-in;
+
+    transition: width 0.3s ease;
+}
+
+.credential-diploma img[hidden] {
+    display: none !important;
+}
+
+.credential-diploma .credential-diploma-full {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    cursor: zoom-out;
+}
+
 /* Certifications Grid */
 .credential-certifications {
     display: grid;
@@ -4358,9 +4384,21 @@ input, select, textarea {
 
 .credential-button:active {
     background-color: #238579;
-
     transform: translateY(0);
 }
+
+/* Diploma expand button */
+.credential-diploma-card .credential-expand-btn {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.credential-diploma-card .credential-expand-btn.open {
+    background-color: #2a9d8f;
+    color: #fff !important;
+    border-color: #2a9d8f;
+}
+
 /* Certificate date */
 .credential-date {
     margin-top: 0.65em;
