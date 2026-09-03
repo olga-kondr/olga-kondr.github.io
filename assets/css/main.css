@@ -2290,7 +2290,8 @@ input, select, textarea {
 
 			body.dv-project #main > section p,
 			body.dv-project #main > section ul,
-			body.dv-project #main > section ol {
+			body.dv-project #main > section ol,
+			body.dv-project #main > section li {
 				text-align: left;
 			}
 
@@ -2300,6 +2301,17 @@ input, select, textarea {
 
 			body.dv-project strong {
 				font-weight: 500;
+			}
+
+			/* dv_works (assignments) page text scaling */
+			body.dv-project #main > section#projects,
+			body.dv-project #main > section#projects p,
+			body.dv-project #main > section#projects li {
+				font-size: 0.85em;
+			}
+
+			body.dv-project #main > section#projects h3 {
+				font-size: 1.15em;
 			}
 
 			/* Data visualization page top navigation */
